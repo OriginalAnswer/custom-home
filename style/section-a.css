@@ -1,0 +1,6 @@
+.section-a{
+    &.headapps{
+        display: block;
+        text-align: var(--headapps-textalign);
+    }
+}

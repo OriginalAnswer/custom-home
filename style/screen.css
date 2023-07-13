@@ -1,0 +1,15 @@
+@import url(./root.css);
+html,body{
+    -webkit-scrollbar: none;
+    height: 100vh;
+    width: 100vw;
+}
+@import url(./section-a.css);
+@import url(./section-b.css);
+@import url(./section-b.css);
+@import url(./section-x.css);
+.section-a{
+    width: 100%;
+}
+.section-b{width: 100%;}
+.section-c{width: 100%;}

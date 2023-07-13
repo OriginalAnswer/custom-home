@@ -1,0 +1,31 @@
+.section-x{
+    -webkit-scrollbar: none;
+    height: 100vh;
+    overflow-y: scroll;
+    width: 100vw;
+    
+    & .xtoggle{
+        bottom: 0;
+        position: fixed;
+        right: 0;
+    }
+    & .back{
+        height: 100%;
+        opacity: 0.2;
+        position: relative;
+        width: 100%;
+        z-index: 11;
+    }
+    & .set{
+        -webkit-scrollbar: none;
+        height: 100%;
+        overflow-y: scroll;
+        position: relative;
+        width: 350px;
+        right: 0;
+        top: 0;
+        z-index: 12;
+        &.general{}
+        &.set-apps{}
+    }
+}   
