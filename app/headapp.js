@@ -53,26 +53,25 @@ function syncHeadTextFontsize() {
 
 
 // --------------------------
-const greetInput = document.querySelector("#set-greet");
-const appGreet = document.querySelector(".app-greet");
+// const greetInput = document.querySelector("#set-greet");
+// const appGreet = document.querySelector(".app-greet");
 
-const GREET_KEY = "greet name"
-const savedGreet= localStorage.getItem(GREET_KEY);
+// const GREET_KEY = "greet name"
+// const savedGreet= localStorage.getItem(GREET_KEY);
 
-function printGreet() {
-    appGreet.innerText = `${savedGreet}`;
-}
-if (savedGreet !== null) {
-    printGreet();
-    greetInput.setAttribute('placeholder', `${savedGreet}`)
-}
-function syncGreet() {
-    let syncText = greetInput.value;
-    appGreet.innerText = `${syncText}`;
-    localStorage.setItem(GREET_KEY, syncText);
-    greetInput.setAttribute('placeholder', `${syncText}`)
-}
-// --------------------------
+// function printGreet() {
+//     appGreet.innerText = `${savedGreet}`;
+// }
+// if (savedGreet !== null) {
+//     printGreet();
+//     greetInput.setAttribute('placeholder', `${savedGreet}`)
+// }
+// function syncGreet() {
+//     let syncText = greetInput.value;
+//     appGreet.innerText = `${syncText}`;
+//     localStorage.setItem(GREET_KEY, syncText);
+//     greetInput.setAttribute('placeholder', `${syncText}`)
+// }
 
 const greet = document.querySelector('.app-greet');
 
