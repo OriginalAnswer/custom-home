@@ -9,8 +9,8 @@
  <body>
    <div class="sectionA">
       <div class="headapps">
-         <div class="app-title">tyep</div>
-         <div class="app-time">00:00:00</div>
+         <div class="app-headtext">you can change in setting here.</div>
+         <div class="app-time"><span id="app-time">00:00:00</span></div>
          <div class="app-date">0000.0.00.0요일</div>
          <div class="app-greet">good day</div>
       </div>
@@ -28,7 +28,25 @@
       <label for="xtoggle" class="xtoggle"></label>
       <label for="xtoggle" class="back"></label>
       <div class="set">
+         <div class="general">
+            <div class="bgselect"></div>
+            <div class="font"></div>
+            <div class="mode"></div>
+         </div>
+
+         <div class="headapp-set">
+            <div class="haedapp-align"></div>
+            <div class="set-headtext">
+               <input type="text" id="set-headtext" oninput="syncHeadText()">
+               <input type="range" id="headtext-fontsize" min="8"max="64" step="1" onchange="syncHeadTextFontsize()">
+            </div>
+            <!-- <div class="set-greet">
+               <input type="text" id="set-greet" oninput="syncGreet()">
+            </div> -->
+         </div>
+
          <div class="newapp">
+            <div class="newapp-toggle">+</div>
             <div class="newlinks"></div>
             <div class="newtask"></div>
             <div class="newtodo"></div>
@@ -41,9 +59,9 @@
    </div>
 
 
-
-
-
-    <script src="https://kit.fontawesome.com/e4704dcbbd.js" crossorigin="anonymous"></script>
+   <script src="./app/time.js"></script>
+   <script src="./app/date.js"></script>
+   <script src="./app/headapp.js"></script>
+   <script src="https://kit.fontawesome.com/e4704dcbbd.js" crossorigin="anonymous"></script>
  </body>
  </html>
