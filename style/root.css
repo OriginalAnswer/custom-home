@@ -21,3 +21,10 @@
 .dpnone{
     display: none;
 }
+.thinline{
+    width: 100%;
+    border: 1px solid #000;
+    /* opacity: .5; */
+    transform: scaleY(.3);
+    margin: 10px 0;
+}

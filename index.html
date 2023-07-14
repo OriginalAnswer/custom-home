@@ -12,7 +12,7 @@
             <div class="app-headtext">you can change in setting here.</div>
             <div class="app-headtime"><span id="app-headtime">00:00:00</span></div>
             <div class="app-date">0000.0.00.0요일</div>
-            <div class="app-greet">good day</div>
+            <div class="app-greet">good day<span class="app-greet-name"></span></div>
          </div>
       </div>
 
@@ -53,10 +53,12 @@
                   <input type="range" id="headtime-fontsize" min="8"max="64" step="1" oninput="syncHeadTimeSize()">
                </div>
                <div class="set-greet">
-                  <input type="text" id="set-greet" oninput="syncGreet()">
+                  <input type="text" id="set-greet-name" oninput="syncGreetName()">
                </div>
             </div>
-   
+            
+            <div class="thinline"></div>
+            
             <div class="newapp">
                <div class="newapp-toggle">+</div>
                <div class="newlinks"></div>
