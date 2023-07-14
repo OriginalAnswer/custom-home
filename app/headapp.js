@@ -17,7 +17,7 @@ if (savedHeadText !== null) {
     const txt = parsedHeadText.text;
     const size = parsedHeadText.fontsize;
     printHeadText(txt, size);
-    headTextInput.setAttribute('placeholder', `${txt}`)
+    // headTextInput.setAttribute('placeholder', `${txt}`)
     headTextInput.setAttribute('value', `${txt}`)
     headtextFontsize.setAttribute('value', `${size}`)
 }
