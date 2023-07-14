@@ -1,8 +1,3 @@
-
-// `
-// 아래 : 띄어쓰기 키 막기
-// onkeypress = "if(event.keyCode == 32) event.returnValue = false;
-
 // --------------------------
 const headTextInput = document.querySelector("#set-headtext");
 const appHeadText = document.querySelector(".app-headtext");
@@ -23,6 +18,7 @@ if (savedHeadText !== null) {
     const size = parsedHeadText.fontsize;
     printHeadText(txt, size);
     headTextInput.setAttribute('placeholder', `${txt}`)
+    headTextInput.setAttribute('value', `${txt}`)
     headtextFontsize.setAttribute('value', `${size}`)
 }
 function syncHeadText() {
@@ -33,24 +29,21 @@ function syncHeadText() {
         fontsize: syncFontsize
     };
     appHeadText.innerText = `${syncText}`;
-    // appHeadText.style.fontSize = `${syncFontsize}px`;
     localStorage.setItem(HEADTEXT_KEY, JSON.stringify(headtextObj));
-    headTextInput.setAttribute('placeholder', `${syncText}`)
+    headTextInput.setAttribute('placeholder', `${syncText}`);
 }
 
 function syncHeadTextFontsize() {
     let syncFontsize = headtextFontsize.value;
+    let syncText = headTextInput.value;
 
-    const txt = parsedHeadText.text;
     const headtextObj = {
-        text: txt,
+        text: syncText,
         fontsize: syncFontsize
     }
     localStorage.setItem(HEADTEXT_KEY, JSON.stringify(headtextObj));
     appHeadText.style.fontSize = `${syncFontsize}px`;
 }
-
-
 
 // --------------------------
 // const greetInput = document.querySelector("#set-greet");
@@ -94,6 +87,30 @@ function changeGreeting(){
     }
 }
 changeGreeting();
-// const greetingShow = document.querySelector('#greeting-name');
-// const greetingInput = document.querySelector('#greeting-input');
-// const greetingForm = document.querySelector('#greeting-form');
+// -----------------------------------
+
+function headappAlign(value) {
+    const appHeadtext = document.querySelector(".headapps");
+    if (value === 'left') {
+        appHeadtext.style.textAlign = 'left';
+      } else if (value === 'center') {
+        appHeadtext.style.textAlign = 'center';
+      } else if (value === 'right') {
+        appHeadtext.style.textAlign = 'right';
+      }
+}
+
+
+//----------------------------------
+
+function syncHeadTextFontsize() {
+    let syncFontsize = headtextFontsize.value;
+    let syncText = headTextInput.value;
+
+    const headtextObj = {
+        text: syncText,
+        fontsize: syncFontsize
+    }
+    localStorage.setItem(HEADTEXT_KEY, JSON.stringify(headtextObj));
+    appHeadText.style.fontSize = `${syncFontsize}px`;
+}
