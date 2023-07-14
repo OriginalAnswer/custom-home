@@ -8,9 +8,9 @@
    </head>
    <body>
       <div class="sectionA">
-         <div class="headapps">
+         <div class="headapp">
             <div class="app-headtext">you can change in setting here.</div>
-            <div class="app-time"><span id="app-time">00:00:00</span></div>
+            <div class="app-headtime"><span id="app-headtime">00:00:00</span></div>
             <div class="app-date">0000.0.00.0요일</div>
             <div class="app-greet">good day</div>
          </div>
@@ -37,9 +37,9 @@
    
             <div class="set-headapp">
                <div class="haedapp-align">
-                  <input type="radio" name="haedapp-align" class="dpnone" id="haedapp-align-left" value="left" onchange="headappAlign(this.value)">
-                  <input type="radio" name="haedapp-align" class="dpnone" id="haedapp-align-center" value="center" onchange="headappAlign(this.value)">
-                  <input type="radio" name="haedapp-align" class="dpnone" id="haedapp-align-right" value="right" onchange="headappAlign(this.value)">
+                  <input type="radio" name="haedapp-align" class="dpnone" id="haedapp-align-left" value="left" onchange="handleAlignHeadapp(this.value)">
+                  <input type="radio" name="haedapp-align" class="dpnone" id="haedapp-align-center" value="center" onchange="handleAlignHeadapp(this.value)">
+                  <input type="radio" name="haedapp-align" class="dpnone" id="haedapp-align-right" value="right" onchange="handleAlignHeadapp(this.value)">
                   <label for="haedapp-align-left">LEFT</label>
                   <label for="haedapp-align-center">CENTER</label>
                   <label for="haedapp-align-right">RIGHT</label>
@@ -49,12 +49,12 @@
                   <input type="range" id="headtext-fontsize" min="8"max="64" step="1" oninput="syncHeadTextFontsize()">
                </div>
                <div class="set-headtime">
-                  tite size
-                  <input type="range" id="headtext-timesize" min="8"max="64" step="1" oninput="syncHeadTimeSize()">
+                  time size
+                  <input type="range" id="headtime-fontsize" min="8"max="64" step="1" oninput="syncHeadTimeSize()">
                </div>
-               <!-- <div class="set-greet">
+               <div class="set-greet">
                   <input type="text" id="set-greet" oninput="syncGreet()">
-               </div> -->
+               </div>
             </div>
    
             <div class="newapp">
@@ -71,9 +71,9 @@
       </div>
 
 
+   <script src="./app/headapp.js"></script>
    <script src="./app/time.js"></script>
    <script src="./app/date.js"></script>
-   <script src="./app/headapp.js"></script>
    <script src="https://kit.fontawesome.com/e4704dcbbd.js" crossorigin="anonymous"></script>
  </body>
  </html>

@@ -1,9 +1,8 @@
 
 :root{
     /* default */
-    --font-color : #000;
+    --font-color : #fff;
     --font-family: 1rem var(--font-color) sans-serif;
-
     --headapps-textalign: center;
 
 }
