@@ -96,35 +96,39 @@ const savedHeadTime = localStorage.getItem(HEADTIME_KEY);
 const savedHeadTimeSize = localStorage.getItem(HEADTIME_KEY, 'fontsize');
 const parsedHeadTime = JSON.parse(savedHeadTime);//객체 분석하기
 const appHeadTime = document.querySelector('#app-headtime');
-// function printHeadTime() {
-    // }
-    function syncHeadTimeSize() {
-        let syncTimeSize = headTimeSize.value;
-        const headTimeObj = {
-            fontsize: syncTimeSize
-        }
-        appHeadTime.style.fontSize = `${syncTimeSize}px`;
-        localStorage.setItem(HEADTIME_KEY, JSON.stringify(headTimeObj));
+function syncHeadTimeSize() {
+    let syncTimeSize = headTimeSize.value;
+    const headTimeObj = {
+        fontsize: syncTimeSize
     }
-    if (savedHeadTime !== null) {
-        const size = parsedHeadTime.fontsize;
-        headTimeSize.setAttribute('value', `${size}`)
-        appHeadTime.style.fontSize = `${size}px`;
-    }
-    
-    // -----------------------------------
+    appHeadTime.style.fontSize = `${syncTimeSize}px`;
+    localStorage.setItem(HEADTIME_KEY, JSON.stringify(headTimeObj));
+}
+if (savedHeadTime !== null) {
+    const size = parsedHeadTime.fontsize;
+    headTimeSize.setAttribute('value', `${size}`)
+    appHeadTime.style.fontSize = `${size}px`;
+}
+
+// -----------------------------------
 const HEADAPP_KEY = 'headapp';
 const savedHeadapp = localStorage.getItem(HEADAPP_KEY);
 const savedHeadappAlign = localStorage.getItem(HEADAPP_KEY, 'align');
 const parsedHeadapp = JSON.parse(savedHeadapp);//객체 분석하기
 const headapp = document.querySelector('.headapp');
 function handleAlignHeadapp(value) {
-    const appHeadtext = document.querySelector(".headapp");
+    const headappObj = {align: value};
+    localStorage.setItem(HEADAPP_KEY, JSON.stringify(headappObj));
     if (value === 'left') {
-        appHeadtext.style.textAlign = 'left';
+        headapp.style.textAlign = 'left';
     } else if (value === 'center') {
-        appHeadtext.style.textAlign = 'center';
+        headapp.style.textAlign = 'center';
     } else if (value === 'right') {
-        appHeadtext.style.textAlign = 'right';
+        headapp.style.textAlign = 'right';
     }
+}
+
+if (savedHeadapp !== null) {
+    const align = parsedHeadapp.align;
+    headapp.style.textAlign = `${align}`;
 }
