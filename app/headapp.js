@@ -115,20 +115,20 @@ const HEADAPP_KEY = 'headapp';
 const savedHeadapp = localStorage.getItem(HEADAPP_KEY);
 const savedHeadappAlign = localStorage.getItem(HEADAPP_KEY, 'align');
 const parsedHeadapp = JSON.parse(savedHeadapp);//객체 분석하기
-const headapp = document.querySelector('.headapp');
+const headapps = document.querySelector('.headapps');
 function handleAlignHeadapp(value) {
     const headappObj = {align: value};
     localStorage.setItem(HEADAPP_KEY, JSON.stringify(headappObj));
     if (value === 'left') {
-        headapp.style.textAlign = 'left';
+        headapps.style.textAlign = 'left';
     } else if (value === 'center') {
-        headapp.style.textAlign = 'center';
+        headapps.style.textAlign = 'center';
     } else if (value === 'right') {
-        headapp.style.textAlign = 'right';
+        headapps.style.textAlign = 'right';
     }
 }
 
 if (savedHeadapp !== null) {
     const align = parsedHeadapp.align;
-    headapp.style.textAlign = `${align}`;
+    headapps.style.textAlign = `${align}`;
 }

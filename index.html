@@ -8,14 +8,14 @@
    </head>
    <body>
       <div class="section-a">
-         <div class="headapp">
-            <div class="app-headtext">you can change in setting here.</div>
-            <div class="app-headtime"><span id="app-headtime">00:00:00</span></div>
-            <div class="app-date">0000.0.00.0요일</div>
-            <div class="app-greet"><span class="greet"></span><span class="app-greet-name"></span></div>
+         <div class="headapps">
+            <div class="headapp app-headtext">you can change in setting here.</div>
+            <div class="headapp app-headtime"><span id="app-headtime">00:00:00</span></div>
+            <div class="headapp app-date">0000.0.00.0요일</div>
+            <div class="headapp app-greet"><span class="greet"></span><span class="app-greet-name"></span></div>
          </div>
       </div>
-
+      
       <div class="section-b">
          <div class="app-search">
             <form action="https://www.youtube.com/results" target="blank" class="searchbar search-youtube">
@@ -34,6 +34,7 @@
                <button>icon</button>
             </form>
          </div>
+         
       </div>
       <div class="sectionC"></div>
       <div class="sectionX">
@@ -52,9 +53,9 @@
                   <input type="radio" name="haedapp-align" class="dpnone" id="haedapp-align-left" value="left" onchange="handleAlignHeadapp(this.value)">
                   <input type="radio" name="haedapp-align" class="dpnone" id="haedapp-align-center" value="center" onchange="handleAlignHeadapp(this.value)">
                   <input type="radio" name="haedapp-align" class="dpnone" id="haedapp-align-right" value="right" onchange="handleAlignHeadapp(this.value)">
-                  <label for="haedapp-align-left">LEFT</label>
-                  <label for="haedapp-align-center">CENTER</label>
-                  <label for="haedapp-align-right">RIGHT</label>
+                  <label for="haedapp-align-left"class="haedapp-align-left">LEFT</label>
+                  <label for="haedapp-align-center" class="haedapp-align-center">CENTER</label>
+                  <label for="haedapp-align-right" class="haedapp-align-right">RIGHT</label>
                </div>
                <div class="set-headtext">
                   <input type="text" id="set-headtext" oninput="syncHeadText()">
@@ -71,15 +72,16 @@
             
             <div class="thinline"></div>
             
-            <div class="newapp">
-               <div class="newapp-toggle">+</div>
-               <div class="newlinks"></div>
-               <div class="newtask"></div>
-               <div class="newtodo"></div>
-               <div class="newtext"></div>
-               <div class="newtimer"></div>
-               <div class="newcalc"></div>
-               <div class="newmusicplayer"></div>
+            <div class="newapps">
+               <input type="checkbox" id="newapp-toggle">
+               <label for="newapp-toggle" class="newapp-toggle">추가하기</label>
+               <li class="newapp newlinks">links</li>
+               <li class="newapp newtask">task</li>
+               <li class="newapp newchecklist">checklsit</li>
+               <li class="newapp newtext">memo</li>
+               <li class="newapp newtimer">timer</li>
+               <li class="newapp newcalc">calc</li>
+               <li class="newapp newmusicplayer">musicplayer</li>
             </div>
          </div>
       </div>

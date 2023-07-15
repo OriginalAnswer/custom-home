@@ -1,9 +1,14 @@
 .section-a{
+    display: flex;
+    justify-content: space-around;
     width: 100%;
     padding: 20px;
     &.headapps{
+        width: 100%;
+        margin: 0;
         display: block;
         text-align: var(--headapps-textalign);
-
+        /* &.headapp{
+        } */
     }
 }

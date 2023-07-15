@@ -26,4 +26,25 @@ html,body{
     overflow-y: scroll;
     -webkit-scrollbar: none;
 }
+
+.dpnone{
+    display: none;
+}
+.thinline{
+    width: 100%;
+    border: 1px solid #000;
+    /* opacity: .5; */
+    transform: scaleY(.3);
+    margin: 10px 0;
+}
 /* -------------------------------------- */
+.newapps{
+    width: 200px;height: 50px;
+    border: #000 solid 1px;
+    & .newapp{
+        display: none;
+    }
+}
+.newapp-toggle:checked ~ .newapp{
+    display: block;
+}
