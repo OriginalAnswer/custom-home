@@ -8,8 +8,3 @@ html,body{
 @import url(./section-b.css);
 @import url(./section-b.css);
 @import url(./section-x.css);
-.section-a{
-    width: 100%;
-}
-.section-b{width: 100%;}
-.section-c{width: 100%;}

@@ -1,6 +1,9 @@
 .section-a{
+    width: 100%;
     &.headapps{
         display: block;
         text-align: var(--headapps-textalign);
+        padding: 200px;
+
     }
 }
