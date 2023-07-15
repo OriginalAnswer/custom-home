@@ -3,24 +3,16 @@
     /* default */
     --font-color : #fff;
     --font-family: 1rem var(--font-color) sans-serif;
-    --headapps-textalign: center;
 
 }
 
 @media (prefers-color-scheme: light) {
     /* 라이트 모드에 적용할 스타일 정의 */
-    :root{
-    }
 }
 @media (prefers-color-scheme: dark) {
     /* 라이트 모드에 적용할 스타일 정의 */
-    :root{
-    }
 }
 
-*{
-    box-sizing: border-box;
-}
 
 .dpnone{
     display: none;
