@@ -36,8 +36,10 @@
          </div>
          
       </div>
-      <div class="sectionC"></div>
-      <div class="sectionX">
+      <div class="thinline"></div>
+
+      <div class="section-c"></div>
+      <div class="section-x">
          <input type="checkbox" name="" id="xtoggle">
          <label for="xtoggle" class="xtoggle"></label>
          <label for="xtoggle" class="back"></label>
@@ -69,10 +71,8 @@
                   <input type="text" id="set-greet-name" oninput="syncGreetName()">
                </div>
             </div>
-            
-            <div class="thinline"></div>
-            
-            <div class="newapps">
+                        
+            <!-- <div class="newapps">
                <input type="checkbox" id="newapp-toggle">
                <label for="newapp-toggle" class="newapp-toggle">추가하기</label>
                <li class="newapp newlinks">links</li>
@@ -82,7 +82,23 @@
                <li class="newapp newtimer">timer</li>
                <li class="newapp newcalc">calc</li>
                <li class="newapp newmusicplayer">musicplayer</li>
-            </div>
+            </div> -->
+            
+            <div class="dropdown">
+               <input type="checkbox" id="dropdown-checkbox">
+               <label for="dropdown-checkbox" class="dropdown-trigger">new</label>
+               <div class="dropdown-menu">
+                 <a href="#">task</a>
+                 <a href="#">checklsit</a>
+                 <a href="#">link</a>
+                 <a href="#">memo</a>
+                 <a href="#">timer</a>
+                 <a href="#">calc</a>
+               </div>
+             </div>
+             
+             
+             
          </div>
       </div>
 
@@ -90,6 +106,8 @@
    <script src="./app/headapp.js"></script>
    <script src="./app/time.js"></script>
    <script src="./app/date.js"></script>
+   <script src="./app/apps.js"></script>
+
    <script src="https://kit.fontawesome.com/e4704dcbbd.js" crossorigin="anonymous"></script>
  </body>
  </html>

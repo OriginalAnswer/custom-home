@@ -114,8 +114,10 @@ if (savedHeadTime !== null) {
 const HEADAPP_KEY = 'headapp';
 const savedHeadapp = localStorage.getItem(HEADAPP_KEY);
 const savedHeadappAlign = localStorage.getItem(HEADAPP_KEY, 'align');
-const parsedHeadapp = JSON.parse(savedHeadapp);//객체 분석하기
+const parsedHeadapp = JSON.parse(savedHeadapp);
 const headapps = document.querySelector('.headapps');
+const labels = document.querySelectorAll('.set-headapp label'); // 라벨 요소들을 선택합니다.
+
 function handleAlignHeadapp(value) {
     const headappObj = {align: value};
     localStorage.setItem(HEADAPP_KEY, JSON.stringify(headappObj));
@@ -126,9 +128,28 @@ function handleAlignHeadapp(value) {
     } else if (value === 'right') {
         headapps.style.textAlign = 'right';
     }
+
+    // 라벨의 색상을 변경합니다.
+    labels.forEach(label => {
+        if (label.htmlFor === `haedapp-align-${value}`) {
+            label.style.color = 'red';
+        } else {
+            label.style.color = '';
+        }
+    });
 }
 
 if (savedHeadapp !== null) {
     const align = parsedHeadapp.align;
-    headapps.style.textAlign = `${align}`;
+    headapps.style.textAlign = align;
+
+    // 초기 로드 시 라벨의 색상을 설정합니다.
+    labels.forEach(label => {
+        if (label.htmlFor === `haedapp-align-${align}`) {
+            label.style.color = 'red';
+        } else {
+            label.style.color = '';
+        }
+    });
 }
+

@@ -1,4 +1,6 @@
 @import "./style/section-a.css";
+@import "./style/apps.css";
+
 /* input, select{
     border: 0;
     outline: none;
@@ -38,13 +40,50 @@ html,body{
     margin: 10px 0;
 }
 /* -------------------------------------- */
-.newapps{
+/* .newapps{
     width: 200px;height: 50px;
     border: #000 solid 1px;
     & .newapp{
         display: none;
     }
 }
-.newapp-toggle:checked ~ .newapp{
+#newapp-toggle:checked ~ .newapp{
     display: block;
-}
+} */
+.dropdown {
+    position: relative;
+    display: inline-block;
+  }
+  
+  .dropdown-trigger {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  
+  .dropdown-menu {
+    position: absolute;
+    bottom: 100%;
+    left: 0;
+    display: none;
+    background-color: #fff;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    z-index: 1;
+  }
+  
+  .dropdown-menu a {
+    display: block;
+    padding: 5px;
+    color: #000;
+    text-decoration: none;
+    &:hover{
+        color: #cf4b4b;
+    }
+  }
+  
+  #dropdown-checkbox:checked + .dropdown-trigger + .dropdown-menu {
+    display: block;
+  }
+  
