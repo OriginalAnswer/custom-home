@@ -1,4 +1,5 @@
 @import "./style/section-a.css";
+@import "./style/section-b.css";
 @import "./style/apps.css";
 
 /* input, select{
@@ -70,7 +71,7 @@ html,body{
     padding: 5px;
     border: 1px solid #ccc;
     border-radius: 5px;
-    z-index: 1;
+    z-index: 10;
   }
   
   .dropdown-menu a {
@@ -82,8 +83,26 @@ html,body{
         color: #cf4b4b;
     }
   }
-  
-  #dropdown-checkbox:checked + .dropdown-trigger + .dropdown-menu {
+  .dropdown-overlay{
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 9;
+    background-color: #8e7575;
+    display: none;
+  }
+  #dropdown-checkbox:checked 
+  + .dropdown-trigger 
+  + .dropdown-menu 
+{
     display: block;
   }
   
+
+  /* ==== */
+  /* #droppable-area{
+    width: 500px;height: 500px;
+    border: #000 1px solid;
+  } */

@@ -9,11 +9,11 @@
    <body>
       <div class="section-a">
          <div class="headapps">
-            <div class="headapp app-headtext">you can change in setting here.</div>
-            <div class="headapp app-headtime"><span id="app-headtime">00:00:00</span></div>
-            <div class="headapp app-date">0000.0.00.0요일</div>
-            <div class="headapp app-greet"><span class="greet"></span><span class="app-greet-name"></span></div>
-         </div>
+            <div draggable="true" id="headtext" class="headapp app-headtext">you can change in setting here.</div>
+            <div draggable="true" id="headtime" class="headapp app-headtime"><span id="app-headtime">00:00:00</span></div>
+            <div draggable="true" id="date" class="headapp app-date">0000.0.00.0요일</div>
+            <div draggable="true" id="greet" class="headapp app-greet"><span class="greet"></span><span class="app-greet-name"></span></div>
+          </div>          
       </div>
       
       <div class="section-b">
@@ -41,7 +41,7 @@
       <div class="section-c"></div>
       <div class="section-x">
          <input type="checkbox" name="" id="xtoggle">
-         <label for="xtoggle" class="xtoggle"></label>
+         <label for="xtoggle" class="xtoggle">icon</label>
          <label for="xtoggle" class="back"></label>
          <div class="set">
             <div class="general">
@@ -88,12 +88,12 @@
                <input type="checkbox" id="dropdown-checkbox">
                <label for="dropdown-checkbox" class="dropdown-trigger">new</label>
                <div class="dropdown-menu">
-                 <a href="#">task</a>
-                 <a href="#">checklsit</a>
-                 <a href="#">link</a>
-                 <a href="#">memo</a>
-                 <a href="#">timer</a>
-                 <a href="#">calc</a>
+                  <a href="#">task</a>
+                  <a href="#">checklsit</a>
+                  <a href="#">link</a>
+                  <a href="#">memo</a>
+                  <a href="#">timer</a>
+                  <a href="#">calc</a>
                </div>
              </div>
              
@@ -101,6 +101,8 @@
              
          </div>
       </div>
+<!-- 드래그 앤 드롭 -->
+ 
 
 
    <script src="./app/headapp.js"></script>

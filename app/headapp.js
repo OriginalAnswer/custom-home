@@ -153,3 +153,66 @@ if (savedHeadapp !== null) {
     });
 }
 
+// 드래그 앤 드롭*********************
+const headappsContainer = document.querySelector('.headapps');
+const draggableElements = headappsContainer.querySelectorAll('.headapp');
+
+let draggedElement = [];
+
+headappsContainer.addEventListener('dragstart', dragStart);
+headappsContainer.addEventListener('dragover', dragOver);
+headappsContainer.addEventListener('drop', drop);
+
+
+function dragStart(event) {
+    draggedElement = event.target;
+    event.dataTransfer.effectAllowed = 'move';
+    event.dataTransfer.setData('text/plain', '');
+}
+
+function dragOver(event) {
+    event.preventDefault();
+    const afterElement = getDragAfterElement(event.clientY);
+    const isSameContainer = afterElement?.parentNode === headappsContainer;
+    
+    if (isSameContainer) {
+        headappsContainer.insertBefore(draggedElement, afterElement);
+    }
+}
+
+function drop(event) {
+    event.preventDefault();
+    saveElementOrder();
+}
+
+function getDragAfterElement(y) {
+    const draggableElementsArr = Array.from(draggableElements).filter(element => element !== draggedElement);
+    return draggableElementsArr.reduce((closest, element) => {
+        const box = element.getBoundingClientRect();
+        const offset = y - box.top - box.height / 2;
+        if (offset < 0 && offset > closest.offset) {
+            return { offset: offset, element: element };
+        } else {
+            return closest;
+        }
+    }, { offset: Number.NEGATIVE_INFINITY }).element;
+}
+
+function saveElementOrder() {
+    const elementOrder = Array.from(draggableElements).map(element => element.id);
+    localStorage.setItem('elementOrder', JSON.stringify(elementOrder));
+}
+
+function loadElementOrder() {
+    const elementOrder = JSON.parse(localStorage.getItem('elementOrder'));
+    if (elementOrder) {
+        elementOrder.forEach(id => {
+            const element = document.getElementById(id);
+            if (element) {
+                headappsContainer.appendChild(element);
+            }
+        });
+    }
+}
+
+loadElementOrder();
