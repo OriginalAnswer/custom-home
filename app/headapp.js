@@ -154,18 +154,17 @@ if (savedHeadapp !== null) {
 }
 
 // 드래그 앤 드롭*********************
-const headappsContainer = document.querySelector('.headapps');
-const draggableElements = headappsContainer.querySelectorAll('.headapp');
+const draggableHeadapps = headapps.querySelectorAll('.headapp');
 
-let draggedElement = [];
+let draggedHeadapp = null;
 
-headappsContainer.addEventListener('dragstart', dragStart);
-headappsContainer.addEventListener('dragover', dragOver);
-headappsContainer.addEventListener('drop', drop);
+headapps.addEventListener('dragstart', dragStart);
+headapps.addEventListener('dragover', dragOver);
+headapps.addEventListener('drop', drop);
 
 
 function dragStart(event) {
-    draggedElement = event.target;
+    draggedHeadapp = event.target;
     event.dataTransfer.effectAllowed = 'move';
     event.dataTransfer.setData('text/plain', '');
 }
@@ -173,10 +172,10 @@ function dragStart(event) {
 function dragOver(event) {
     event.preventDefault();
     const afterElement = getDragAfterElement(event.clientY);
-    const isSameContainer = afterElement?.parentNode === headappsContainer;
+    const isSameContainer = afterElement?.parentNode === headapps;
     
     if (isSameContainer) {
-        headappsContainer.insertBefore(draggedElement, afterElement);
+        headapps.insertBefore(draggedHeadapp, afterElement);
     }
 }
 
@@ -186,7 +185,7 @@ function drop(event) {
 }
 
 function getDragAfterElement(y) {
-    const draggableElementsArr = Array.from(draggableElements).filter(element => element !== draggedElement);
+    const draggableElementsArr = Array.from(draggableHeadapps).filter(element => element !== draggedHeadapp);
     return draggableElementsArr.reduce((closest, element) => {
         const box = element.getBoundingClientRect();
         const offset = y - box.top - box.height / 2;
@@ -199,7 +198,7 @@ function getDragAfterElement(y) {
 }
 
 function saveElementOrder() {
-    const elementOrder = Array.from(draggableElements).map(element => element.id);
+    const elementOrder = Array.from(draggableHeadapps).map(element => element.id);
     localStorage.setItem('elementOrder', JSON.stringify(elementOrder));
 }
 
@@ -209,7 +208,7 @@ function loadElementOrder() {
         elementOrder.forEach(id => {
             const element = document.getElementById(id);
             if (element) {
-                headappsContainer.appendChild(element);
+                headapps.appendChild(element);
             }
         });
     }
