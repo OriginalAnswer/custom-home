@@ -212,6 +212,6 @@ function loadElementOrder() {
             }
         });
     }
-}
+} 
 
 loadElementOrder();
