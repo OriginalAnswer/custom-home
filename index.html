@@ -9,7 +9,7 @@
    <body>
       <div class="section-a">
          <div class="headapps">
-            <p draggable="true" class="headapp app-headtext"></p>
+            <span draggable="true" class="headapp app-headtext"></span>
             <div draggable="true" id="headtime" class="headapp app-headtime"><span id="app-headtime">00:00:00</span></div>
             <div draggable="true" id="headdate" class="headapp app-date">0000.0.00.0요일</div>
             <div draggable="true" id="headgreet" class="headapp app-greet"><span class="greet"></span><span class="app-greet-name"></span></div>
@@ -43,17 +43,19 @@
 
    <input type="checkbox" name="" id="xtoggle">
    <label for="xtoggle" class="xtoggle">icon</label>
-   <!-- <label for="xtoggle" class="back"></label> -->
+   <label for="xtoggle" class="back"></label>
       
       
    <div class="section-x">
       <div class="general">
-         <div class="bgselect"></div>
-         <div class="font"></div>
-         <div class="mode"></div>
+         general
+         <div class="bgselect">background</div>
+         <div class="font">fonts</div>
+         <div class="mode">mode</div>
       </div> 
    
       <div class="set-headapp">
+         <div>information</div>
          <div class="haedapp-align">
             <input type="radio" name="haedapp-align" class="dpnone" id="haedapp-align-left" value="left" onchange="handleAlignHeadapp(this.value)">
             <input type="radio" name="haedapp-align" class="dpnone" id="haedapp-align-center" value="center" onchange="handleAlignHeadapp(this.value)">
@@ -63,7 +65,8 @@
             <label for="haedapp-align-right" class="haedapp-align-right">RIGHT</label>
          </div>
          <div class="set-headtext">
-            <input type="text"id="set-headtext" oninput="syncHeadText()">
+            <textarea id="set-headtext" oninput="syncHeadText()"></textarea>
+            <!-- <input type="text"id="set-headtext" oninput="syncHeadText()"> -->
             <input type="range" id="headtext-fontsize" min="8"max="64" step="1" oninput="syncHeadTextFontsize()">
          </div>
          <div class="set-headtime">
@@ -71,6 +74,7 @@
             <input type="range" id="headtime-fontsize" min="8"max="150" step="1" oninput="syncHeadTimeSize()">
          </div>
          <div class="set-greet">
+            username
             <input type="text" id="set-greet-name" oninput="syncGreetName()">
          </div>
       </div>

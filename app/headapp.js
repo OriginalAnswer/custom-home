@@ -36,7 +36,6 @@ function syncHeadText() {
 }
 
 function syncHeadTextFontsize() {
-    // let syncText = headTextInput.innerText;
     let syncText = headTextInput.value;
     let syncFontsize = headtextFontsize.value;
     
@@ -56,18 +55,14 @@ const GREET_NAME_KEY = "greet name"
 const savedGreetName= localStorage.getItem(GREET_NAME_KEY);
 // const parsedGreetName = JSON.parse(savedGreetName);//객체 분석하기
 
-function printGreet() {
-    greetName.innerText = `, ${savedGreetName}`;
-}
 if (savedGreetName !== null) {
-    printGreet();
-    greetInput.setAttribute('value', `${savedGreetName}`)
+    greetName.innerText = `, ${savedGreetName}.`;
+    greetInput.setAttribute('value', savedGreetName)
 }
 function syncGreetName() {
-    event.preventDefault();
     let syncText = greetInput.value;
     greetName.innerText = `, ${syncText}.`;
-    localStorage.setItem(GREET_NAME_KEY, syncText);
+    localStorage.setItem(GREET_NAME_KEY, `${syncText}`);
     greetInput.setAttribute('value', `${syncText}`)
 }
 
