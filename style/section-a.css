@@ -10,3 +10,9 @@
     display: block;
     text-align: var(--headapps-textalign);
 }
+.app-headtext{
+    width: auto;
+    height: auto;
+    text-align: center;
+    /* border: none; */
+}

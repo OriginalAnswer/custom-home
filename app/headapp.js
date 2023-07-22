@@ -1,4 +1,6 @@
 // --------------------------
+// const headTextInput = document.querySelector("#set-headtext[role=textbox]");
+// const appHeadText = document.querySelector(".app-headtext[role=textbox]");
 const headTextInput = document.querySelector("#set-headtext");
 const appHeadText = document.querySelector(".app-headtext");
 const headtextFontsize = document.querySelector("#headtext-fontsize");
@@ -17,25 +19,26 @@ if (savedHeadText !== null) {
     const txt = parsedHeadText.text;
     const size = parsedHeadText.fontsize;
     printHeadText(txt, size);
-    // headTextInput.setAttribute('placeholder', `${txt}`)
     headTextInput.setAttribute('value', `${txt}`)
     headtextFontsize.setAttribute('value', `${size}`)
 }
 function syncHeadText() {
+    headTextInput.focus();
+    // let syncText = headTextInput.innerText;
     let syncText = headTextInput.value;
     let syncFontsize = headtextFontsize.value;
     const headtextObj = {
         text: syncText,
         fontsize: syncFontsize
     };
-    appHeadText.innerText = `${syncText}`;
+    headTextInput.innerText = `${syncText}`;
     localStorage.setItem(HEADTEXT_KEY, JSON.stringify(headtextObj));
-    // headTextInput.setAttribute('placeholder', `${syncText}`);
 }
 
 function syncHeadTextFontsize() {
-    let syncFontsize = headtextFontsize.value;
+    // let syncText = headTextInput.innerText;
     let syncText = headTextInput.value;
+    let syncFontsize = headtextFontsize.value;
     
     const headtextObj = {
         text: syncText,
@@ -61,6 +64,7 @@ if (savedGreetName !== null) {
     greetInput.setAttribute('value', `${savedGreetName}`)
 }
 function syncGreetName() {
+    event.preventDefault();
     let syncText = greetInput.value;
     greetName.innerText = `, ${syncText}.`;
     localStorage.setItem(GREET_NAME_KEY, syncText);
