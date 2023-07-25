@@ -37,75 +37,74 @@
          
       </div>
       <div class="thinline"></div>
-
+      
       <div class="section-c"></div>
       
+      <input type="checkbox" name="" id="apptoggle">
+      <label for="apptoggle" class="apptoggle">icon</label>
+      <label for="apptoggle" class="newapp-back"></label>
+      <div class="section-newapp">
+         <button class="newapp-btn new-task">task</button>
+         <div class="thinline2"></div>
+         <button class="newapp-btn new-">checklist</button>
+         <div class="thinline2"></div>
+         <button class="newapp-btn new-">textbox</button>
+         <div class="thinline2"></div>
+         <button class="newapp-btn new-">timer</button>
+         <div class="thinline2"></div>
+         <button class="newapp-btn new-">calc</button>
+         <div class="thinline2"></div>
+         <button class="newapp-btn new-">calander</button>
+         <div class="thinline2"></div>
+         <button class="newapp-btn new-">links</button>
+      </div>
 
-   <input type="checkbox" name="" id="xtoggle">
-   <label for="xtoggle" class="xtoggle">icon</label>
-   <label for="xtoggle" class="back"></label>
-      
-      
-   <div class="section-x">
-      <div class="general">
-         general
-         <div class="bgselect">background</div>
-         <div class="font">fonts</div>
-         <div class="mode">mode</div>
-      </div> 
-      <div class="thinline"></div>
+      <input type="checkbox" id="xtoggle">
+      <label for="xtoggle" class="xtoggle">icon</label>
+      <label for="xtoggle" class="back"></label>
 
-      <div class="set-headapp">
-         <p>head information</p>
-         <div class="haedapp-align">
-            <input type="radio" name="haedapp-align" class="dpnone" id="haedapp-align-left" value="left" onchange="handleAlignHeadapp(this.value)">
-            <input type="radio" name="haedapp-align" class="dpnone" id="haedapp-align-center" value="center" onchange="handleAlignHeadapp(this.value)">
-            <input type="radio" name="haedapp-align" class="dpnone" id="haedapp-align-right" value="right" onchange="handleAlignHeadapp(this.value)">
-            <label for="haedapp-align-left"class="haedapp-align-left">LEFT</label>
-            <label for="haedapp-align-center" class="haedapp-align-center">CENTER</label>
-            <label for="haedapp-align-right" class="haedapp-align-right">RIGHT</label>
+      <div class="section-x">
+         <div class="general">
+            general
+            <div class="bgselect">background</div>
+            <div class="font">fonts</div>
+            <div class="mode">mode</div>
+         </div> 
+         <div class="thinline"></div>
+
+         <div class="set-headapp">
+            <p>head information</p>
+            <div class="haedapp-align">
+               <input type="radio" name="haedapp-align" class="dpnone" id="haedapp-align-left" value="left" onchange="handleAlignHeadapp(this.value)">
+               <input type="radio" name="haedapp-align" class="dpnone" id="haedapp-align-center" value="center" onchange="handleAlignHeadapp(this.value)">
+               <input type="radio" name="haedapp-align" class="dpnone" id="haedapp-align-right" value="right" onchange="handleAlignHeadapp(this.value)">
+               <label for="haedapp-align-left"class="haedapp-align-left">LEFT</label>
+               <label for="haedapp-align-center" class="haedapp-align-center">CENTER</label>
+               <label for="haedapp-align-right" class="haedapp-align-right">RIGHT</label>
+            </div>
+            <div class="set-headtext">
+               <textarea id="set-headtext" oninput="syncHeadText()" placeholder="type here."></textarea>
+               <label for="headtext-fontsize">font size</label>
+               <input type="range" id="headtext-fontsize" min="8"max="64" step="1" oninput="syncHeadTextFontsize()">
+            </div>
+            <div class="set-headtime">
+               <label for="headtime-fontsize">clock size</label>
+               <input type="range" id="headtime-fontsize" min="8"max="150" step="1" oninput="syncHeadTimeSize()">
+            </div>
+            <div class="set-greet">
+               <label for="set-greet-name">username</label>
+               <input type="text" id="set-greet-name" oninput="syncGreetName()">
+            </div>
          </div>
-         <div class="set-headtext">
-            <textarea id="set-headtext" oninput="syncHeadText()" placeholder="type here."></textarea>
-            <label for="headtext-fontsize">font size</label>
-            <input type="range" id="headtext-fontsize" min="8"max="64" step="1" oninput="syncHeadTextFontsize()">
-         </div>
-         <div class="set-headtime">
-            <label for="headtime-fontsize">clock size</label>
-            <input type="range" id="headtime-fontsize" min="8"max="150" step="1" oninput="syncHeadTimeSize()">
-         </div>
-         <div class="set-greet">
-            <label for="set-greet-name">username</label>
-            <input type="text" id="set-greet-name" oninput="syncGreetName()">
+         <div class="thinline"></div>
+         <div class="searchmode">
+            <span>search mode</span>
+            <select id="search-mode" onchange="searchmode()">
+               <option value="default">default</option>
+               <option value="minimum">minimum</option>
+            </select>
          </div>
       </div>
-      <div class="thinline"></div>
-
-      <!-- <div class="newapps">
-         <input type="checkbox" id="newapp-toggle">
-         <label for="newapp-toggle" class="newapp-toggle">추가하기</label>
-         <li class="newapp newlinks">links</li>
-         <li class="newapp newtask">task</li>
-         <li class="newapp newchecklist">checklsit</li>
-         <li class="newapp newtext">memo</li>
-         <li class="newapp newtimer">timer</li>
-         <li class="newapp newcalc">calc</li>
-         <li class="newapp newmusicplayer">musicplayer</li>
-      </div> -->
-      
-      <div class="dropdown">
-         <input type="checkbox" id="dropdown-checkbox">
-         <label for="dropdown-checkbox" class="dropdown-trigger">new</label>
-         <div class="dropdown-menu">
-            <a href="#">task</a>
-            <a href="#">checklsit</a>
-            <a href="#">link</a>
-            <a href="#">memo</a>
-            <a href="#">timer</a>
-            <a href="#">calc</a>
-         </div>
-      </div>
-   </div>
       <!-- 드래그 앤 드롭 -->
  
 

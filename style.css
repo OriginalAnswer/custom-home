@@ -3,14 +3,18 @@
 @import "./style/section-a.css";
 @import "./style/section-b.css";
 @import "./style/section-x.css";
+@import "./style/newapp.css";
 
-@import "./style/apps.css";
 :root{
   --search-bgclr: #fff;
   --search-height: 2rem;
   --search-border-radius: 20px;
   --search-icon-border-radius: 50px;
   --set-bgclr: #ffffff7c;
+  --set-back-clr: #8484841c;
+  --border-radius-1: 10px;
+  --newapp-back-clr: #8484845d;
+  --newapp-bgclr: #ffffff;
 }
 
 * {
@@ -20,11 +24,11 @@
     margin: 0;padding: 0;
     text-decoration: none;
 }
-
-html,body{
+body{
     width: 100vw;
     height: 100vh;
     overflow-y: scroll;
+    overflow-x: hidden;
     -webkit-scrollbar: none;
 }
 
@@ -32,75 +36,14 @@ html,body{
     display: none;
 }
 .thinline{
-    width: 100%;
-    border: 1px solid #000;
-    /* opacity: .5; */
-    transform: scaleY(.3);
-    margin: 10px 0;
+  transform: scaleY(.3);
+  margin: 10px 0;
+  width: 100%;
+  border: 1px solid #000;
+}
+.thinline2{
+  transform: scaleY(.2);
+  width: 100%;
+  border: 1px solid #000;
 }
 /* -------------------------------------- */
-/* .newapps{
-    width: 200px;height: 50px;
-    border: #000 solid 1px;
-    & .newapp{
-        display: none;
-    }
-}
-#newapp-toggle:checked ~ .newapp{
-    display: block;
-} */
-.dropdown {
-    position: relative;
-    display: inline-block;
-  }
-  
-  .dropdown-trigger {
-    color: #000;
-    text-decoration: none;
-    cursor: pointer;
-  }
-  
-  .dropdown-menu {
-    position: absolute;
-    bottom: 100%;
-    left: 0;
-    display: none;
-    background-color: #fff;
-    padding: 5px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    z-index: 10;
-  }
-  
-  .dropdown-menu a {
-    display: block;
-    padding: 5px;
-    color: #000;
-    text-decoration: none;
-    &:hover{
-        color: #cf4b4b;
-    }
-  }
-  .dropdown-overlay{
-    position: fixed;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 9;
-    background-color: #8e7575;
-    display: none;
-  }
-  #dropdown-checkbox:checked 
-  + .dropdown-trigger 
-  + .dropdown-menu 
-{
-    display: block;
-  }
-  
-
-  /* ==== */
-  /* #droppable-area{
-    width: 500px;height: 500px;
-    border: #000 1px solid;
-  } */
