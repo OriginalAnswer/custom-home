@@ -9,15 +9,17 @@
     width: 350px;
     height: 100vh;
     height: 100dvh;
-    background-color: #c6c6c67c;
-    overflow-y: scroll;
-    -webkit-scrollbar: none;
-    overflow-y: scroll;
     position: fixed;
     top: 0;
     right: 0;
     z-index: 10;
     transform: translate(100%);
+
+    background-color: #c6c6c67c;
+    overflow-y: scroll;
+    -webkit-scrollbar: none;
+    overflow-y: scroll;
+    backdrop-filter: blur(2px);
 }
 .back{
     width: 100%;
