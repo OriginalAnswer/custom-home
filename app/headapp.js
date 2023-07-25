@@ -132,8 +132,10 @@ function handleAlignHeadapp(value) {
     labels.forEach(label => {
         if (label.htmlFor === `haedapp-align-${value}`) {
             label.style.color = 'red';
+            label.style.backgroundColor = 'var(--haedapp-align-checked-bgclr)';
         } else {
             label.style.color = '';
+            label.style.backgroundColor = 'var(--haedapp-align-bgclr)';
         }
     });
 }
@@ -141,13 +143,15 @@ function handleAlignHeadapp(value) {
 if (savedHeadapp !== null) {
     const align = parsedHeadapp.align;
     headapps.style.textAlign = align;
-
+    
     // 초기 로드 시 라벨의 색상을 설정합니다.
     labels.forEach(label => {
         if (label.htmlFor === `haedapp-align-${align}`) {
             label.style.color = 'red';
+            label.style.backgroundColor = 'var(--haedapp-align-checked-bgclr)';
         } else {
             label.style.color = '';
+            label.style.backgroundColor = 'var(--haedapp-align-bgclr)';
         }
     });
 }
