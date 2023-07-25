@@ -10,8 +10,9 @@
   --search-height: 2rem;
   --search-border-radius: 20px;
   --search-icon-border-radius: 50px;
-  --set-bgclr: #ffffff7c;
+  --set-bgclr: hsla(0, 0%, 89%, 0.243);
   --set-back-clr: #8484841c;
+  --set-input-clr:#fff;
   --border-1: 1px solid #000;
   --border-radius-10: 10px;
   --border-radius-15: 15px;
@@ -20,10 +21,19 @@
   --border-radius-30: 30px;
   --newapp-back-clr: #8484845d;
   --newapp-bgclr: #ffffff;
+
   --box-shadow-inset-1:  rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
-  --box-shadow-inset-2: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px inset;;
-  --haedapp-align-checked-bgclr:#f7f7f7;
-  --haedapp-align-bgclr:#fcfcfc;
+  --box-shadow-inset-2: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px inset;
+  --box-shadow-inset-3: 19px 19px 39px #bebebe,-19px -19px 39px #ffffff;
+
+  --haedapp-align-checked-bgclr:#fff;
+  --haedapp-align-bgclr:#f2f2f2;
+}
+@media (prefers-color-scheme: dark) {
+  :root{
+    --set-bgclr: #00000096;
+  }
+
 }
 
 * {
