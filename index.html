@@ -53,9 +53,10 @@
          <div class="font">fonts</div>
          <div class="mode">mode</div>
       </div> 
-   
+      <div class="thinline"></div>
+
       <div class="set-headapp">
-         <div>information</div>
+         <p>head information</p>
          <div class="haedapp-align">
             <input type="radio" name="haedapp-align" class="dpnone" id="haedapp-align-left" value="left" onchange="handleAlignHeadapp(this.value)">
             <input type="radio" name="haedapp-align" class="dpnone" id="haedapp-align-center" value="center" onchange="handleAlignHeadapp(this.value)">
@@ -66,19 +67,20 @@
          </div>
          <div class="set-headtext">
             <textarea id="set-headtext" oninput="syncHeadText()" placeholder="type here."></textarea>
-            <!-- <input type="text"id="set-headtext" oninput="syncHeadText()"> -->
+            <label for="headtext-fontsize">font size</label>
             <input type="range" id="headtext-fontsize" min="8"max="64" step="1" oninput="syncHeadTextFontsize()">
          </div>
          <div class="set-headtime">
-            time size
+            <label for="headtime-fontsize">clock size</label>
             <input type="range" id="headtime-fontsize" min="8"max="150" step="1" oninput="syncHeadTimeSize()">
          </div>
          <div class="set-greet">
-            username
+            <label for="set-greet-name">username</label>
             <input type="text" id="set-greet-name" oninput="syncGreetName()">
          </div>
       </div>
-                  
+      <div class="thinline"></div>
+
       <!-- <div class="newapps">
          <input type="checkbox" id="newapp-toggle">
          <label for="newapp-toggle" class="newapp-toggle">추가하기</label>

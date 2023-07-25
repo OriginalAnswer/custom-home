@@ -1,4 +1,4 @@
-input, select{
+input, select, textarea{
     border: 0;
     outline: none;
 }

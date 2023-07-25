@@ -15,7 +15,7 @@
     z-index: 10;
     transform: translate(100%);
 
-    background-color: #c6c6c67c;
+    background-color: var(--set-bgclr);
     overflow-y: scroll;
     -webkit-scrollbar: none;
     overflow-y: scroll;
@@ -50,4 +50,29 @@
 /* ------------------------- */
 .set-headapp{
     text-align: center;
+    & > div{
+        display: flex;
+        justify-content: space-between;
+        gap: 10px;
+        width: 100%;
+        padding: 10px;
+
+        text-transform: uppercase;
+        text-align: center;
+        border-radius: var(--search-border-radius);
+    }
+    & p{
+        text-transform: uppercase;
+        text-align: center;
+    }
+}
+.set-headtext{
+    flex-wrap: wrap;
+    & #set-headtext{
+        width: 100%;
+        padding-top: 10px;
+        text-align: center;
+        background: #ffffffc3;
+        border-radius: var(--search-border-radius);
+    }
 }
