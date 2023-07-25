@@ -1,21 +1,16 @@
+@import "./style/default.css";
+@import "./style/root.css";
 @import "./style/section-a.css";
 @import "./style/section-b.css";
 @import "./style/section-x.css";
 
 @import "./style/apps.css";
-
-/* input, select{
-    border: 0;
-    outline: none;
+:root{
+  --search-bgclr: #fff;
+  --search-height: 2rem;
+  --search-border-radius: 20px;
+  --search-icon-border-radius: 50px;
 }
-button{
-    border: 0;
-    outline: none;
-    background: none;
-} */
-
-ul, ol, li {list-style: none;}
-input, select, textarea, button, a, label {-webkit-tap-highlight-color:rgba(0,0,0,0);}
 
 * {
     box-sizing: border-box; 

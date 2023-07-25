@@ -19,11 +19,11 @@ if (savedHeadText !== null) {
     const txt = parsedHeadText.text;
     const size = parsedHeadText.fontsize;
     printHeadText(txt, size);
+    headTextInput.innerText = `${txt}`;
     headTextInput.setAttribute('value', `${txt}`)
     headtextFontsize.setAttribute('value', `${size}`)
 }
 function syncHeadText() {
-    headTextInput.focus();
     // let syncText = headTextInput.innerText;
     let syncText = headTextInput.value;
     let syncFontsize = headtextFontsize.value;
@@ -31,8 +31,8 @@ function syncHeadText() {
         text: syncText,
         fontsize: syncFontsize
     };
-    headTextInput.innerText = `${syncText}`;
     localStorage.setItem(HEADTEXT_KEY, JSON.stringify(headtextObj));
+    appHeadText.innerText = `${syncText}`;
 }
 
 function syncHeadTextFontsize() {

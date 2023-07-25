@@ -19,19 +19,19 @@
       <div class="section-b">
          <div class="app-search">
             <form action="https://www.youtube.com/results" target="blank" class="searchbar search-youtube">
-               <label for="youtube">icon</label>
+               <label for="youtube-input" class="search-icon">icon</label>
                <input type="text" id="youtube-input" name="q" placeholder="YouTube 검색">
-               <button>icon</button>
+               <button class="search-icon">icon</button>
             </form>
             <form action="https://www.google.com/search" method="GET" target="blank" class="searchbar search-google">
-               <label for="google">icon</label>
+               <label for="google-input" class="search-icon">icon</label>
                <input type="text" id="google-input" name="q" placeholder="Google 검색">
-               <button>icon</button>
+               <button class="search-icon">icon</button>
             </form>
             <form action="https://music.youtube.com/search" target="blank" class="searchbar search-youtubemusic">
-               <label for="youtubemusic">icon</label>
+               <label for="youtubemusic-input" class="search-icon">icon</label>
                <input type="text" id="youtubemusic-input" name="q" placeholder="YouTube Music 검색">
-               <button>icon</button>
+               <button class="search-icon">icon</button>
             </form>
          </div>
          
@@ -65,7 +65,7 @@
             <label for="haedapp-align-right" class="haedapp-align-right">RIGHT</label>
          </div>
          <div class="set-headtext">
-            <textarea id="set-headtext" oninput="syncHeadText()"></textarea>
+            <textarea id="set-headtext" oninput="syncHeadText()" placeholder="type here."></textarea>
             <!-- <input type="text"id="set-headtext" oninput="syncHeadText()"> -->
             <input type="range" id="headtext-fontsize" min="8"max="64" step="1" oninput="syncHeadTextFontsize()">
          </div>

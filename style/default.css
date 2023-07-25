@@ -1,0 +1,15 @@
+input, select{
+    border: 0;
+    outline: none;
+}
+button{
+    border: 0;
+    outline: none;
+    background: none;
+    &:hover{
+      cursor: pointer;
+    }
+}
+
+ul, ol, li {list-style: none;}
+input, select, textarea, button, a, label {-webkit-tap-highlight-color:rgba(0,0,0,0);}
