@@ -29,12 +29,11 @@
   --haedapp-align-checked-bgclr:#fff;
   --haedapp-align-bgclr:#f2f2f2;
 }
-@media (prefers-color-scheme: dark) {
+/* @media (prefers-color-scheme: dark) {
   :root{
     --set-bgclr: #00000096;
   }
-
-}
+} */
 
 * {
     box-sizing: border-box; 
