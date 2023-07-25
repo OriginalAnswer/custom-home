@@ -24,7 +24,7 @@
     width: 350px;
     height: 100vh;
     height: 100dvh;
-    padding: 60px 0 10px 0;
+    padding: 60px 5px 10px 5px;
 
     background-color: var(--set-bgclr);
     overflow-y: scroll;
