@@ -115,7 +115,7 @@ const savedHeadapp = localStorage.getItem(HEADAPP_KEY);
 const savedHeadappAlign = localStorage.getItem(HEADAPP_KEY, 'align');
 const parsedHeadapp = JSON.parse(savedHeadapp);
 const headapps = document.querySelector('.headapps');
-const labels = document.querySelectorAll('.set-headapp label'); // 라벨 요소들을 선택합니다.
+const labels = document.querySelectorAll('.haedapp-align-btn'); // 라벨 요소들을 선택합니다.
 
 function handleAlignHeadapp(value) {
     const headappObj = {align: value};
