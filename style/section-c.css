@@ -1,0 +1,10 @@
+.section-c{
+    display: flex;
+    flex-wrap: wrap;
+    &.app{
+        /* flex-grow: 1; */
+        flex-basis: 25%;
+
+        border-radius: var(--border-radius-20);
+    }
+}

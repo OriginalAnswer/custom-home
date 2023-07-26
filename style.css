@@ -2,6 +2,7 @@
 @import "./style/root.css";
 @import "./style/section-a.css";
 @import "./style/section-b.css";
+@import "./style/section-c.css";
 @import "./style/section-x.css";
 @import "./style/newapp.css";
 
@@ -23,6 +24,9 @@
   --border-radius-30: 30px;
   --newapp-back-clr: #8484845d;
   --newapp-bgclr: #ffffff;
+  --app-bgclr: hsla(0, 0%, 89%, 0.32);
+  --bg-blur-4: blur(4px);
+  --bg-blur-20: blur(20px);
 
   --box-shadow-inset-1:  rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
   --box-shadow-inset-2: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px inset;
