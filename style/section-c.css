@@ -55,4 +55,7 @@
             }
         }
     }
+    .toggle{
+        cursor: pointer;
+    }
 }

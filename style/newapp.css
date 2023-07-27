@@ -1,11 +1,11 @@
-#apptoggle[type=checkbox]{display: none;}
+#newapptoggle[type=checkbox]{display: none;}
 .section-newapp,.newapp-back{transform: translateY(100%);}
-#apptoggle:checked ~ .section-newapp,
-#apptoggle:checked ~ .newapp-back{
+#newapptoggle:checked ~ .section-newapp,
+#newapptoggle:checked ~ .newapp-back{
     transform: translateY(0);
 }
 
-.apptoggle{z-index: 99;}
+.newapptoggle{z-index: 99;}
 .newapp-back{z-index: 110;}
 .section-newapp{z-index: 111;}
 
@@ -41,7 +41,7 @@
         }
     }
 }
-.apptoggle{
+.newapptoggle{
     display: flex;
     justify-content: center;
     align-items: center;

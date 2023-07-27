@@ -16,6 +16,11 @@ function newapp(value) {
     appsArr.push(newappObj);
     createAppElement(newappObj); // 새로운 앱 요소 생성 및 추가
     saveAppsArr(); // appsArr 저장
+    const newAppToggle = document.getElementById('newapptoggle');
+    if (newAppToggle) {
+        newAppToggle.checked = false;
+    }
+
 }
 
 function createAppElement(appObj) {
@@ -34,7 +39,7 @@ function createAppElement(appObj) {
 
     const labelAppTitle = document.createElement('label');
     labelAppTitle.setAttribute('for', 'app-print-toggle');
-    labelAppTitle.classList.add('app-title');
+    labelAppTitle.classList.add('app-title','toggle');
     labelAppTitle.innerText = appObj.name;
 
     const checkboxSetToggle = document.createElement('input');
@@ -44,7 +49,7 @@ function createAppElement(appObj) {
 
     const labelAppSetIcon = document.createElement('label');
     labelAppSetIcon.setAttribute('for', 'app-set-toggle');
-    labelAppSetIcon.classList.add('app-set-icon');
+    labelAppSetIcon.classList.add('app-set-icon','toggle');
     labelAppSetIcon.innerText = 'i';
 
     const appPrint = document.createElement('div');
