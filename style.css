@@ -34,6 +34,8 @@
 
   --haedapp-align-checked-bgclr:#fefefe;
   --haedapp-align-bgclr:#f2f2f2;
+
+  --app-set-icon-size: 2rem;
 }
 /* @media (prefers-color-scheme: dark) {
   :root{

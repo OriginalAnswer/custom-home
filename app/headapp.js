@@ -111,9 +111,11 @@ if (savedHeadTime !== null) {
 
 // -----------------------------------
 const HEADAPP_KEY = 'headapp';
+
 const savedHeadapp = localStorage.getItem(HEADAPP_KEY);
 const savedHeadappAlign = localStorage.getItem(HEADAPP_KEY, 'align');
 const parsedHeadapp = JSON.parse(savedHeadapp);
+
 const headapps = document.querySelector('.headapps');
 const labels = document.querySelectorAll('.haedapp-align-btn'); // 라벨 요소들을 선택합니다.
 

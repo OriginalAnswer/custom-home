@@ -39,20 +39,21 @@
       
       <div class="section-c">
 
+
       </div>
       
-      <input type="checkbox" name="" id="apptoggle">
+      <input type="checkbox" id="apptoggle">
       <label for="apptoggle" class="apptoggle">icon</label>
       <label for="apptoggle" class="newapp-back"></label>
       <div class="section-newapp">
-         <button onclick="newapp()" class="newapp-btn new-task">task</button><div class="thinline2"></div>
-         <button onclick="" class="newapp-btn new-checklist">checklist</button><div class="thinline2"></div>
-         <button onclick="" class="newapp-btn new-textbox">textbox</button><div class="thinline2"></div>
-         <button onclick="" class="newapp-btn new-timer">timer</button><div class="thinline2"></div>
-         <button onclick="" class="newapp-btn new-calc">calc</button><div class="thinline2"></div>
-         <button onclick="" class="newapp-btn new-calander">calander</button><div class="thinline2"></div>
-         <button onclick="" class="newapp-btn new-links">links</button><div class="thinline2"></div>
-         <button onclick="" class="newapp-btn new-picture">picture</button>
+         <button onclick="newapp(this.value);" value="task" class="newapp-btn new-task">task</button><div class="thinline2"></div>
+         <button onclick="newapp(this.value);" value="checklist" class="newapp-btn new-checklist">checklist</button><div class="thinline2"></div>
+         <button onclick="newapp(this.value);" value="textbox" class="newapp-btn new-textbox">textbox</button><div class="thinline2"></div>
+         <button onclick="newapp(this.value);" value="timer" class="newapp-btn new-timer">timer</button><div class="thinline2"></div>
+         <button onclick="newapp(this.value);" value="calc" class="newapp-btn new-calc">calc</button><div class="thinline2"></div>
+         <button onclick="newapp(this.value);" value="calander" class="newapp-btn new-calander">calander</button><div class="thinline2"></div>
+         <button onclick="newapp(this.value);" value="links" class="newapp-btn new-links">links</button><div class="thinline2"></div>
+         <button onclick="newapp(this.value);" value="picture" class="newapp-btn new-picture">picture</button>
       </div>
 
 
@@ -107,7 +108,7 @@
    <script src="./app/headapp.js"></script>
    <script src="./app/time.js"></script>
    <script src="./app/date.js"></script>
-   <script src="./app/apps.js"></script>
+   <script src="./app/newapp.js"></script>
 
    <script src="https://kit.fontawesome.com/e4704dcbbd.js" crossorigin="anonymous"></script>
  </body>
