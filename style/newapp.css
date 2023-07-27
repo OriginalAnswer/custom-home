@@ -19,6 +19,8 @@
     height: 100%;
     
     background-color: var(--newapp-back-clr);
+    backdrop-filter: var(--bg-blur-4);
+    -webkit-backdrop-filter: var(--bg-blur-2);
     cursor:crosshair;
 }
 .section-newapp{
@@ -51,6 +53,7 @@
     position: fixed;
     bottom: 0;
     left: 0;
+    background-color: #fff;
     &:hover{
         cursor: pointer;
     }

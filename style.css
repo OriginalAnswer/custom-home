@@ -25,7 +25,10 @@
   --newapp-back-clr: #8484845d;
   --newapp-bgclr: #ffffff;
   --app-bgclr: hsla(0, 0%, 89%, 0.32);
+  --bg-blur-1: blur(1px);
+  --bg-blur-2: blur(2px);
   --bg-blur-4: blur(4px);
+  --bg-blur-10: blur(10px);
   --bg-blur-20: blur(20px);
 
   --box-shadow-inset-1:  rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
