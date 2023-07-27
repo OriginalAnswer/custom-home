@@ -5,6 +5,8 @@
         /* flex-grow: 1; */
         flex-basis: 25%;
 
+        width: 100%;
+        background-color: rgba(51, 138, 214, 0.677);
         border-radius: var(--border-radius-20);
     }
 }
