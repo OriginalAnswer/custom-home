@@ -16,6 +16,8 @@ function newapp(value) {
     appsArr.push(newappObj);
     createAppElement(newappObj); // 새로운 앱 요소 생성 및 추가
     saveAppsArr(); // appsArr 저장
+    newtask(newappObj);
+
     const newAppToggle = document.getElementById('newapptoggle');
     if (newAppToggle) {
         newAppToggle.checked = false;
@@ -27,28 +29,27 @@ function createAppElement(appObj) {
     const appElement = document.createElement('div');
     appElement.classList.add('app');
     appElement.draggable = true;
-    appElement.id = appObj.id;
 
     const checkboxPrintToggle = document.createElement('input');
     checkboxPrintToggle.type = 'checkbox';
-    checkboxPrintToggle.id = 'app-print-toggle';
+    checkboxPrintToggle.id = `${appObj.id}-title`;
     checkboxPrintToggle.classList.add('dpnone');
 
     const appHeader = document.createElement('div');
     appHeader.classList.add('app-header');
 
     const labelAppTitle = document.createElement('label');
-    labelAppTitle.setAttribute('for', 'app-print-toggle');
+    labelAppTitle.setAttribute('for', `${appObj.id}-title`);
     labelAppTitle.classList.add('app-title','toggle');
     labelAppTitle.innerText = appObj.name;
 
     const checkboxSetToggle = document.createElement('input');
     checkboxSetToggle.type = 'checkbox';
-    checkboxSetToggle.id = 'app-set-toggle';
+    checkboxSetToggle.id = `${appObj.id}-set`;
     checkboxSetToggle.classList.add('dpnone');
 
     const labelAppSetIcon = document.createElement('label');
-    labelAppSetIcon.setAttribute('for', 'app-set-toggle');
+    labelAppSetIcon.setAttribute('for', `${appObj.id}-set`);
     labelAppSetIcon.classList.add('app-set-icon','toggle');
     labelAppSetIcon.innerText = 'i';
 
