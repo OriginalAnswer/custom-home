@@ -14,8 +14,7 @@
     position: fixed;
     top: 0;
     left: 0;
-    
-    backdrop-filter: var(--bg-blur-1);
+
     cursor:crosshair;
     /* background-color: var(--set-back-clr); */
 }

@@ -4,7 +4,6 @@
 #apptoggle:checked ~ .newapp-back{
     transform: translateY(0);
 }
-/* #apptoggle:checked ~ .section-x,.back{transform: translate(100%);} */
 
 .apptoggle{z-index: 99;}
 .newapp-back{z-index: 110;}
@@ -18,7 +17,6 @@
     width: 100%;
     height: 100%;
     
-    background-color: var(--newapp-back-clr);
     backdrop-filter: var(--bg-blur-4);
     -webkit-backdrop-filter: var(--bg-blur-2);
     cursor:crosshair;
