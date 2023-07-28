@@ -1,8 +1,8 @@
 // --------------------------
 // const headTextInput = document.querySelector("#set-headtext[role=textbox]");
-// const appHeadText = document.querySelector(".app-headtext[role=textbox]");
+// const headText = document.querySelector(".app-headtext[role=textbox]");
 const headTextInput = document.querySelector("#set-headtext");
-const appHeadText = document.querySelector(".app-headtext");
+const headText = document.querySelector(".app-headtext");
 const headtextFontsize = document.querySelector("#headtext-fontsize");
 
 const HEADTEXT_KEY = "headtext"
@@ -12,8 +12,8 @@ const savedHeadTextFontsize = localStorage.getItem(HEADTEXT_KEY,'fontsize');
 const parsedHeadText = JSON.parse(savedHeadText);//객체 분석하기
 
 function printHeadText(txt, size) {
-    appHeadText.innerText = txt;
-    appHeadText.style.fontSize = `${size}px`;
+    headText.innerText = txt;
+    headText.style.fontSize = `${size}px`;
 }
 if (savedHeadText !== null) {
     const txt = parsedHeadText.text;
@@ -32,7 +32,7 @@ function syncHeadText() {
         fontsize: syncFontsize
     };
     localStorage.setItem(HEADTEXT_KEY, JSON.stringify(headtextObj));
-    appHeadText.innerText = `${syncText}`;
+    headText.innerText = `${syncText}`;
 }
 
 function syncHeadTextFontsize() {
@@ -44,7 +44,7 @@ function syncHeadTextFontsize() {
         fontsize: syncFontsize
     }
     localStorage.setItem(HEADTEXT_KEY, JSON.stringify(headtextObj));
-    appHeadText.style.fontSize = `${syncFontsize}px`;
+    headText.style.fontSize = `${syncFontsize}px`;
 }
 
 // --------------------------

@@ -1,5 +1,6 @@
-// new task app for a test.
 const sectionC = document.querySelector('.section-c');
+
+
 let appsArr = [];
 
 function newapp(value) {
@@ -14,68 +15,163 @@ function newapp(value) {
     };
 
     appsArr.push(newappObj);
-    createAppElement(newappObj); // 새로운 앱 요소 생성 및 추가
+    createNewapp(newappObj); // 새로운 앱 요소 생성 및 추가
     saveAppsArr(); // appsArr 저장
-    newtask(newappObj);
 
     const newAppToggle = document.getElementById('newapptoggle');
     if (newAppToggle) {
         newAppToggle.checked = false;
+    };
+
+}
+
+function createNewapp(appObj) {
+
+    const app = document.createElement('div');
+    const appId = appObj.id;
+    app.classList.add('app');
+    app.id = appId;
+    app.draggable = true;
+    app.dataset.type = appObj.type;
+    if (appObj.type == 'memo') {
+        app.innerHTML = `
+        <input type="checkbox" id="${appId}-title" class="dpnone">
+        <div class="app-header">
+        <label for="${appId}-title" class="app-title toggle">${appObj.name}</label>
+        <input type="checkbox" id="${appId}-set" class="dpnone">
+        <label for="${appId}-set" class="app-set-icon toggle">i</label>
+        </div>
+        <div class="app-print">
+            <textarea id="${appId}" oninput="apptext()"></textarea>
+        </div>
+        `;
+        //Individual obj
+        const indiObj = {
+            id: appId,
+            type: appObj.type,
+            text: ""
+        }
+        localStorage.setItem(`${appId}`, JSON.stringify(indiObj));
     }
+    else if (appObj.type == "task") {
+        app.innerHTML = `<input type="checkbox" id="${appId}-title" class="dpnone">
+        <div class="app-header">
+        <label for="${appId}-title" class="app-title toggle">${appObj.name}</label>
+        <input type="checkbox" id="${appId}-set" class="dpnone">
+        <label for="${appId}-set" class="app-set-icon toggle">i</label>
+        </div>
+        <form class="app-print">
+            <div class="task-bar">
+                <label for="task-input"><i class="fa-regular fa-pen-to-square"></i></label>
+                <input type="text" id="task-input" class="task-input" required>
+                <button type="submit"><i class="fa-solid fa-plus"></i></button>
+            </div>
+            <div id="task-show" class="task-show">
+            </div>
+        </form>`;
+        //Individual obj
+        const indiObjArr = [];
+        localStorage.setItem(`${appId}`, JSON.stringify(indiObjArr));
+    } 
+    else if (appObj.type == "links") {
+        app.innerHTML = `<input type="checkbox" id="${appId}-title" class="dpnone">
+        <div class="app-header">
+        <label for="${appId}-title" class="app-title toggle">${appObj.name}</label>
+        <input type="checkbox" id="${appId}-set" class="dpnone">
+        <label for="${appId}-set" class="app-set-icon toggle">i</label>
+        </div>
+        <form class="app-print">
+            <div>
+                <input id="quicklink-input-title" type="text" placeholder="Name" required="">
+                <input id="quicklink-input-url" type="url" placeholder="URL" required="">
+            </div>
+            <button><i class="fa-solid fa-plus"></i></button>
+        </form>`;
+        //Individual obj
+        const indiObjArr = [];
+        localStorage.setItem(`${appId}`, JSON.stringify(indiObjArr));
+    } 
 
+
+    sectionC.appendChild(app);
 }
 
-function createAppElement(appObj) {
-    const appElement = document.createElement('div');
-    appElement.classList.add('app');
-    appElement.draggable = true;
 
-    const checkboxPrintToggle = document.createElement('input');
-    checkboxPrintToggle.type = 'checkbox';
-    checkboxPrintToggle.id = `${appObj.id}-title`;
-    checkboxPrintToggle.classList.add('dpnone');
 
-    const appHeader = document.createElement('div');
-    appHeader.classList.add('app-header');
+// ===================================================
+function printApp(appObj) {
+    const appId = appObj.id;
+    const thisArrJson = localStorage.getItem(appId);
+    const thisArr = JSON.parse(thisArrJson);
+    const app = document.createElement('div');
+    app.classList.add("app");
+    app.draggable = true;
 
-    const labelAppTitle = document.createElement('label');
-    labelAppTitle.setAttribute('for', `${appObj.id}-title`);
-    labelAppTitle.classList.add('app-title','toggle');
-    labelAppTitle.innerText = appObj.name;
-
-    const checkboxSetToggle = document.createElement('input');
-    checkboxSetToggle.type = 'checkbox';
-    checkboxSetToggle.id = `${appObj.id}-set`;
-    checkboxSetToggle.classList.add('dpnone');
-
-    const labelAppSetIcon = document.createElement('label');
-    labelAppSetIcon.setAttribute('for', `${appObj.id}-set`);
-    labelAppSetIcon.classList.add('app-set-icon','toggle');
-    labelAppSetIcon.innerText = 'i';
-
-    const appPrint = document.createElement('div');
-    appPrint.classList.add('app-print');
-
-    appHeader.appendChild(labelAppTitle);
-    appHeader.appendChild(checkboxSetToggle);
-    appHeader.appendChild(labelAppSetIcon);
-
-    appElement.appendChild(checkboxPrintToggle);
-    appElement.appendChild(appHeader);
-    appElement.appendChild(appPrint);
-
-    sectionC.appendChild(appElement);
+    if (appObj.type == "memo") {
+        app.innerHTML = `
+        <input type="checkbox" id="${appId}-title" class="dpnone">
+        <div class="app-header">
+        <label for="${appId}-title" class="app-title toggle">${appObj.name}</label>
+        <input type="checkbox" id="${appId}-set" class="dpnone">
+        <label for="${appId}-set" class="app-set-icon toggle">i</label>
+        </div>
+        <div class="app-print">
+            <textarea id="${appId}" oninput="apptext()"></textarea>
+        </div>
+        `;
+    } 
+    else if (appObj.type == "task") {
+        app.innerHTML = `<input type="checkbox" id="${appId}-title" class="dpnone">
+        <div class="app-header">
+        <label for="${appId}-title" class="app-title toggle">${appObj.name}</label>
+        <input type="checkbox" id="${appId}-set" class="dpnone">
+        <label for="${appId}-set" class="app-set-icon toggle">i</label>
+        </div>
+        <form class="app-print">
+            <div class="task-bar">
+                <label for="task-input"><i class="fa-regular fa-pen-to-square"></i></label>
+                <input type="text" id="task-input" class="task-input" required>
+                <button type="submit"><i class="fa-solid fa-plus"></i></button>
+            </div>
+            <div id="task-show" class="task-show">
+            </div>
+        </form>`;
+        console.log(app);
+    } 
+    else if (appObj.type == "links") {
+        app.innerHTML = `<input type="checkbox" id="${appId}-title" class="dpnone">
+        <div class="app-header">
+        <label for="${appId}-title" class="app-title toggle">${appObj.name}</label>
+        <input type="checkbox" id="${appId}-set" class="dpnone">
+        <label for="${appId}-set" class="app-set-icon toggle">i</label>
+        </div>
+        <form class="app-print">
+            <div>
+                <input id="quicklink-input-title" type="text" placeholder="Name" required="">
+                <input id="quicklink-input-url" type="url" placeholder="URL" required="">
+            </div>
+            <button><i class="fa-solid fa-plus"></i></button>
+        </form>`;
+        //Individual obj
+        const indiObjArr = [];
+        localStorage.setItem(`${appId}`, JSON.stringify(indiObjArr));
+    } 
+    
+    sectionC.appendChild(app);
+    
 }
-
 function loadAppsArr() {
     const appsArrJson = localStorage.getItem('appsArr');
     if (appsArrJson) {
         appsArr = JSON.parse(appsArrJson);
-        appsArr.forEach(appObj => createAppElement(appObj));
+        appsArr.forEach(appObj => printApp(appObj));
+        console.log(appsArr);
     }
 }
 
 loadAppsArr(); // 페이지 로드 시 appsArr 복원
+
+// -------------------------------------------------------
 
 let draggedApp = null;
 
@@ -113,11 +209,11 @@ function drop(event) {
 }
 
 function updateAppsArrOrder() {
-    appsArr = Array.from(sectionC.querySelectorAll('.app')).map(appElement => {
+    appsArr = Array.from(sectionC.querySelectorAll('.app')).map(app => {
         return {
-            id: parseInt(appElement.id),
-            type: appElement.getAttribute('data-type'), // 예를 들어, 'task', 'checklist' 등
-            name: appElement.querySelector('.app-title').innerText,
+            id: app.id,
+            type: app.getAttribute('data-type'),
+            name: app.querySelector('.app-title').innerText,
             section: 'c',
             statu: 'open'
         };
@@ -140,6 +236,3 @@ function getDragAfterElement(y) {
 function saveAppsArr() {
     localStorage.setItem('appsArr', JSON.stringify(appsArr));
 }
-
-// newappPrint(newappObj);
-// saveApp();
