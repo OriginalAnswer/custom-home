@@ -35,22 +35,22 @@ function createNewapp(appObj) {
     app.dataset.type = appObj.type;
     if (appObj.type == 'memo') {
         app.innerHTML = `
-        <input type="checkbox" id="${appId}-title" class="dpnone">
         <div class="app-header">
+            <input type="checkbox" id="${appId}-title" class="dpnone" onchange="">
             <label for="${appId}-title" class="app-title toggle">${appObj.name}</label>
-
+            
             <input type="checkbox" id="${appId}-set" class="dpnone">
-            <label for="${appId}-set" class="app-set-icon toggle">i</label>
+            <label for="${appId}-set" class="app-set-icon  toggle">i</label>
         </div>
         <div class="app-print">
-            <textarea id="${appId}" oninput="apptext()"></textarea>
+            <textarea id="${appId}-app" oninput="apptext(this.value, ${appId})"></textarea>
         </div>
         `;
         //Individual obj
         const indiObj = {
             id: appId,
             type: appObj.type,
-            text: ""
+            content: ""
         }
         localStorage.setItem(`${appId}`, JSON.stringify(indiObj));
     }
@@ -97,8 +97,6 @@ function createNewapp(appObj) {
     sectionC.appendChild(app);
 }
 
-
-
 // ===================================================
 function printApp(appObj) {
     const app = document.createElement('div');
@@ -109,16 +107,19 @@ function printApp(appObj) {
     app.dataset.type = appObj.type;
 
     if (appObj.type == "memo") {
+        const currentAppData = localStorage.getItem(appId);
+
+
         app.innerHTML = `
-        <div class="app-header">
+         <div class="app-header">
             <input type="checkbox" id="${appId}-title" class="dpnone" onchange="">
             <label for="${appId}-title" class="app-title toggle">${appObj.name}</label>
             
             <input type="checkbox" id="${appId}-set" class="dpnone">
-            <label for="${appId}-set" class="app-set-icon toggle">i</label>
+            <label for="${appId}-set" class="app-set-icon  toggle">i</label>
         </div>
         <div class="app-print">
-            <textarea id="${appId}" oninput="apptext()"></textarea>
+            <textarea id="${appId}-app" oninput="apptext(this.value, ${appId})"></textarea>
         </div>
         `;
     } 
@@ -184,14 +185,14 @@ function dragStart(event) {
     draggedApp = event.target;
     event.dataTransfer.effectAllowed = 'move';
     event.dataTransfer.setData('text/plain', '');
-    const jj = {
+    const pick = {
         id: draggedApp.id,
         type: draggedApp.getAttribute('data-type'),
         name: draggedApp.querySelector('.app-title').innerText,
         section: 'c',
         statu: 'open'
     };
-    console.log(jj);
+    console.log(pick);
 }
 
 function dragOver(event) {
