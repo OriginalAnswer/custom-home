@@ -64,9 +64,13 @@
         }
         & .app-print{
             width: 100%;
+            /* Memo */
             & textarea{
                 width: 100%;
+                text-align: center;
+                padding: 10px 10px 0 10px;
             }
+            /* Task */
             & .task-bar{
                 display: flex;
                 align-items: center;

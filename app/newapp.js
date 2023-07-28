@@ -107,7 +107,10 @@ function printApp(appObj) {
     app.dataset.type = appObj.type;
 
     if (appObj.type == "memo") {
-        const currentAppData = localStorage.getItem(appId);
+        const currentAppDataJSON = localStorage.getItem(appId);
+        const parsedCurrentAppData = JSON.parse(currentAppDataJSON);
+        const currentContent = parsedCurrentAppData.content;
+        console.log(currentContent);
 
 
         app.innerHTML = `
@@ -119,7 +122,7 @@ function printApp(appObj) {
             <label for="${appId}-set" class="app-set-icon  toggle">i</label>
         </div>
         <div class="app-print">
-            <textarea id="${appId}-app" oninput="apptext(this.value, ${appId})"></textarea>
+            <textarea id="${appId}-app" oninput="apptext(this.value, ${appId})">${currentContent}</textarea>
         </div>
         `;
     } 
