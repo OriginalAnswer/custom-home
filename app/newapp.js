@@ -37,9 +37,10 @@ function createNewapp(appObj) {
         app.innerHTML = `
         <input type="checkbox" id="${appId}-title" class="dpnone">
         <div class="app-header">
-        <label for="${appId}-title" class="app-title toggle">${appObj.name}</label>
-        <input type="checkbox" id="${appId}-set" class="dpnone">
-        <label for="${appId}-set" class="app-set-icon toggle">i</label>
+            <label for="${appId}-title" class="app-title toggle">${appObj.name}</label>
+
+            <input type="checkbox" id="${appId}-set" class="dpnone">
+            <label for="${appId}-set" class="app-set-icon toggle">i</label>
         </div>
         <div class="app-print">
             <textarea id="${appId}" oninput="apptext()"></textarea>
@@ -100,20 +101,21 @@ function createNewapp(appObj) {
 
 // ===================================================
 function printApp(appObj) {
-    const appId = appObj.id;
-    const thisArrJson = localStorage.getItem(appId);
-    const thisArr = JSON.parse(thisArrJson);
     const app = document.createElement('div');
-    app.classList.add("app");
+    const appId = appObj.id;
+    app.classList.add('app');
+    app.id = appId;
     app.draggable = true;
+    app.dataset.type = appObj.type;
 
     if (appObj.type == "memo") {
         app.innerHTML = `
-        <input type="checkbox" id="${appId}-title" class="dpnone">
         <div class="app-header">
-        <label for="${appId}-title" class="app-title toggle">${appObj.name}</label>
-        <input type="checkbox" id="${appId}-set" class="dpnone">
-        <label for="${appId}-set" class="app-set-icon toggle">i</label>
+            <input type="checkbox" id="${appId}-title" class="dpnone" onchange="">
+            <label for="${appId}-title" class="app-title toggle">${appObj.name}</label>
+            
+            <input type="checkbox" id="${appId}-set" class="dpnone">
+            <label for="${appId}-set" class="app-set-icon toggle">i</label>
         </div>
         <div class="app-print">
             <textarea id="${appId}" oninput="apptext()"></textarea>
@@ -136,7 +138,6 @@ function printApp(appObj) {
             <div id="task-show" class="task-show">
             </div>
         </form>`;
-        console.log(app);
     } 
     else if (appObj.type == "links") {
         app.innerHTML = `<input type="checkbox" id="${appId}-title" class="dpnone">
@@ -183,6 +184,14 @@ function dragStart(event) {
     draggedApp = event.target;
     event.dataTransfer.effectAllowed = 'move';
     event.dataTransfer.setData('text/plain', '');
+    const jj = {
+        id: draggedApp.id,
+        type: draggedApp.getAttribute('data-type'),
+        name: draggedApp.querySelector('.app-title').innerText,
+        section: 'c',
+        statu: 'open'
+    };
+    console.log(jj);
 }
 
 function dragOver(event) {
