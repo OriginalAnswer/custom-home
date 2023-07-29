@@ -37,13 +37,12 @@ function createNewapp(appObj) {
         app.innerHTML = `
         <div class="app-header">
             <input type="checkbox" id="${appId}-title" class="dpnone" onchange="">
-            <label for="${appId}-title" class="app-title toggle">${appObj.name}</label>
-            
+            <label for="${appId}-title" class="app-title toggle dpnone">${appObj.name}</label>
             <input type="checkbox" id="${appId}-set" class="dpnone">
             <label for="${appId}-set" class="app-set-icon  toggle">i</label>
         </div>
         <div class="app-print">
-            <textarea id="${appId}-app" oninput="apptext(this.value, ${appId})"></textarea>
+            <textarea id="${appId}-app" oninput="apptext(this.value, ${appId})" rows="1" placeholder="type here..."></textarea>
         </div>
         `;
         //Individual obj
@@ -114,15 +113,14 @@ function printApp(appObj) {
 
 
         app.innerHTML = `
-         <div class="app-header">
-            <input type="checkbox" id="${appId}-title" class="dpnone" onchange="">
-            <label for="${appId}-title" class="app-title toggle">${appObj.name}</label>
-            
+        <div class="app-header">
+        <input type="checkbox" id="${appId}-title" class="dpnone" onchange="">
+            <label for="${appId}-title" class="app-title toggle dpnone">${appObj.name}</label>
             <input type="checkbox" id="${appId}-set" class="dpnone">
             <label for="${appId}-set" class="app-set-icon  toggle">i</label>
         </div>
         <div class="app-print">
-            <textarea id="${appId}-app" oninput="apptext(this.value, ${appId})">${currentContent}</textarea>
+            <textarea id="${appId}-app" oninput="apptext(this.value, ${appId})" rows="1" placeholder="type here...">${currentContent}</textarea>
         </div>
         `;
     } 

@@ -1,8 +1,11 @@
 #newapptoggle[type=checkbox]{display: none;}
-.section-newapp,.newapp-back{transform: translateY(100%);}
+.section-newapp,.newapp-back{
+    transform: translateY(100%) translateX(0);
+    visibility: hidden;}
 #newapptoggle:checked ~ .section-newapp,
 #newapptoggle:checked ~ .newapp-back{
     transform: translateY(0);
+    visibility: visible;
 }
 
 .newapptoggle{z-index: 99;}
@@ -17,7 +20,7 @@
     width: 100%;
     height: 100%;
     
-    background-color: var(--eeea);
+    /* background-color: blue; */
     backdrop-filter: var(--blur-10);
     -webkit-backdrop-filter: var(--blur-10);
     cursor:crosshair;
@@ -32,10 +35,10 @@
     padding: 50px 0 50px 0;
     border-radius: var(--border-radius-30) var(--border-radius-30) 0 0;
     
-    background-color: var(--fffa);
-    backdrop-filter: var(--blur-20);
-    -webkit-backdrop-filter: var(--blur-20);
-    box-shadow: var(--box-shadow-inset-2);
+    background-color: var(--fffa2);
+    backdrop-filter: var(--blur-20) ;
+    -webkit-backdrop-filter: var(--blur-20) ;
+    box-shadow: var(--box-shadow-1);
     
     transition: all ease-in-out;
     transition-duration: .2s;
@@ -87,5 +90,15 @@
              width: 100%;
              padding: 20px 0;
          }
+    }
+
+
+
+    .section-newapp,.newapp-back{
+        transform: translateY(0) translateX(-100%);
+    }
+    #newapptoggle:checked ~ .section-newapp,
+    #newapptoggle:checked ~ .newapp-back{
+        transform: translateX(0);
     }
 }

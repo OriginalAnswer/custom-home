@@ -1,11 +1,14 @@
 input, select, textarea{
     border: 0;
     outline: none;
+    background: none;
+}
+textarea{
+  resize: none;
 }
 button{
     border: 0;
     outline: none;
-    background: none;
     &:hover{
       cursor: pointer;
     }
