@@ -12,7 +12,7 @@ function newapp(value) {
         name: newappName,
         section: 'c',
         statu: 'open'
-    };
+    }; 
 
     appsArr.push(newappObj);
     createNewapp(newappObj); // 새로운 앱 요소 생성 및 추가
