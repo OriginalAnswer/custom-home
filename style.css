@@ -7,12 +7,27 @@
 @import "./style/newapp.css";
 
 :root{
+  --fff: #fff;
+  --fffa: #ffffff4a;
+
+
+  --hsla-lightness: 100%;
+  --hsla-saturation: 0%;
+  --hsla-alpha: .25;
+
+  --blur-1: blur(1px);
+  --blur-2: blur(2px);
+  --blur-4: blur(4px);
+  --blur-8: blur(8px);
+  --blur-10: blur(10px);
+  --blur-20: blur(20px);
+
   --search-bgclr: #fff;
   --search-height: 2rem;
   --search-border-radius: 20px;
   --search-icon-border-radius: 50px;
   
-  --set-bgclr: hsla(0, 0%, 89%, 0.243);
+  --set-bgclr: hsla(0, var(--hsla-saturation), var(--hsla-lightness), var(--hsla-alpha));
   --set-back-clr: #8484841c;
   --set-input-clr:#fff;
 
@@ -25,11 +40,6 @@
   --newapp-back-clr: #8484845d;
   --newapp-bgclr: #ffffff;
   --app-bgclr: hsla(0, 0%, 89%, 0.32);
-  --bg-blur-1: blur(1px);
-  --bg-blur-2: blur(2px);
-  --bg-blur-4: blur(4px);
-  --bg-blur-10: blur(10px);
-  --bg-blur-20: blur(20px);
 
   --input-height-15: 1.5rem;
 

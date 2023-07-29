@@ -31,13 +31,15 @@
     padding: 10px 5px 10px 5px;
 
     background-color: var(--set-bgclr);
-    overflow-y: scroll;
+    backdrop-filter: var(--blur-10);
+    -webkit-backdrop-filter: var(--blur-10);
+    box-shadow: var(--box-shadow-inset-2);
+    
+    transition: all ease-in-out;
+    transition-duration: .3s;
+
     -webkit-scrollbar: none;
     overflow-y: scroll;
-    backdrop-filter: blur(4px);
-    -webkit-backdrop-filter: blur(4px);
-    transition: all .2s ease-in-out;
-    box-shadow: var(--box-shadow-inset-2);
     & input, select{
         flex-basis: 50%;
     }
