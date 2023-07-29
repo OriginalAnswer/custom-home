@@ -26,7 +26,8 @@
 
   --saturate-80: saturate(80%);
 
-  --brightness-60:brightness(97%);
+  --brightness-97:brightness(97%);
+  --brightness-85:brightness(85%);
 
   --border-1: 1px solid #000;
   --border-radius-10: 10px;

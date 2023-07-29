@@ -75,14 +75,19 @@
             /* Memo */
             & textarea{
                 width: 100%;
-                height: 100%;
+                height: auto;
+                /* max-height: 200px; */
                 text-align: center;
                 padding: 20px 10px 10px 10px;
                 border-radius: var(--border-radius-15);
                 outline: none;
                 background-color: inherit;
+                font-size: 1rem;
                 /* box-shadow: var(--box-shadow-inset-3); */
                 /* border: 1px solid #9e9e9e5b; */
+                &::-webkit-scrollbar{
+                    width: 0;
+                }
             }
             /* Task */
             & .task-bar{

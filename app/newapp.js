@@ -111,7 +111,6 @@ function printApp(appObj) {
         const currentContent = parsedCurrentAppData.content;
         console.log(currentContent);
 
-
         app.innerHTML = `
         <div class="app-header">
         <input type="checkbox" id="${appId}-title" class="dpnone" onchange="">
@@ -123,6 +122,20 @@ function printApp(appObj) {
             <textarea id="${appId}-app" oninput="apptext(this.value, ${appId})" rows="1" placeholder="type here...">${currentContent}</textarea>
         </div>
         `;
+        
+        function resize() {
+            let textarea = document.getElementById(`${appId}-app`);    
+         
+            let scHeight = textarea.scrollHeight;
+            let style = window.getComputedStyle(textarea);
+            let borderTop = parseInt(style.borderTop);
+            let borderBottom = parseInt(style.borderBottom);
+     
+            textarea.style.height = (scHeight + borderTop + borderBottom)+"px";
+        }
+        window.addEventListener("load", resize);
+        window.onresize = resize;
+    
     } 
     else if (appObj.type == "task") {
         app.innerHTML = `<input type="checkbox" id="${appId}-title" class="dpnone">
@@ -168,7 +181,6 @@ function loadAppsArr() {
     if (appsArrJson) {
         appsArr = JSON.parse(appsArrJson);
         appsArr.forEach(appObj => printApp(appObj));
-        console.log(appsArr);
     }
 }
 

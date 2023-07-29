@@ -21,8 +21,8 @@
     height: 100%;
     
     /* background-color: blue; */
-    backdrop-filter: var(--blur-10);
-    -webkit-backdrop-filter: var(--blur-10);
+    backdrop-filter: var(--blur-10) var(--brightness-85);
+    -webkit-backdrop-filter: var(--blur-10) var(--brightness-85);
     cursor:crosshair;
 }
 .section-newapp{
@@ -47,7 +47,7 @@
         width: 100%;
         padding: 18px 0;
         text-transform: uppercase;
-        /* background: var(--clr-fff); */
+        background: var(--clr-fff);
         &:hover{
             background-color: #e0e0e0;
         }
