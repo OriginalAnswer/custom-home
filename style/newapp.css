@@ -37,7 +37,7 @@
     box-shadow: var(--box-shadow-inset-2);
     
     transition: all ease-in-out;
-    transition-duration: .3s;
+    transition-duration: .2s;
 
     & button{
         width: 100%;
@@ -67,10 +67,10 @@
 
 @media (max-height: 550px) {
     .section-newapp{
-        padding: 30px 0 0 0;
+        padding: 15px 0 15px 0;
        & button{
             width: 100%;
-            padding: 15px 0;
+            padding: 5px 0;
         }
     }
 }

@@ -36,7 +36,7 @@
     box-shadow: var(--box-shadow-inset-2);
     
     transition: all ease-in-out;
-    transition-duration: .3s;
+    transition-duration: .2s;
 
     -webkit-scrollbar: none;
     overflow-y: scroll;
