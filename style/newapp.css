@@ -17,8 +17,9 @@
     width: 100%;
     height: 100%;
     
-    backdrop-filter: var(--blur-2);
-    -webkit-backdrop-filter: var(--blur-2);
+    background-color: var(--eeea);
+    backdrop-filter: var(--blur-10);
+    -webkit-backdrop-filter: var(--blur-10);
     cursor:crosshair;
 }
 .section-newapp{

@@ -27,7 +27,7 @@
         padding: 10px;
         margin-bottom: auto;
 
-        /* background-color: rgba(204, 223, 240, 0.677); */
+        background-color: var(--fff);
         border: var(--border-1);
         border-radius: var(--border-radius-20);
         
