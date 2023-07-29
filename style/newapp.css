@@ -5,7 +5,7 @@
 #newapptoggle:checked ~ .section-newapp,
 #newapptoggle:checked ~ .newapp-back{
     transform: translateY(0);
-    visibility: visible;
+    visibility: visible; 
 }
 
 .newapptoggle{z-index: 99;}
