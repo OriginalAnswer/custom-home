@@ -29,7 +29,7 @@ searchbar
 
     & input[type=text]{
         width: 100%;
-        height: var(--search-width);
+        height: var(--search-height);
         padding: 0 10px;
         font-size: 1rem;
         color: var(--color-font);
@@ -40,8 +40,8 @@ searchbar
         justify-content: center;
         margin: 0 5px;
 
-        width: var(--search-width);
-        height: var(--search-width);
+        width: var(--search-height);
+        height: var(--search-height);
         border-radius: var(--search-icon-border-radius);
     }
     & .search-submit{display: none;}
