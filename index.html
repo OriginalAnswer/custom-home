@@ -1,156 +1,156 @@
- <!DOCTYPE html>
- <html lang="ko">
- <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0 , maximum-scale=1.0, user-scalable=no" />    <link rel="stylesheet" href="style.css">
-    <title>Home</title>
-   </head>
-   <body>
-      <div class="section-a">
-         <div class="headapps">
-            <div draggable="true" id="headdate" class="headapp app-date">0000.0.00.0요일</div>
-            <div draggable="true" id="headgreet" class="headapp app-greet"><span class="greet"></span><span class="app-greet-name"></span></div>
-            <div draggable="true" id="headtime" class="headapp app-headtime"><span id="app-headtime">00:00:00</span></div>
-            <p draggable="true" class="headapp app-headtext"></p>
-          </div>          
-      </div>
-      
-      <div class="section-b">
-         <div class="app-search">
-            <input type="radio" name="search-toggle" id="google-toggle" checked class="dpnone">
-            <input type="radio" name="search-toggle" id="youtube-toggle" class="dpnone">
-            <input type="radio" name="search-toggle" id="ym-toggle" class="dpnone">
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0 , maximum-scale=1.0, user-scalable=no" />    <link rel="stylesheet" href="style.css">
+   <title>Home</title>
+  </head>
+  <body>
+     <div class="section-a">
+        <div class="headapps">
+           <div draggable="true" id="headdate" class="headapp app-date">0000.0.00.0요일</div>
+           <div draggable="true" id="headgreet" class="headapp app-greet"><span class="greet"></span><span class="app-greet-name"></span></div>
+           <div draggable="true" id="headtime" class="headapp app-headtime"><span id="app-headtime">00:00:00</span></div>
+           <p draggable="true" class="headapp app-headtext"></p>
+         </div>          
+     </div>
+     
+     <div class="section-b">
+        <div class="app-search">
+           <input type="radio" name="search-toggle" id="google-toggle" checked class="dpnone">
+           <input type="radio" name="search-toggle" id="youtube-toggle" class="dpnone">
+           <input type="radio" name="search-toggle" id="ym-toggle" class="dpnone">
 
-            <form action="https://www.google.com/search" method="GET" target="blank" class="searchbar search-google">
-               <label for="google-toggle" class="search-icon">
-                  <i class="fa-brands fa-google search-site-icon"></i>
-               </label>
-               <input type="text" id="google-input" name="q" placeholder="Google 검색">
-               <button class="search-icon search-submit google-submit">
-                  <i class="fa-solid fa-magnifying-glass"></i>
-               </button>
-            </form>
-            <form action="https://www.youtube.com/results" target="blank" class="searchbar search-youtube">
-               <label for="youtube-toggle" class="search-icon">
-                  <i class="fa-brands fa-youtube search-site-icon"></i>
-               </label>
-               <input type="text" id="youtube-input" name="q" placeholder="YouTube 검색">
-               <button class="search-icon search-submit youtube-submit">
-                  <i class="fa-solid fa-magnifying-glass"></i>
-               </button>
-            </form>
-            <form action="https://music.youtube.com/search" target="blank" class="searchbar search-ym">
-               <label for="ym-toggle" class="search-icon">
-                  <i class="fa-solid fa-headphones search-site-icon"></i>
-               </label>
-               <input type="text" id="ym-input" name="q" placeholder="YouTube Music 검색">
-               <button class="search-icon search-submit ym-submit">
-                  <i class="fa-solid fa-magnifying-glass"></i>
-               </button>
-            </form>
-         </div>
-         
-      </div>
-   
-      <div  class="section-c">
-      </div>
+           <form action="https://www.google.com/search" method="GET" target="blank" class="searchbar search-google">
+              <label for="google-toggle" class="search-icon">
+                 <i class="fa-brands fa-google search-site-icon"></i>
+              </label>
+              <input type="text" id="google-input" name="q" placeholder="Google 검색">
+              <button class="search-icon search-submit google-submit">
+                 <i class="fa-solid fa-magnifying-glass"></i>
+              </button>
+           </form>
+           <form action="https://www.youtube.com/results" target="blank" class="searchbar search-youtube">
+              <label for="youtube-toggle" class="search-icon">
+                 <i class="fa-brands fa-youtube search-site-icon"></i>
+              </label>
+              <input type="text" id="youtube-input" name="q" placeholder="YouTube 검색">
+              <button class="search-icon search-submit youtube-submit">
+                 <i class="fa-solid fa-magnifying-glass"></i>
+              </button>
+           </form>
+           <form action="https://music.youtube.com/search" target="blank" class="searchbar search-ym">
+              <label for="ym-toggle" class="search-icon">
+                 <i class="fa-solid fa-headphones search-site-icon"></i>
+              </label>
+              <input type="text" id="ym-input" name="q" placeholder="YouTube Music 검색">
+              <button class="search-icon search-submit ym-submit">
+                 <i class="fa-solid fa-magnifying-glass"></i>
+              </button>
+           </form>
+        </div>
+        
+     </div>
+  
+     <div  class="section-c">
+     </div>
 
 <!-- <input type="text" > -->
 
 
 
 
-      <input type="checkbox" id="newapptoggle">
-      <label for="newapptoggle" class="newapptoggle">icon</label>
-      <label for="newapptoggle" class="newapp-back"></label>
-      
-      <div class="section-newapp">
-         <div class="thinline2"></div>
-         <button onclick="newapp('memo');" class="newapp-btn new-textbox">memo</button>
-         <div class="thinline2"></div>
-         <button onclick="newapp('task');" class="newapp-btn new-task">task</button>
-         <div class="thinline2"></div>
-         <!-- <button onclick="newapp('checklist');" class="newapp-btn new-checklist">checklist</button>
-         <div class="thinline2"></div>
-         <button onclick="newapp('links');" class="newapp-btn new-links">links</button>
-         <div class="thinline2"></div> -->
-         
-         <!-- <button onclick="newapp('timer');" class="newapp-btn new-timer">timer</button><div class="thinline2"></div>
-         <button onclick="newapp('calc');" class="newapp-btn new-calc">calc</button><div class="thinline2"></div>
-         <button onclick="newapp('calander');" class="newapp-btn new-calander">calander</button><div class="thinline2"></div>
-         <button onclick="newapp('picture');" class="newapp-btn new-picture">picture</button><div class="thinline2"></div> -->
-      </div>
+     <input type="checkbox" id="newapptoggle">
+     <label for="newapptoggle" class="newapptoggle">icon</label>
+     <label for="newapptoggle" class="newapp-back"></label>
+     
+     <div class="section-newapp">
+        <div class="thinline2"></div>
+        <button onclick="newapp('memo');" class="newapp-btn new-textbox">memo</button>
+        <div class="thinline2"></div>
+        <button onclick="newapp('task');" class="newapp-btn new-task">task</button>
+        <div class="thinline2"></div>
+        <!-- <button onclick="newapp('checklist');" class="newapp-btn new-checklist">checklist</button>
+        <div class="thinline2"></div>
+        <button onclick="newapp('links');" class="newapp-btn new-links">links</button>
+        <div class="thinline2"></div> -->
+        
+        <!-- <button onclick="newapp('timer');" class="newapp-btn new-timer">timer</button><div class="thinline2"></div>
+        <button onclick="newapp('calc');" class="newapp-btn new-calc">calc</button><div class="thinline2"></div>
+        <button onclick="newapp('calander');" class="newapp-btn new-calander">calander</button><div class="thinline2"></div>
+        <button onclick="newapp('picture');" class="newapp-btn new-picture">picture</button><div class="thinline2"></div> -->
+     </div>
 
-      <input type="checkbox" id="xtoggle">
-      <label for="xtoggle" class="xtoggle">icon</label>
-      <label for="xtoggle" class="back"></label>
+     <input type="checkbox" id="xtoggle">
+     <label for="xtoggle" class="xtoggle">icon</label>
+     <label for="xtoggle" class="back"></label>
 
-      <div class="section-x">
-         <div class="general">
-            <p>general</p>
-            <div class="bgselect set-name">background</div>
-            <div class="font set-name" >fonts</div>
-            <div class="mode set-name">mode</div>
-         </div> 
-         <div class="thinline"></div>
+     <div class="section-x">
+        <div class="general">
+           <p>general</p>
+           <div class="bgselect set-name">background</div>
+           <div class="font set-name" >fonts</div>
+           <div class="mode set-name">mode</div>
+        </div> 
+        <div class="thinline"></div>
 
-         <div class="set-headapp">
-            <p>head information</p>
-            <div class="haedapp-align">
-               <input type="radio" name="haedapp-align" class="dpnone" id="haedapp-align-left" value="left" onchange="handleAlignHeadapp(this.value)" checked>
-               <input type="radio" name="haedapp-align" class="dpnone" id="haedapp-align-center" value="center" onchange="handleAlignHeadapp(this.value)">
-               <input type="radio" name="haedapp-align" class="dpnone" id="haedapp-align-right" value="right" onchange="handleAlignHeadapp(this.value)">
-               <label for="haedapp-align-left"class="haedapp-align-btn haedapp-align-left">LEFT</label>
-               <label for="haedapp-align-center" class="haedapp-align-btn haedapp-align-center">CENTER</label>
-               <label for="haedapp-align-right" class="haedapp-align-btn haedapp-align-right">RIGHT</label>
-            </div>
-            <div class="set-headtext">
-               <textarea id="set-headtext" oninput="syncHeadText()" placeholder="type here."></textarea>
+        <div class="set-headapp">
+           <p>head information</p>
+           <div class="haedapp-align">
+              <input type="radio" name="haedapp-align" class="dpnone" id="haedapp-align-left" value="left" onchange="handleAlignHeadapp(this.value)" checked>
+              <input type="radio" name="haedapp-align" class="dpnone" id="haedapp-align-center" value="center" onchange="handleAlignHeadapp(this.value)">
+              <input type="radio" name="haedapp-align" class="dpnone" id="haedapp-align-right" value="right" onchange="handleAlignHeadapp(this.value)">
+              <label for="haedapp-align-left"class="haedapp-align-btn haedapp-align-left">LEFT</label>
+              <label for="haedapp-align-center" class="haedapp-align-btn haedapp-align-center">CENTER</label>
+              <label for="haedapp-align-right" class="haedapp-align-btn haedapp-align-right">RIGHT</label>
+           </div>
+           <div class="set-headtext">
+              <textarea id="set-headtext" oninput="syncHeadText()" placeholder="type here."></textarea>
 
-               <label for="headtext-fontsize" class="set-title">font size</label>
-               <input type="range" id="headtext-fontsize" min="8"max="64" step="1" oninput="syncHeadTextFontsize()">
+              <label for="headtext-fontsize" class="set-title">font size</label>
+              <input type="range" id="headtext-fontsize" min="8"max="64" step="1" oninput="syncHeadTextFontsize()">
 
-               <span class="set-title headtext-fontwight">font wight</span>
-               <select id="headtext-fontwight" onchange="headtextFontwight()">
-                  <option value="light">light</option>
-                  <option value="nomal" selected>nomal</option>
-                  <option value="bold">bold</option>
-               </select>
-            </div>
+              <span class="set-title headtext-fontwight">font wight</span>
+              <select id="headtext-fontwight" onchange="headtextFontwight()">
+                 <option value="light">light</option>
+                 <option value="nomal" selected>nomal</option>
+                 <option value="bold">bold</option>
+              </select>
+           </div>
 
-            <div class="set-headtime">
-               <label for="headtime-fontsize" class="set-title">clock size</label>
-               <input type="range" id="headtime-fontsize" min="8"max="150" step="1" oninput="syncHeadTimeSize()">
+           <div class="set-headtime">
+              <label for="headtime-fontsize" class="set-title">clock size</label>
+              <input type="range" id="headtime-fontsize" min="8"max="150" step="1" oninput="syncHeadTimeSize()">
 
-               <span class="set-title headtime-fontwight">clock wight</span>
-               <select id="headtime-fontwight" onchange="headtextFontwight()">
-                  <option value="light">light</option>
-                  <option value="nomal" selected>nomal</option>
-                  <option value="bold">bold</option>
-               </select>
-            </div>
-            <div class="set-greet">
-               <label for="set-greet-name" class="set-title">username</label>
-               <input type="text" id="set-greet-name" oninput="syncGreetName()">
-            </div>
-         </div>
-         <div class="thinline"></div>
-         <div class="searchmode">
-            <span class="set-title">search mode</span>
-            <select id="search-mode" onchange="searchmode()">
-               <option value="default">default</option>
-               <option value="minimum">minimum</option>
-               <option value="minimum">none</option>
-            </select>
-         </div>
-      </div> 
+              <span class="set-title headtime-fontwight">clock wight</span>
+              <select id="headtime-fontwight" onchange="headtextFontwight()">
+                 <option value="light">light</option>
+                 <option value="nomal" selected>nomal</option>
+                 <option value="bold">bold</option>
+              </select>
+           </div>
+           <div class="set-greet">
+              <label for="set-greet-name" class="set-title">username</label>
+              <input type="text" id="set-greet-name" oninput="syncGreetName()">
+           </div>
+        </div>
+        <div class="thinline"></div>
+        <div class="searchmode">
+           <span class="set-title">search mode</span>
+           <select id="search-mode" onchange="searchmode()">
+              <option value="default">default</option>
+              <option value="minimum">minimum</option>
+              <option value="minimum">none</option>
+           </select>
+        </div>
+     </div> 
 
-   <script src="./app/headapp.js"></script>
-   <script src="./app/time.js"></script>
-   <script src="./app/date.js"></script>
-   <script src="./app/apptext.js"></script>
-   <script src="./app/newapp.js"></script>
+  <script src="./app/headapp.js"></script>
+  <script src="./app/time.js"></script>
+  <script src="./app/date.js"></script>
+  <script src="./app/apptext.js"></script>
+  <script src="./app/newapp.js"></script>
 
-   <script src="https://kit.fontawesome.com/e4704dcbbd.js" crossorigin="anonymous"></script>
- </body>
- </html>
+  <script src="https://kit.fontawesome.com/e4704dcbbd.js" crossorigin="anonymous"></script>
+</body>
+</html>
