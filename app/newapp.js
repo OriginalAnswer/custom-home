@@ -123,7 +123,7 @@ function printApp(appObj) {
         </div>
         `;
         
-        function resize() {
+        function appMemoResize() {
             let textarea = document.getElementById(`${appId}-app`);    
          
             let scHeight = textarea.scrollHeight;
@@ -133,8 +133,8 @@ function printApp(appObj) {
      
             textarea.style.height = (scHeight + borderTop + borderBottom)+"px";
         }
-        window.addEventListener("load", resize);
-        window.onresize = resize;
+        window.addEventListener("load", appMemoResize);
+        window.onresize = appMemoResize;
     
     } 
     else if (appObj.type == "task") {
