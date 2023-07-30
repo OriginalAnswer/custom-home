@@ -58,6 +58,9 @@
     & .search-submit{
         display: none;
     }
+    & .fa-youtube{
+        color: red;
+    }
 }
 /* ============== */
 .searchbar input[type=text], .search-submit{display: none;}
