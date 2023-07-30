@@ -24,7 +24,7 @@
 .searchbar{
     flex-basis: auto;
     /* flex-grow: 1; */
-
+    /* width: 100px; */
     display: flex;
     flex-wrap: nowrap;
     justify-content: space-between;
@@ -34,13 +34,13 @@
     padding: 5px 0; 
     border-radius: var(--border-radius-30);
     
-    transition: width ease-in-out;
+    transition: all ease-in-out;
     transition-duration: 1s;
 
     & input[type=text]{
-        width: calc(100% - 5px);
-        height: var(--search-height);
-        padding: 0 10px;
+        width: 100%;
+        height: var(--search-width);
+        /* padding: 0 10px; */
         font-size: 1rem;
         color: var(--color-font);
     }
