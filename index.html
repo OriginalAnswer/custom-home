@@ -17,20 +17,24 @@
       
       <div class="section-b">
          <div class="app-search">
-            <form action="https://www.youtube.com/results" target="blank" class="searchbar search-youtube">
-               <label for="youtube-input" class="search-icon">icon</label>
-               <input type="text" id="youtube-input" name="q" placeholder="YouTube 검색">
-               <button class="search-icon">icon</button>
-            </form>
+            <input type="radio" name="search-toggle" id="youtube-toggle" class="dpnone">
+            <input type="radio" name="search-toggle" id="google-toggle" class="dpnone">
+            <input type="radio" name="search-toggle" id="ym-toggle" class="dpnone">
+
             <form action="https://www.google.com/search" method="GET" target="blank" class="searchbar search-google">
-               <label for="google-input" class="search-icon">icon</label>
+               <label for="google-toggle" class="search-icon">G</label>
                <input type="text" id="google-input" name="q" placeholder="Google 검색">
-               <button class="search-icon">icon</button>
+               <button class="search-icon search-submit google-submit">icon</button>
+            </form>
+            <form action="https://www.youtube.com/results" target="blank" class="searchbar search-youtube">
+               <label for="youtube-toggle" class="search-icon">Y</label>
+               <input type="text" id="youtube-input" name="q" placeholder="YouTube 검색">
+               <button class="search-icon search-submit youtube-submit">icon</button>
             </form>
             <form action="https://music.youtube.com/search" target="blank" class="searchbar search-youtubemusic">
-               <label for="youtubemusic-input" class="search-icon">icon</label>
-               <input type="text" id="youtubemusic-input" name="q" placeholder="YouTube Music 검색">
-               <button class="search-icon">icon</button>
+               <label for="ym-toggle" class="search-icon">YM</label>
+               <input type="text" id="ym-input" name="q" placeholder="YouTube Music 검색">
+               <button class="search-icon search-submit ym-submit">icon</button>
             </form>
          </div>
          
