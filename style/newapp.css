@@ -22,7 +22,7 @@
     
     /* background-color: blue; */
     backdrop-filter: var(--blur-2) var(--brightness-85);
-    -webkit-backdrop-filter: var(--blur-10) var(--brightness-85);
+    -webkit-backdrop-filter: var(--blur-2) var(--brightness-85);
     cursor:crosshair;
 }
 .section-newapp{

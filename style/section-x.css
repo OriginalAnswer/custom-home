@@ -16,6 +16,7 @@
     left: 0;
     cursor:crosshair;
     backdrop-filter: var(--blur-2) var(--brightness-85);
+    -webkit-backdrop-filter: var(--blur-2) var(--brightness-85);
 
     /* background-color: var(--set-back-clr); */
 }
