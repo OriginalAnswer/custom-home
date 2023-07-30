@@ -21,7 +21,7 @@
     height: 100%;
     
     /* background-color: blue; */
-    backdrop-filter: var(--blur-10) var(--brightness-85);
+    backdrop-filter: var(--blur-2) var(--brightness-85);
     -webkit-backdrop-filter: var(--blur-10) var(--brightness-85);
     cursor:crosshair;
 }
@@ -35,7 +35,7 @@
     padding: 50px 0 50px 0;
     border-radius: var(--border-radius-30) var(--border-radius-30) 0 0;
     
-    background-color: var(--fffa2);
+    background-color: var(--fff);
     backdrop-filter: var(--blur-20) ;
     -webkit-backdrop-filter: var(--blur-20) ;
     box-shadow: var(--box-shadow-1);

@@ -14,8 +14,9 @@
     position: fixed;
     top: 0;
     left: 0;
-
     cursor:crosshair;
+    backdrop-filter: var(--blur-2) var(--brightness-85);
+
     /* background-color: var(--set-back-clr); */
 }
 .section-x{

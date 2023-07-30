@@ -95,6 +95,7 @@ const savedHeadTime = localStorage.getItem(HEADTIME_KEY);
 const savedHeadTimeSize = localStorage.getItem(HEADTIME_KEY, 'fontsize');
 const parsedHeadTime = JSON.parse(savedHeadTime);//객체 분석하기
 const appHeadTime = document.querySelector('#app-headtime');
+
 function syncHeadTimeSize() {
     let syncTimeSize = headTimeSize.value;
     const headTimeObj = {
