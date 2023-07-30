@@ -12,7 +12,7 @@
     /* display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px,1fr)); */
     
-    gap: 10px;
+    gap: 5px;
     width: 100%;
     padding: 10px;
  
@@ -31,16 +31,16 @@
     align-items: center;
     
     background-color: var(--search-bgclr);
-    padding: 5px 10px; 
+    padding: 5px 0; 
     border-radius: var(--border-radius-30);
     
     transition: all ease-in-out;
     transition-duration: 1s;
 
     & input[type=text]{
-        width: 100%;
+        width: calc(100% - 5px);
         height: var(--search-height);
-        padding: 0 15px;
+        padding: 0 10px;
         font-size: 1rem;
         color: var(--color-font);
     }
@@ -61,10 +61,10 @@
 }
 /* ============== */
 .searchbar input[type=text], .search-submit{display: none;}
-
+/* 
 #google-toggle:checked ~ #google-input{width: 100%;}
 #youtube-toggle:checked ~ .search-youtube{width: 100%;}
-#ym-toggle:checked ~ .search-ym{width: 100%;}
+#ym-toggle:checked ~ .search-ym{width: 100%;} */
     /* @media (min-width: 1000px) {
        .searchbar{max-width: 500px;}
     } */
