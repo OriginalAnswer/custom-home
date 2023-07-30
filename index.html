@@ -8,10 +8,10 @@
    <body>
       <div class="section-a">
          <div class="headapps">
-            <span draggable="true" class="headapp app-headtext"></span>
-            <div draggable="true" id="headtime" class="headapp app-headtime"><span id="app-headtime">00:00:00</span></div>
             <div draggable="true" id="headdate" class="headapp app-date">0000.0.00.0요일</div>
             <div draggable="true" id="headgreet" class="headapp app-greet"><span class="greet"></span><span class="app-greet-name"></span></div>
+            <div draggable="true" id="headtime" class="headapp app-headtime"><span id="app-headtime">00:00:00</span></div>
+            <p draggable="true" class="headapp app-headtext"></p>
           </div>          
       </div>
       
@@ -93,6 +93,12 @@
                <textarea id="set-headtext" oninput="syncHeadText()" placeholder="type here."></textarea>
                <label for="headtext-fontsize">font size</label>
                <input type="range" id="headtext-fontsize" min="8"max="64" step="1" oninput="syncHeadTextFontsize()">
+               <span class="set-name headtext-fontwight">font wight</span>
+               <select id="search-mode" onchange="searchmode()">
+                  <option value="light">light</option>
+                  <option value="nomal" selected>nomal</option>
+                  <option value="bold">bold</option>
+               </select>
             </div>
             <div class="set-headtime">
                <label for="headtime-fontsize" class="set-name">clock size</label>

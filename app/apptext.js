@@ -12,6 +12,5 @@ function apptext(v,n) {
         textarea.style.height = 'auto';
         let scHeight = e.target.scrollHeight;
         textarea.style.height = `${scHeight}px`;
-        console.log(scHeight);
     })
 }

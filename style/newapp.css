@@ -38,7 +38,7 @@
     background-color: var(--fff);
     backdrop-filter: var(--blur-20) ;
     -webkit-backdrop-filter: var(--blur-20) ;
-    box-shadow: var(--box-shadow-1);
+    /* box-shadow: var(--box-shadow-1); */
     
     transition: all ease-in-out;
     transition-duration: .2s;

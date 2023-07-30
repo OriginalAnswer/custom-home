@@ -1,11 +1,11 @@
 .section-c{
-    /* display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px,1fr)); */
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px,1fr));
     gap: 10px;
 
 
-    display: flex;
-    flex-wrap: wrap;
+    /* display: flex;
+    flex-wrap: wrap; */
     /* justify-content:left; */
     /* width: 100%; */
     margin: auto;
@@ -18,8 +18,8 @@
     } */
     
     & .app{
-        flex-grow: 1;
-        flex-basis:350px;
+        /* flex-grow: 1; */
+        /* flex-basis: calc(50%-1px); */
         /*display: flex;
         flex-direction: column;
         width: 100%; */
@@ -77,7 +77,7 @@
                 width: 100%;
                 height: auto;
                 text-align: center;
-                padding: 20px 10px 10px 10px;
+                padding: 20px 25px 15px 25px;
                 border-radius: var(--border-radius-15);
                 outline: none;
                 background-color: inherit;

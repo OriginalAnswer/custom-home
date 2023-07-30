@@ -33,6 +33,11 @@ function syncHeadText() {
     };
     localStorage.setItem(HEADTEXT_KEY, JSON.stringify(headtextObj));
     headText.innerText = `${syncText}`;
+    headTextInput.addEventListener("keyup", e => {
+        headTextInput.style.height = 'auto';
+        let scHeight = e.target.scrollHeight;
+        headTextInput.style.height = `${scHeight}px`;
+    })
 }
 
 function syncHeadTextFontsize() {
@@ -46,7 +51,16 @@ function syncHeadTextFontsize() {
     localStorage.setItem(HEADTEXT_KEY, JSON.stringify(headtextObj));
     headText.style.fontSize = `${syncFontsize}px`;
 }
+function setTextareaResize() { 
+    let scHeight = headTextInput.scrollHeight;
+    let style = window.getComputedStyle(headTextInput);
+    let borderTop = parseInt(style.borderTop);
+    let borderBottom = parseInt(style.borderBottom);
 
+    headTextInput.style.height = (scHeight + borderTop + borderBottom)+"px";
+}
+window.addEventListener("load", setTextareaResize);
+window.onresize = setTextareaResize;
 // --------------------------
 const greetName = document.querySelector(".app-greet-name");
 const greetInput = document.querySelector("#set-greet-name");

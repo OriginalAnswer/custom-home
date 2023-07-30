@@ -10,11 +10,7 @@
     padding: 20px 20px 10px 20px;
     display: block;
     text-align: var(--headapps-textalign);
-}
-.app-headtext{
-    width: auto;
-    height: auto;
-    /* border: none; */
+
 }
 .app-headtime{
     font-weight: bold;
