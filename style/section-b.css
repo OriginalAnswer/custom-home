@@ -48,7 +48,8 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        padding: 5px;
+        /* padding: 5px; */
+        margin: 0 5px;
 
         width: var(--search-width);
         height: var(--search-width);
