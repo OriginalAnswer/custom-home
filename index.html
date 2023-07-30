@@ -22,19 +22,25 @@
             <input type="radio" name="search-toggle" id="ym-toggle" class="dpnone">
 
             <form action="https://www.google.com/search" method="GET" target="blank" class="searchbar search-google">
-               <label for="google-toggle" class="search-icon">G</label>
+               <label for="google-toggle" class="search-icon">
+                  <i class="fa-brands fa-google search-site-icon"></i>
+               </label>
                <input type="text" id="google-input" name="q" placeholder="Google 검색">
-               <button class="search-icon search-submit google-submit">icon</button>
+               <button class="search-icon search-submit google-submit"><i class="fa-solid fa-magnifying-glass"></i></button>
             </form>
             <form action="https://www.youtube.com/results" target="blank" class="searchbar search-youtube">
-               <label for="youtube-toggle" class="search-icon">Y</label>
+               <label for="youtube-toggle" class="search-icon">
+                  Y
+               </label>
                <input type="text" id="youtube-input" name="q" placeholder="YouTube 검색">
-               <button class="search-icon search-submit youtube-submit">icon</button>
+               <button class="search-icon search-submit youtube-submit"><i class="fa-solid fa-magnifying-glass"></i></button>
             </form>
             <form action="https://music.youtube.com/search" target="blank" class="searchbar search-ym">
-               <label for="ym-toggle" class="search-icon">YM</label>
+               <label for="ym-toggle" class="search-icon">
+                  <i class="fa-solid fa-headphones search-site-icon"></i>
+               </label>
                <input type="text" id="ym-input" name="q" placeholder="YouTube Music 검색">
-               <button class="search-icon search-submit ym-submit">icon</button>
+               <button class="search-icon search-submit ym-submit"><i class="fa-solid fa-magnifying-glass"></i></button>
             </form>
          </div>
          
