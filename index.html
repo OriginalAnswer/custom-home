@@ -91,27 +91,37 @@
             </div>
             <div class="set-headtext">
                <textarea id="set-headtext" oninput="syncHeadText()" placeholder="type here."></textarea>
-               <label for="headtext-fontsize">font size</label>
+
+               <label for="headtext-fontsize" class="set-title">font size</label>
                <input type="range" id="headtext-fontsize" min="8"max="64" step="1" oninput="syncHeadTextFontsize()">
-               <span class="set-name headtext-fontwight">font wight</span>
-               <select id="search-mode" onchange="searchmode()">
+
+               <span class="set-title headtext-fontwight">font wight</span>
+               <select id="headtext-fontwight" onchange="headtextFontwight()">
                   <option value="light">light</option>
                   <option value="nomal" selected>nomal</option>
                   <option value="bold">bold</option>
                </select>
             </div>
+
             <div class="set-headtime">
-               <label for="headtime-fontsize" class="set-name">clock size</label>
+               <label for="headtime-fontsize" class="set-title">clock size</label>
                <input type="range" id="headtime-fontsize" min="8"max="150" step="1" oninput="syncHeadTimeSize()">
+
+               <span class="set-title headtime-fontwight">clock wight</span>
+               <select id="headtime-fontwight" onchange="headtextFontwight()">
+                  <option value="light">light</option>
+                  <option value="nomal" selected>nomal</option>
+                  <option value="bold">bold</option>
+               </select>
             </div>
             <div class="set-greet">
-               <label for="set-greet-name" class="set-name">username</label>
+               <label for="set-greet-name" class="set-title">username</label>
                <input type="text" id="set-greet-name" oninput="syncGreetName()">
             </div>
          </div>
          <div class="thinline"></div>
          <div class="searchmode">
-            <span class="set-name">search mode</span>
+            <span class="set-title">search mode</span>
             <select id="search-mode" onchange="searchmode()">
                <option value="default">default</option>
                <option value="minimum">minimum</option>

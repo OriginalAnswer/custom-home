@@ -58,9 +58,6 @@
         font-weight: bold;
         padding: 10px 0;
     }
-    & .set-name{
-        text-transform: uppercase;
-    }
 }
 .xtoggle{
     display: flex;
@@ -91,20 +88,10 @@
         width: 100%;
         padding: 10px;
         
-        text-transform: uppercase;
         text-align: center;
         border-radius: var(--border-radius-10);
     }
     
-    & .set-headtext{
-        flex-wrap: wrap;
-        & #set-headtext{
-            width: 100%;
-            padding-top: 10px;
-            text-align: center;
-            background: var();
-        }
-    }
     & .haedapp-align{
         gap:0;
         & label{
@@ -131,6 +118,19 @@
             border-bottom-right-radius: var(--border-radius-15);
         }
     }
+
+    & .set-headtext{
+        flex-wrap: wrap;
+        & #set-headtext{
+            width: 100%;
+            padding-top: 10px;
+            text-align: center;
+            background: var();
+        }
+    }
+    & .set-headtime{
+        flex-wrap: wrap;
+    }
 }
 /* -------------------------- */
 .searchmode{
@@ -140,4 +140,7 @@
     gap: 10px;
     width: 100%;
     padding: 10px;
+}
+.set-title{
+    text-transform: uppercase;
 }
