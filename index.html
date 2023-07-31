@@ -97,7 +97,7 @@
         <div class="set-headapp">
            <p>head information</p>
            <div class="haedapp-align">
-              <input type="radio" name="haedapp-align" class="dpnone" id="haedapp-align-left" value="left" onchange="handleAlignHeadapp(this.value)" checked>
+              <input type="radio" name="haedapp-align" class="dpnone" id="haedapp-align-left" value="left" onchange="handleAlignHeadapp(this.value)" >
               <input type="radio" name="haedapp-align" class="dpnone" id="haedapp-align-center" value="center" onchange="handleAlignHeadapp(this.value)">
               <input type="radio" name="haedapp-align" class="dpnone" id="haedapp-align-right" value="right" onchange="handleAlignHeadapp(this.value)">
               <label for="haedapp-align-left"class="haedapp-align-btn haedapp-align-left">LEFT</label>
@@ -108,7 +108,7 @@
               <textarea id="set-headtext" oninput="syncHeadText()" placeholder="type here."></textarea>
 
               <label for="headtext-fontsize" class="set-title">font size</label>
-              <input type="range" id="headtext-fontsize" min="8"max="64" step="1" oninput="syncHeadTextFontsize()">
+              <input type="range" id="headtext-fontsize" value="24" min="8"max="64" step="1" oninput="syncHeadTextFontsize()">
 
               <span class="set-title headtext-fontwight">font wight</span>
               <select id="headtext-fontwight" onchange="headtextFontwight()">
@@ -120,7 +120,7 @@
 
            <div class="set-headtime">
               <label for="headtime-fontsize" class="set-title">clock size</label>
-              <input type="range" id="headtime-fontsize" min="8"max="150" step="1" oninput="syncHeadTimeSize()">
+              <input type="range" id="headtime-fontsize" value="24" min="8"max="120" step="1" oninput="syncHeadTimeSize()">
 
               <span class="set-title headtime-fontwight">clock wight</span>
               <select id="headtime-fontwight" onchange="headtextFontwight()">

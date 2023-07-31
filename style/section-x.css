@@ -34,7 +34,7 @@
 
     background-color: var(--set-bgclr);
     backdrop-filter: var(--blur-10);
-    -webkit-backdrop-filter: var(--blur-10);
+    -webkit-backdrop-filter: var(--blur-10) var(--saturate-95);
     box-shadow: var(--box-shadow-inset-2);
     
     transition: all ease-in-out;
@@ -99,6 +99,7 @@
             width: 100%;
             padding: 8px 0;
             box-shadow: var(--box-shadow-inset-3);
+            background-color: var(--haedapp-align-bgclr);
             &:hover{
                 transform: scale(1.02);
             }

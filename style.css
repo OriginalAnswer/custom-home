@@ -14,9 +14,9 @@
   --clr-none:#00000000;
 
 
+  --hsla-saturation: 100%;
   --hsla-lightness: 100%;
-  --hsla-saturation: 0%;
-  --hsla-alpha: .25;
+  --hsla-alpha: .5;
 
   --blur-1: blur(1px);
   --blur-2: blur(2px);
@@ -25,7 +25,7 @@
   --blur-10: blur(10px);
   --blur-20: blur(20px);
 
-  --saturate-80: saturate(80%);
+  --saturate-95: saturate(95%);
 
   --brightness-97:brightness(97%);
   --brightness-85:brightness(85%);
