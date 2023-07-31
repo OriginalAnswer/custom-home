@@ -9,7 +9,7 @@ function apptext(v,n) {
     
     let textarea = document.getElementById(`${n}-app`);
     textarea.addEventListener("keyup", e => {
-        // textarea.style.height = 'auto';
+        textarea.style.height = 'auto';
         let scHeight = e.target.scrollHeight;
         textarea.style.height = `${scHeight}px`;
     })
