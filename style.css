@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Gowun+Dodum&family=Nanum+Gothic&family=Nanum+Myeongjo&display=swap');
 @import "./style/default.css";
 @import "./style/root.css";
 @import "./style/section-a.css";
@@ -6,7 +7,6 @@
 @import "./style/section-x.css";
 @import "./style/newapp.css";
 
-  @import url('https://fonts.googleapis.com/css2?family=Gowun+Dodum&family=Nanum+Gothic&family=Nanum+Myeongjo&display=swap');
 
 :root{
   --fff: #fff;
