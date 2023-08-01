@@ -6,6 +6,8 @@
 @import "./style/section-x.css";
 @import "./style/newapp.css";
 
+  @import url('https://fonts.googleapis.com/css2?family=Gowun+Dodum&family=Nanum+Gothic&family=Nanum+Myeongjo&display=swap');
+
 :root{
   --fff: #fff;
   --fffa: #ffffff4a;
@@ -78,6 +80,8 @@ html{
   height: 100vh;
 }
 body{
+  /*'Gowun Dodum','Nanum Gothic','Nanum Myeongjo'*/
+  font-family: Helvetica, 'Nanum Gothic',sans-serif ,serif;
     width: 100dvw;
     width: 100%;
     height: 100dvh;
@@ -86,6 +90,7 @@ body{
     background-color: var(--body-bgclr);
     backdrop-filter: var(--brightness-60);
     -webkit-scrollbar: none;
+
 }
 
 .dpnone{
