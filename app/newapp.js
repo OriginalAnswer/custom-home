@@ -54,23 +54,30 @@ function createNewapp(appObj) {
         localStorage.setItem(`${appId}`, JSON.stringify(indiObj));
     }
     else if (appObj.type == "task") {
-        app.innerHTML = `<input type="checkbox" id="${appId}-title" class="dpnone">
-        <div class="app-header">
-        <label for="${appId}-title" class="app-title toggle">${appObj.name}</label>
-        <input type="checkbox" id="${appId}-set" class="dpnone">
-        <label for="${appId}-set" class="app-set-icon toggle">i</label>
+        app.innerHTML = `<div class="app-header">
+            <input type="checkbox" id="${appId}-title" class="dpnone">
+            <label for="${appId}-title" class="app-title toggle">${appObj.name}</label>
+            <input type="checkbox" id="${appId}-set" class="dpnone">
+            <label for="${appId}-set" class="app-set-icon toggle">i</label>
         </div>
-        <form class="app-print">
-            <div class="task-bar">
-                <label for="task-input"><i class="fa-regular fa-pen-to-square"></i></label>
-                <input type="text" id="task-input" class="task-input" required>
-                <button type="submit"><i class="fa-solid fa-plus"></i></button>
+
+        <div class="app-print">
+            <form class="task-bar">
+                <label for="${appId}-input"><i class="fa-regular fa-pen-to-square"></i></label>
+                <input type="text" id="${appId}-input" oninput="newtask(this.value, ${appId})" class="task-input" required>
+                <button type="submit" ><i class="fa-solid fa-plus"></i></button>
+            </form>
+            <div id="${appId}-print" class="${appId}-show print">
             </div>
-            <div id="task-show" class="task-show">
-            </div>
-        </form>`;
+        </div>`;
         //Individual obj
         const indiObjArr = [];
+        // const indiObj = {
+        //     id: appId,
+        //     type: appObj.type,
+        //     content: ""
+        // }
+        // printTask(appId);
         localStorage.setItem(`${appId}`, JSON.stringify(indiObjArr));
     } 
     else if (appObj.type == "links") {
@@ -105,9 +112,10 @@ function printApp(appObj) {
     app.draggable = true;
     app.dataset.type = appObj.type;
 
+    const currentAppDataJSON = localStorage.getItem(appId);
+    const parsedCurrentAppData = JSON.parse(currentAppDataJSON);
+
     if (appObj.type == "memo") {
-        const currentAppDataJSON = localStorage.getItem(appId);
-        const parsedCurrentAppData = JSON.parse(currentAppDataJSON);
         const currentContent = parsedCurrentAppData.content;
         console.log(currentContent);
 
@@ -138,21 +146,25 @@ function printApp(appObj) {
     
     } 
     else if (appObj.type == "task") {
-        app.innerHTML = `<input type="checkbox" id="${appId}-title" class="dpnone">
+        console.log(parsedCurrentAppData);
+        app.innerHTML = `
         <div class="app-header">
-        <label for="${appId}-title" class="app-title toggle">${appObj.name}</label>
-        <input type="checkbox" id="${appId}-set" class="dpnone">
-        <label for="${appId}-set" class="app-set-icon toggle">i</label>
+            <input type="checkbox" id="${appId}-title" class="dpnone">
+            <label for="${appId}-title" class="app-title toggle">${appObj.name}</label>
+            <input type="checkbox" id="${appId}-set" class="dpnone">
+            <label for="${appId}-set" class="app-set-icon toggle">i</label>
         </div>
-        <form class="app-print">
-            <div class="task-bar">
-                <label for="task-input"><i class="fa-regular fa-pen-to-square"></i></label>
-                <input type="text" id="task-input" class="task-input" required>
-                <button type="submit"><i class="fa-solid fa-plus"></i></button>
-            </div>
-            <div id="task-show" class="task-show">
-            </div>
-        </form>`;
+
+        <div class="app-print">
+
+            <form class="task-bar" id="${appId}-form">
+                <label for="${appId}-input"><i class="fa-regular fa-pen-to-square"></i></label>
+                <input type="text" id="${appId}-input" name="${appId}" class="task-input" required>
+                <button type="submit" name="${appId}"" ><i class="fa-solid fa-plus"></i></button>
+            </form>
+
+            <div id="${appId}-print" class="${appId}-show print"></div>
+        </div>`;
     } 
     else if (appObj.type == "links") {
         app.innerHTML = `<input type="checkbox" id="${appId}-title" class="dpnone">
@@ -174,7 +186,9 @@ function printApp(appObj) {
     } 
     
     sectionC.appendChild(app);
-    
+
+    const currentForm = document.getElementById(`${appId}-form`);
+    console.log(currentForm);
 }
 function loadAppsArr() {
     const appsArrJson = localStorage.getItem('appsArr');
