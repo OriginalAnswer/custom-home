@@ -47,15 +47,44 @@ searchbar
     & .search-submit{display: none;}
     & .fa-youtube{color: red;}
 }
+/* ===== */
+.search-youtube{
+    border: 1px rgba(178, 34, 34, 0.518) solid;
+    box-shadow: 0 5px 10px 0 rgba(205, 130, 130, 0.283);
+}
+.search-google{
+    border: 1px rgb(251, 251, 251) solid;
+    box-shadow: 0 5px 10px 0 rgba(203, 203, 203, 0.283);
+}
+.search-ym{
+    border: 1px rgb(233, 157, 64) solid;
+    box-shadow: 0 5px 10px 0 rgba(206, 183, 92, 0.283);
+}
+
+
+
+
 /* ============== */
 .searchbar input[type=text], 
 .search-submit{
     display: none;
 }
 
-#google-toggle:checked ~ .search-google{width: 100%;}
-#youtube-toggle:checked ~ .search-youtube{width: 100%;}
-#ym-toggle:checked ~ .search-ym{width: 100%;}
+#youtube-toggle:checked ~ .search-youtube{
+    width: 100%;
+    border: 1px orangered solid;
+    box-shadow: 0 5px 10px 0 rgba(234, 0, 0, 0.283);
+}
+#google-toggle:checked ~ .search-google{
+    width: 100%;
+    border: 1px rgb(251, 251, 251) solid;
+    box-shadow: 0 5px 10px 0 rgba(112, 112, 112, 0.283);
+}
+#ym-toggle:checked ~ .search-ym{
+    width: 100%;
+    border: 1px rgb(243, 162, 10) solid;
+    box-shadow: 0 5px 10px 0 rgba(208, 136, 1, 0.283);
+}
 
 #google-toggle:checked ~ .searchbar #google-input,
 #google-toggle:checked ~ .searchbar .google-submit{

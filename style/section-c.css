@@ -28,13 +28,19 @@
         margin-bottom: auto;
         
         background-color: var(--fffa2);
-        /* backdrop-filter: var(--blur-10); */
+        /* background-color: var(--app-bgclr); */
         
-        /* border: var(--border-1); */ 
-        /* border: 1px solid #9e9e9e5b; */
+        border: var(--app-border); 
         border-radius: var(--border-radius-20);
-        /* box-shadow: var(--box-shadow-1), var(--box-shadow-inset-3); */
-
+        box-shadow: var(--app-box-shadow-1), var(--app-box-shadow-inset-1);
+        &:hover{
+            border: var(--app-border); 
+            box-shadow: var(--app-box-shadow-2), var(--app-box-shadow-inset-2);
+        }
+        &:has(:focus){
+            border: var(--app-border); 
+            box-shadow: var(--app-box-shadow-2), var(--app-box-shadow-inset-2);
+        }
         
         /* @media (max-width: 1000px) {
             flex-basis: 33%;
