@@ -4,6 +4,9 @@
 #xtoggle:checked ~ .back{
     transform: translateX(0);
 }
+#xtoggle:checked ~ .xtoggle{
+    transform: rotate(70deg);
+}
 
 .xtoggle{z-index: 102;}
 .back{z-index: 100;}
@@ -32,10 +35,18 @@
     right: 0;
     font-size: 2em;
     /* background-color: #fff; */
-    
+    transition: transform .4s linear;
+    color: #ffffff40;
+    -webkit-text-stroke: 2px rgb(0, 0, 0);
     &:hover{
         cursor: pointer;
+        color: #000000;
+        /* animation: roll 2s linear infinite; */
     }
+}
+@keyframes roll {
+    0%{transform: rotate(0);}
+    100%{transform: rotate(360deg);}
 }
 /* ------------------------- */
 .section-x{
