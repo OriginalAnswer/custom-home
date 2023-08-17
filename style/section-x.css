@@ -20,6 +20,24 @@
 
     /* background-color: var(--set-back-clr); */
 }
+.xtoggle{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    height: 50px;
+    /* border: 1px #000 solid; */
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    font-size: 2em;
+    /* background-color: #fff; */
+    
+    &:hover{
+        cursor: pointer;
+    }
+}
+/* ------------------------- */
 .section-x{
     
     position: fixed;
@@ -61,23 +79,7 @@
         padding: 10px 0;
     }
 }
-.xtoggle{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 50px;
-    height: 50px;
-    border: 1px #000 solid;
-    position: fixed;
-    bottom: 0;
-    right: 0;
 
-    background-color: #fff;
-    
-    &:hover{
-        cursor: pointer;
-    }
-}
 
 /* ------------------------- */
 .set-headapp{
