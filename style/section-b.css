@@ -48,16 +48,16 @@ searchbar
     & .fa-youtube{color: red;}
 }
 /* ===== */
-.search-youtube{
-    border: 1px rgba(178, 34, 34, 0.518) solid;
-    box-shadow: 0 5px 10px 0 rgba(205, 130, 130, 0.283);
-}
 .search-google{
-    border: 1px rgb(251, 251, 251) solid;
+    border: 1px var(--clr-search-g-border) solid;
     box-shadow: 0 5px 10px 0 rgba(203, 203, 203, 0.283);
 }
+.search-youtube{
+    border: 1px var(--clr-search-y-border) solid;
+    box-shadow: 0 5px 10px 0 rgba(205, 130, 130, 0.283);
+}
 .search-ym{
-    border: 1px rgb(233, 157, 64) solid;
+    border: 1px var(--clr-search-ym-border) solid;
     box-shadow: 0 5px 10px 0 rgba(206, 183, 92, 0.283);
 }
 
