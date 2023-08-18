@@ -87,7 +87,8 @@
                 border-radius: var(--border-radius-15);
                 outline: none;
                 background-color: inherit;
-                font-size: 1rem;
+                font-size: .9rem;
+                font-family: 'Nanum Gothic',Helvetica, sans-serif ,serif;
                 /* box-shadow: var(--box-shadow-inset-3); */
                 /* border: 1px solid #9e9e9e5b; */
                 &::-webkit-scrollbar{
