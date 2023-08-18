@@ -31,13 +31,14 @@
     height: 50px;
     /* border: 1px #000 solid; */
     position: fixed;
-    bottom: 0;
+    top: 0;
     right: 0;
-    font-size: 2em;
+    font-size: 1.5em;
     /* background-color: #fff; */
     transition: transform .4s linear;
-    color: #ffffff40;
-    -webkit-text-stroke: 2px rgb(0, 0, 0);
+    color: #000000;
+    /* color: #ffffff40;
+    -webkit-text-stroke: 2px rgb(0, 0, 0); */
     &:hover{
         cursor: pointer;
         color: #000000;

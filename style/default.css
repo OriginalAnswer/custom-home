@@ -5,6 +5,9 @@
   margin: 0;
   padding: 0;
   text-decoration: none;
+  &::-webkit-scrollbar{
+    display: none;
+  }
 }
 
 input, select, textarea{

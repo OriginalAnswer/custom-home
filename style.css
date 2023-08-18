@@ -89,14 +89,16 @@ html{
 body{
   /*'Gowun Dodum','Nanum Gothic','Nanum Myeongjo'*/
   font-family: Helvetica, 'Nanum Gothic',sans-serif ,serif;
-    width: 100dvw;
-    width: 100%;
-    height: 100dvh;
-    overflow-y: scroll;
-    overflow-x: hidden;
-    background-color: var(--body-bgclr);
-    backdrop-filter: var(--brightness-60);
-    -webkit-scrollbar: none;
+  width: 100dvw;
+  width: 100%;
+  height: 100dvh;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  background-color: var(--body-bgclr);
+  backdrop-filter: var(--brightness-60);
+  &::-webkit-scrollbar{
+    display: none;
+  }
 
 
     max-width: 600px;
