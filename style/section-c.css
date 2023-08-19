@@ -110,7 +110,7 @@
                 /* box-shadow: var(--box-shadow-1), var(--box-shadow-inset-3); */
 
                 & input{
-                    font-size: 1rem;
+                    font-size: .98rem;
                     width: 100%;
                     height: var(--input-height-15);
                     padding: 0px 5px;
@@ -131,14 +131,15 @@
                 width: 100%;
                 /* padding: 15px 0px; */
                 & .task-item{
-                    padding: 15px 12px;
-                    margin-bottom: 10px;
+                    padding: 5px 12px;
+                    /* margin-bottom: 5px; */
                     font-size: .9em;
                     width: 100%;
                     height: auto;
                     display: block;
                     display: flex;
                     flex-wrap: nowrap;
+                    /* flex-grow:0; */
                     justify-content: space-between;
                     align-items: center;
                     border-radius: var(--radius-round);
@@ -149,14 +150,17 @@
                         &:hover{color: var(--color-font);}
                     }
                     & span{
-                        width: 100%;
+                        width: calc(100% - 50px);
                         padding: 0 15px;
-                        /* word-wrap: break-word; */
+                        word-wrap: break-word;
                         text-align: center;
                     }
                     & input[type=checkbox]{
                         width: 15px;
                         height: 15px;
+                    }
+                    &:nth-child(1){
+                        margin-top: 10px;
                     }
                 }
             }
