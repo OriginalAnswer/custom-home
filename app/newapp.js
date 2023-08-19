@@ -55,37 +55,38 @@ function createNewapp(appObj) {
     }
     else if (appObj.type == "task") {
         app.innerHTML = `<div class="app-header">
-            <input type="checkbox" id="${appId}-title" class="dpnone">
-            <label for="${appId}-title" class="app-title toggle">${appObj.name}</label>
-            <input type="checkbox" id="${appId}-set" class="dpnone">
-            <label for="${appId}-set" class="app-set-icon toggle">i</label>
+            <input type="checkbox" id="title-${appId}" class="dpnone">
+            <label for="title-${appId}" class="app-title toggle">${appObj.name}</label>
+            <input type="checkbox" id="set-${appId}" class="dpnone">
+            <label for="set-${appId}" class="app-set-icon toggle">i</label>
         </div>
 
         <div class="app-print">
-            <form class="task-bar">
-                <label for="${appId}-input"><i class="fa-regular fa-pen-to-square"></i></label>
-                <input type="text" id="${appId}-input" oninput="newtask(this.value, ${appId})" class="task-input" required>
-                <button type="submit" ><i class="fa-solid fa-plus"></i></button>
+
+            <form class="task-bar" id="form-${appId}" name="${appId}" onsubmit="appTask()">
+                <label for="input-${appId}"><i class="fa-regular fa-pen-to-square"></i></label>
+                <input type="text" id="input-${appId}" name="${appId}" class="task-input" required>
+                <button type="submit" name="${appId}"" ><i class="fa-solid fa-plus"></i></button>
             </form>
-            <div id="${appId}-print" class="${appId}-show print">
-            </div>
+
+            <div class="show-${appId} task-show"></div>
         </div>`;
         //Individual obj
         const indiObjArr = [];
         // const indiObj = {
-        //     id: appId,
-        //     type: appObj.type,
-        //     content: ""
+        //     id: Date.now(),
+        //     content: "test"
         // }
+        // indiObjArr.push(indiObj)
         // printTask(appId);
         localStorage.setItem(`${appId}`, JSON.stringify(indiObjArr));
     } 
     else if (appObj.type == "links") {
-        app.innerHTML = `<input type="checkbox" id="${appId}-title" class="dpnone">
+        app.innerHTML = `<input type="checkbox" id="title-${appId}" class="dpnone">
         <div class="app-header">
-        <label for="${appId}-title" class="app-title toggle">${appObj.name}</label>
-        <input type="checkbox" id="${appId}-set" class="dpnone">
-        <label for="${appId}-set" class="app-set-icon toggle">i</label>
+        <label for="title-${appId}" class="app-title toggle">${appObj.name}</label>
+        <input type="checkbox" id="set-${appId}" class="dpnone">
+        <label for="set-${appId}" class="app-set-icon toggle">i</label>
         </div>
         <form class="app-print">
             <div>
@@ -119,17 +120,17 @@ function printApp(appObj) {
         const currentContent = parsedCurrentAppData.content;
         app.innerHTML = `
         <div class="app-header">
-        <input type="checkbox" id="${appId}-title" class="dpnone" onchange="">
-            <label for="${appId}-title" class="app-title toggle dpnone">${appObj.name}</label>
-            <input type="checkbox" id="${appId}-set" class="dpnone">
-            <label for="${appId}-set" class="app-set-icon  toggle">i</label>
+        <input type="checkbox" id="title-${appId}" class="dpnone" onchange="">
+            <label for="title"-${appId} class="app-title toggle dpnone">${appObj.name}</label>
+            <input type="checkbox" id="set-${appId}" class="dpnone">
+            <label for="set-${appId}" class="app-set-icon  toggle">i</label>
         </div>
         <div class="app-print">
-            <textarea id="${appId}-app" oninput="apptext(this.value, ${appId})" rows="1" placeholder="type here...">${currentContent}</textarea>
+            <textarea id="app-${appId}" oninput="apptext(this.value, ${appId})" rows="1" placeholder="type here...">${currentContent}</textarea>
         </div>
         `;
         function appMemoResize() {
-            let textarea = document.getElementById(`${appId}-app`);    
+            let textarea = document.getElementById(`app-${appId}`);    
          
             let scHeight = textarea.scrollHeight;
             let style = window.getComputedStyle(textarea);
@@ -143,34 +144,33 @@ function printApp(appObj) {
     
     } 
     else if (appObj.type == "task") {
-        const currentContent = parsedCurrentAppData.content;
-        console.log(parsedCurrentAppData);
-        console.log(currentContent);
+        // console.log(parsedCurrentAppData);
         app.innerHTML = `
         <div class="app-header">
-            <input type="checkbox" id="${appId}-title" class="dpnone">
-            <label for="${appId}-title" class="app-title toggle">${appObj.name}</label>
-            <input type="checkbox" id="${appId}-set" class="dpnone">
-            <label for="${appId}-set" class="app-set-icon toggle">i</label>
+            <input type="checkbox" id="title-${appId}" class="dpnone">
+            <label for="title-${appId}" class="app-title toggle">${appObj.name}</label>
+            <input type="checkbox" id="set-${appId}" class="dpnone">
+            <label for="set-${appId}" class="app-set-icon toggle">i</label>
         </div>
 
         <div class="app-print">
 
-            <form class="task-bar" id="${appId}-form">
-                <label for="${appId}-input"><i class="fa-regular fa-pen-to-square"></i></label>
-                <input type="text" id="${appId}-input" name="${appId}" class="task-input" required>
-                <button type="submit" name="${appId}"" ><i class="fa-solid fa-plus"></i></button>
+            <form class="task-bar" id="form-${appId}" name="${appId}" onsubmit="appTask()">
+                <label for="input-${appId}"><i class="fa-regular fa-pen-to-square"></i></label>
+                <input type="text" id="input-${appId}" name="${appId}" class="task-input" required>
+                <button type="submit" name="${appId}" ><i class="fa-solid fa-plus"></i></button>
             </form>
 
-            <div id="${appId}-app" class="task-print"></div>
+            <div class="show-${appId} task-show"></div>
         </div>`;
+                 
     } 
     else if (appObj.type == "links") {
-        app.innerHTML = `<input type="checkbox" id="${appId}-title" class="dpnone">
+        app.innerHTML = `<input type="checkbox" id="title-${appId}" class="dpnone">
         <div class="app-header">
-        <label for="${appId}-title" class="app-title toggle">${appObj.name}</label>
-        <input type="checkbox" id="${appId}-set" class="dpnone">
-        <label for="${appId}-set" class="app-set-icon toggle">i</label>
+        <label for="title-${appId}" class="app-title toggle">${appObj.name}</label>
+        <input type="checkbox" id="set-${appId}" class="dpnone">
+        <label for="set-${appId}" class="app-set-icon toggle">i</label>
         </div>
         <form class="app-print">
             <div>
@@ -185,9 +185,11 @@ function printApp(appObj) {
     } 
     
     sectionC.appendChild(app);
-
-    // const currentForm = document.getElementById(`${appId}-form`);
-    // console.log(currentForm);
+    // const currentShow = document.querySelector(`.show-${appId}`);
+    // console.log(currentShow);
+    console.log(parsedCurrentAppData);
+    parsedCurrentAppData.forEach(element => printTask(element, `show-${appId}`, appId));
+    // printTask(parsedCurrentAppData, `show-${appId}`, appId);//어레이, 클래스, 아이디
 }
 function loadAppsArr() {
     const appsArrJson = localStorage.getItem('appsArr');

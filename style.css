@@ -58,6 +58,7 @@
   
   --newapp-back-clr: #8484845d;
   --newapp-bgclr: #ffffff;
+  --clr-newapp-hover-bg-btn:#e0e0e0;
   
   --app-bgclr: hsla(0, 0%, 89%, 0.32);
   --app-border: 1px solid rgba(236, 236, 236, 0.83);
@@ -73,7 +74,12 @@
 
   --app-set-icon-size: 2rem;
 
-  --clr-search-y-border:rgba(178, 34, 34, 0.518);
+  --clr-search-g-border:rgb(221, 221, 221);
+  --clr-search-y-border:rgba(227, 46, 46, 0.795);
+  --clr-search-ym-border:rgb(202, 137, 56);
+  --clr-focus-search-g-border:rgb(251, 251, 251);
+  --clr-focus-search-y-border:orangered;
+  --clr-focus-search-ym-border:rgb(243, 162, 10);
 }
 @media (prefers-color-scheme: dark) {
   :root{
@@ -126,6 +132,7 @@
     
     --newapp-back-clr: #a3a3a35d;
     --newapp-bgclr: #000000;
+    --clr-newapp-hover-bg-btn:#1b1b1b;
     
     --app-bgclr: hsla(0, 0%, 23%, 0.32);
     --app-border: 1px solid rgba(79, 79, 79, 0.83);
@@ -140,15 +147,17 @@
     --haedapp-align-bgclr:#1d1d1d;
   
     --app-set-icon-size: 2rem;
-    --clr-search-g-border:rgb(221, 221, 221);
+    --clr-search-g-border:rgb(188, 184, 184);
     --clr-search-y-border:rgba(227, 46, 46, 0.795);
     --clr-search-ym-border:rgb(202, 137, 56);
     /* --clr-search-g-border:rgba(221, 221, 221, 0);
     --clr-search-y-border:rgba(227, 46, 46, 0);
     --clr-search-ym-border:rgba(202, 136, 56, 0); */
+    --clr-focus-search-g-border:rgb(191, 189, 189);
+    --clr-focus-search-y-border:rgba(227, 46, 46, 0.795);
+    --clr-focus-search-ym-border:rgb(202, 137, 56);
   }
 }
-
 
 html{
   width: 100dvw;

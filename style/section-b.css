@@ -70,19 +70,19 @@ searchbar
     display: none;
 }
 
-#youtube-toggle:checked ~ .search-youtube{
-    width: 100%;
-    border: 1px orangered solid;
-    box-shadow: 0 5px 10px 0 rgba(234, 0, 0, 0.283);
-}
 #google-toggle:checked ~ .search-google{
     width: 100%;
-    border: 1px rgb(251, 251, 251) solid;
+    border: 1px var(--clr-focus-search-g-border) solid;
     box-shadow: 0 5px 10px 0 rgba(112, 112, 112, 0.283);
+}
+#youtube-toggle:checked ~ .search-youtube{
+    width: 100%;
+    border: 1px var(--clr-focus-search-y-border) solid;
+    box-shadow: 0 5px 10px 0 rgba(234, 0, 0, 0.283);
 }
 #ym-toggle:checked ~ .search-ym{
     width: 100%;
-    border: 1px rgb(243, 162, 10) solid;
+    border: 1px var(--clr-focus-search-ym-border) solid;
     box-shadow: 0 5px 10px 0 rgba(208, 136, 1, 0.283);
 }
 
