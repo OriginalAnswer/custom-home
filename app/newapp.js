@@ -189,7 +189,9 @@ function printApp(appObj) {
     // const currentShow = document.querySelector(`.show-${appId}`);
     // console.log(currentShow);
     console.log(parsedCurrentAppData);
-    parsedCurrentAppData.forEach(element => printTask(element, `show-${appId}`, appId));
+    if (appObj.type == "task") {   
+        parsedCurrentAppData.forEach(element => printTask(element, `show-${appId}`, appId));
+    }
     // printTask(parsedCurrentAppData, `show-${appId}`, appId);//어레이, 클래스, 아이디
 }
 function loadAppsArr() {
