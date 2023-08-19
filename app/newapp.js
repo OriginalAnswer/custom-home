@@ -117,8 +117,6 @@ function printApp(appObj) {
 
     if (appObj.type == "memo") {
         const currentContent = parsedCurrentAppData.content;
-        console.log(currentContent);
-
         app.innerHTML = `
         <div class="app-header">
         <input type="checkbox" id="${appId}-title" class="dpnone" onchange="">
@@ -130,7 +128,6 @@ function printApp(appObj) {
             <textarea id="${appId}-app" oninput="apptext(this.value, ${appId})" rows="1" placeholder="type here...">${currentContent}</textarea>
         </div>
         `;
-        
         function appMemoResize() {
             let textarea = document.getElementById(`${appId}-app`);    
          
@@ -146,7 +143,9 @@ function printApp(appObj) {
     
     } 
     else if (appObj.type == "task") {
+        const currentContent = parsedCurrentAppData.content;
         console.log(parsedCurrentAppData);
+        console.log(currentContent);
         app.innerHTML = `
         <div class="app-header">
             <input type="checkbox" id="${appId}-title" class="dpnone">
@@ -163,7 +162,7 @@ function printApp(appObj) {
                 <button type="submit" name="${appId}"" ><i class="fa-solid fa-plus"></i></button>
             </form>
 
-            <div id="${appId}-print" class="${appId}-show print"></div>
+            <div id="${appId}-app" class="task-print"></div>
         </div>`;
     } 
     else if (appObj.type == "links") {
@@ -187,8 +186,8 @@ function printApp(appObj) {
     
     sectionC.appendChild(app);
 
-    const currentForm = document.getElementById(`${appId}-form`);
-    console.log(currentForm);
+    // const currentForm = document.getElementById(`${appId}-form`);
+    // console.log(currentForm);
 }
 function loadAppsArr() {
     const appsArrJson = localStorage.getItem('appsArr');
