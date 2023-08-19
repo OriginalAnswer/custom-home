@@ -187,9 +187,6 @@ body{
 
 }
 
-.dpnone{
-    display: none;
-}
 .thinline{
   transform: scaleY(.3);
   margin: 10px 0;
@@ -202,3 +199,7 @@ body{
   border: 1px solid #000;
 }
 /* -------------------------------------- */
+
+.dpnone{
+    display: none;
+}

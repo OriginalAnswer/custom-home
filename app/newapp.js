@@ -54,12 +54,13 @@ function createNewapp(appObj) {
         localStorage.setItem(`${appId}`, JSON.stringify(indiObj));
     }
     else if (appObj.type == "task") {
-        app.innerHTML = `<div class="app-header">
-            <input type="checkbox" id="title-${appId}" class="dpnone">
-            <label for="title-${appId}" class="app-title toggle">${appObj.name}</label>
-            <input type="checkbox" id="set-${appId}" class="dpnone">
-            <label for="set-${appId}" class="app-set-icon toggle">i</label>
-        </div>
+        // <div class="app-header">
+        //     <input type="checkbox" id="title-${appId}" class="dpnone">
+        //     <label for="title-${appId}" class="app-title toggle">${appObj.name}</label>
+        //     <input type="checkbox" id="set-${appId}" class="dpnone">
+        //     <label for="set-${appId}" class="app-set-icon toggle">i</label>
+        // </div>
+        app.innerHTML = `
 
         <div class="app-print">
 
@@ -145,13 +146,13 @@ function printApp(appObj) {
     } 
     else if (appObj.type == "task") {
         // console.log(parsedCurrentAppData);
+        // <div class="app-header">
+        //     <input type="checkbox" id="title-${appId}" class="dpnone">
+        //     <label for="title-${appId}" class="app-title toggle">${appObj.name}</label>
+        //     <input type="checkbox" id="set-${appId}" class="dpnone">
+        //     <label for="set-${appId}" class="app-set-icon toggle">i</label>
+        // </div>
         app.innerHTML = `
-        <div class="app-header">
-            <input type="checkbox" id="title-${appId}" class="dpnone">
-            <label for="title-${appId}" class="app-title toggle">${appObj.name}</label>
-            <input type="checkbox" id="set-${appId}" class="dpnone">
-            <label for="set-${appId}" class="app-set-icon toggle">i</label>
-        </div>
 
         <div class="app-print">
 
