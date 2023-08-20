@@ -38,8 +38,14 @@ function createNewapp(appObj) {
         <div class="app-header">
             <input type="checkbox" id="${appId}-title" class="dpnone" onchange="">
             <label for="${appId}-title" class="app-title toggle dpnone">${appObj.name}</label>
-            <input type="checkbox" id="${appId}-set" class="dpnone">
+            <input type="checkbox" id="${appId}-set" class="dpnone" onclick="del()">
             <label for="${appId}-set" class="app-set-icon  toggle">i</label>
+            <button onclick="appModal(${appId})">
+                <i class="fa-solid fa-ellipsis-vertical"></i>
+            </button>
+            <dialog id="dialog-${appId}">
+            test
+            </dialog>
         </div>
         <div class="app-print">
             <textarea id="${appId}-app" oninput="apptext(this.value, ${appId})" rows="1" placeholder="type here..."></textarea>
@@ -54,13 +60,22 @@ function createNewapp(appObj) {
         localStorage.setItem(`${appId}`, JSON.stringify(indiObj));
     }
     else if (appObj.type == "task") {
-        // <div class="app-header">
-        //     <input type="checkbox" id="title-${appId}" class="dpnone">
-        //     <label for="title-${appId}" class="app-title toggle">${appObj.name}</label>
-        //     <input type="checkbox" id="set-${appId}" class="dpnone">
-        //     <label for="set-${appId}" class="app-set-icon toggle">i</label>
-        // </div>
         app.innerHTML = `
+        <div class="app-header">
+            <input type="checkbox" id="title-${appId}" class="dpnone">
+            <label for="title-${appId}" class="app-title toggle">${appObj.name}</label>
+            <input type="checkbox" id="set-${appId}" data-group="${appId}" onclick="del()"
+            class="dpnone">
+            <label for="set-${appId}" class="app-set-icon toggle">i</label>
+            <button onclick="appModal(${appId})">
+                <i class="fa-solid fa-ellipsis-vertical"></i>
+            </button>
+            <dialog id="dialog-${appId}">
+            test
+            </dialog>
+        </div>
+      test
+     </dialog>
 
         <div class="app-print">
 
@@ -86,7 +101,7 @@ function createNewapp(appObj) {
         app.innerHTML = `<input type="checkbox" id="title-${appId}" class="dpnone">
         <div class="app-header">
         <label for="title-${appId}" class="app-title toggle">${appObj.name}</label>
-        <input type="checkbox" id="set-${appId}" class="dpnone">
+        <input type="checkbox" id="set-${appId}" data-group="${appId}" class="dpnone">
         <label for="set-${appId}" class="app-set-icon toggle">i</label>
         </div>
         <form class="app-print">
@@ -123,8 +138,14 @@ function printApp(appObj) {
         <div class="app-header">
         <input type="checkbox" id="title-${appId}" class="dpnone" onchange="">
             <label for="title"-${appId} class="app-title toggle dpnone">${appObj.name}</label>
-            <input type="checkbox" id="set-${appId}" class="dpnone">
+            <input type="checkbox" id="set-${appId}" data-group="${appId}"onclick="del()" class="dpnone">
             <label for="set-${appId}" class="app-set-icon  toggle">i</label>
+            <button onclick="appModal(${appId})">
+                <i class="fa-solid fa-ellipsis-vertical"></i>
+            </button>
+            <dialog id="dialog-${appId}">
+            test
+            </dialog>
         </div>
         <div class="app-print">
             <textarea id="app-${appId}" oninput="apptext(this.value, ${appId})" rows="1" placeholder="type here...">${currentContent}</textarea>
@@ -146,22 +167,25 @@ function printApp(appObj) {
     } 
     else if (appObj.type == "task") {
         // console.log(parsedCurrentAppData);
-        // <div class="app-header">
-        //     <input type="checkbox" id="title-${appId}" class="dpnone">
-        //     <label for="title-${appId}" class="app-title toggle">${appObj.name}</label>
-        //     <input type="checkbox" id="set-${appId}" class="dpnone">
-        //     <label for="set-${appId}" class="app-set-icon toggle">i</label>
-        // </div>
         app.innerHTML = `
-
+        <div class="app-header">
+            <input type="checkbox" id="title-${appId}" class="dpnone">
+            <label for="title-${appId}" class="app-title toggle">${appObj.name}</label>
+            <input type="checkbox" id="set-${appId}" data-group="${appId}" class="dpnone" onclick="del()">
+            <label for="set-${appId}" class="app-set-icon toggle">i</label>
+            <button onclick="appModal(${appId})">
+                <i class="fa-solid fa-ellipsis-vertical"></i>
+            </button>
+            <dialog id="dialog-${appId}">
+                test
+            </dialog>
+        </div>
         <div class="app-print">
-
             <form class="task-bar" id="form-${appId}" name="${appId}" onsubmit="appTask()">
                 <label for="input-${appId}"><i class="fa-regular fa-pen-to-square"></i></label>
                 <input type="text" id="input-${appId}" name="${appId}" class="task-input" required>
                 <button type="submit" name="${appId}" ><i class="fa-solid fa-plus"></i></button>
             </form>
-
             <div class="show-${appId} task-show"></div>
         </div>`;
                  
@@ -170,7 +194,7 @@ function printApp(appObj) {
         app.innerHTML = `<input type="checkbox" id="title-${appId}" class="dpnone">
         <div class="app-header">
         <label for="title-${appId}" class="app-title toggle">${appObj.name}</label>
-        <input type="checkbox" id="set-${appId}" class="dpnone">
+        <input type="checkbox" id="set-${appId}" onchange="appModal()" class="dpnone">
         <label for="set-${appId}" class="app-set-icon toggle">i</label>
         </div>
         <form class="app-print">
