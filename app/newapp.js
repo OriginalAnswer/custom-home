@@ -70,7 +70,7 @@ function createNewapp(appObj) {
             </dialog>
         </div>
         <div class="app-print">
-            <textarea id="${appId}" oninput="apptext(this.value, ${appId})" rows="1" placeholder="type here...">${currentContent}</textarea>
+            <textarea id="${appId}" oninput="apptext(this.value, ${appId})" rows="1" placeholder="type here..."></textarea>
         </div>
         `;
         //Individual obj
