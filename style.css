@@ -80,6 +80,8 @@
   --clr-focus-search-g-border:rgb(251, 251, 251);
   --clr-focus-search-y-border:orangered;
   --clr-focus-search-ym-border:rgb(243, 162, 10);
+
+  --clr-item-checked-task:#adadad;
 }
 @media (prefers-color-scheme: dark) {
   :root{

@@ -146,7 +146,7 @@
                     background: var(--color-card-input);
                     & i{
                         cursor: pointer;
-                        color: #adadad;
+                        color: var(--clr-item-checked-task);
                         &:hover{color: var(--color-font);}
                     }
                     & span{
@@ -158,6 +158,10 @@
                     & input[type=checkbox]{
                         width: 15px;
                         height: 15px;
+                    }
+                    & input[type=checkbox]:checked + span {
+                        text-decoration: line-through;
+                        color: var(--clr-item-checked-task);
                     }
                     &:nth-child(1){
                         margin-top: 10px;
