@@ -398,7 +398,7 @@ function dragOver(event) {
 }
 
 function drop(event) {
-    event.preventDefault();
+    event.preventDefault(); 
     const afterElement = getDragAfterElement(event.clientY);
     const isSameContainer = afterElement?.parentNode === sectionC;
 
