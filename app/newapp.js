@@ -30,16 +30,16 @@ function createNewapp(appObj) {
     const app = document.createElement('div');
     const appId = appObj.id;
     app.classList.add('app');
-    app.id = appId;
+    app.id = `app-${appId}`;
     app.draggable = true;
     app.dataset.type = appObj.type;
     if (appObj.type == 'memo') {
         app.innerHTML = `
         <div class="app-header">
-            <input type="checkbox" id="${appId}-title" class="dpnone" onchange="">
-            <label for="${appId}-title" class="app-title toggle dpnone">${appObj.name}</label>
-            <input type="checkbox" id="${appId}-set" class="dpnone" onclick="del()">
-            <label for="${appId}-set" class="app-set-icon  toggle">i</label>
+            <input type="checkbox" id="title-${appId}" class="dpnone" onchange="">
+            <label for="title-${appId}" class="app-title toggle dpnone">${appObj.name}</label>
+            <input type="checkbox" id="set-${appId}" class="dpnone" onclick="del(${appId})">
+            <label for="set-${appId}" class="app-set-icon  toggle">x</label>
             <button onclick="appModal(${appId})">
                 <i class="fa-solid fa-ellipsis-vertical"></i>
             </button>
@@ -62,11 +62,10 @@ function createNewapp(appObj) {
     else if (appObj.type == "task") {
         app.innerHTML = `
         <div class="app-header">
-            <input type="checkbox" id="title-${appId}" class="dpnone">
+            <input type="checkbox" id="title-${appId}" class="dpnone" onchange="">
             <label for="title-${appId}" class="app-title toggle">${appObj.name}</label>
-            <input type="checkbox" id="set-${appId}" data-group="${appId}" onclick="del()"
-            class="dpnone">
-            <label for="set-${appId}" class="app-set-icon toggle">i</label>
+            <input type="checkbox" id="set-${appId}" class="dpnone" onclick="del(${appId})">
+            <label for="set-${appId}" class="app-set-icon  toggle">x</label>
             <button onclick="appModal(${appId})">
                 <i class="fa-solid fa-ellipsis-vertical"></i>
             </button>
@@ -98,11 +97,18 @@ function createNewapp(appObj) {
         localStorage.setItem(`${appId}`, JSON.stringify(indiObjArr));
     } 
     else if (appObj.type == "links") {
-        app.innerHTML = `<input type="checkbox" id="title-${appId}" class="dpnone">
+        app.innerHTML = `
         <div class="app-header">
-        <label for="title-${appId}" class="app-title toggle">${appObj.name}</label>
-        <input type="checkbox" id="set-${appId}" data-group="${appId}" class="dpnone">
-        <label for="set-${appId}" class="app-set-icon toggle">i</label>
+            <input type="checkbox" id="title-${appId}" class="dpnone" onchange="">
+            <label for="title-${appId}" class="app-title toggle">${appObj.name}</label>
+            <input type="checkbox" id="set-${appId}" class="dpnone" onclick="del(${appId})">
+            <label for="set-${appId}" class="app-set-icon  toggle">i</label>
+            <button onclick="appModal(${appId})">
+                <i class="fa-solid fa-ellipsis-vertical"></i>
+            </button>
+            <dialog id="dialog-${appId}">
+                test
+            </dialog>
         </div>
         <form class="app-print">
             <div>
@@ -125,7 +131,7 @@ function printApp(appObj) {
     const app = document.createElement('div');
     const appId = appObj.id;
     app.classList.add('app');
-    app.id = appId;
+    app.id = `app-${appId}`;
     app.draggable = true;
     app.dataset.type = appObj.type;
 
@@ -136,10 +142,10 @@ function printApp(appObj) {
         const currentContent = parsedCurrentAppData.content;
         app.innerHTML = `
         <div class="app-header">
-        <input type="checkbox" id="title-${appId}" class="dpnone" onchange="">
-            <label for="title"-${appId} class="app-title toggle dpnone">${appObj.name}</label>
-            <input type="checkbox" id="set-${appId}" data-group="${appId}"onclick="del()" class="dpnone">
-            <label for="set-${appId}" class="app-set-icon  toggle">i</label>
+            <input type="checkbox" id="title-${appId}" class="dpnone" onchange="">
+            <label for="title-${appId}" class="app-title toggle dpnone">${appObj.name}</label>
+            <input type="checkbox" id="set-${appId}" class="dpnone" onclick="del(${appId})">
+            <label for="set-${appId}" class="app-set-icon  toggle">x</label>
             <button onclick="appModal(${appId})">
                 <i class="fa-solid fa-ellipsis-vertical"></i>
             </button>
@@ -169,10 +175,10 @@ function printApp(appObj) {
         // console.log(parsedCurrentAppData);
         app.innerHTML = `
         <div class="app-header">
-            <input type="checkbox" id="title-${appId}" class="dpnone">
+            <input type="checkbox" id="title-${appId}" class="dpnone" onchange="">
             <label for="title-${appId}" class="app-title toggle">${appObj.name}</label>
-            <input type="checkbox" id="set-${appId}" data-group="${appId}" class="dpnone" onclick="del()">
-            <label for="set-${appId}" class="app-set-icon toggle">i</label>
+            <input type="checkbox" id="set-${appId}" class="dpnone" onclick="del(${appId})">
+            <label for="set-${appId}" class="app-set-icon  toggle">x</label>
             <button onclick="appModal(${appId})">
                 <i class="fa-solid fa-ellipsis-vertical"></i>
             </button>
@@ -191,11 +197,18 @@ function printApp(appObj) {
                  
     } 
     else if (appObj.type == "links") {
-        app.innerHTML = `<input type="checkbox" id="title-${appId}" class="dpnone">
+        app.innerHTML = `
         <div class="app-header">
-        <label for="title-${appId}" class="app-title toggle">${appObj.name}</label>
-        <input type="checkbox" id="set-${appId}" onchange="appModal()" class="dpnone">
-        <label for="set-${appId}" class="app-set-icon toggle">i</label>
+            <input type="checkbox" id="title-${appId}" class="dpnone" onchange="">
+            <label for="title-${appId}" class="app-title toggle">${appObj.name}</label>
+            <input type="checkbox" id="set-${appId}" class="dpnone" onclick="del(${appId})">
+            <label for="set-${appId}" class="app-set-icon  toggle">x</label>
+            <button onclick="appModal(${appId})">
+                <i class="fa-solid fa-ellipsis-vertical"></i>
+            </button>
+            <dialog id="dialog-${appId}">
+                test
+            </dialog>
         </div>
         <form class="app-print">
             <div>
