@@ -52,12 +52,13 @@
             display: flex;
             flex-wrap: nowrap;
             align-items: center;
+            justify-content: space-between;
 
             width: 100%;
-            padding-left: var(--app-set-icon-size);
+            /* padding-left: var(--app-set-icon-size); */
             
             & .app-title{
-                flex-grow: 1;
+                /* flex-grow: 1; */
                 text-align: center;
             }
             & .app-set-icon{
@@ -79,9 +80,12 @@
         }
         & .app-print{
             width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
             /* Memo */
             & textarea{
-                width: 100%;
+                width: calc(100% - 12px);
                 height: auto;
                 text-align: center;
                 padding: 20px 25px 15px 25px;
@@ -157,8 +161,8 @@
                         text-align: center;
                     }
                     & input[type=checkbox]{
-                        width: 15px;
-                        height: 15px;
+                        width: 13px;
+                        height: 13px;
                     }
                     & input[type=checkbox]:checked + span {
                         text-decoration: line-through;
@@ -175,18 +179,37 @@
 }
 /* --------- */
 dialog{
-    text-align: center;
+    background-color: var(--bgclr-app-modal);
+    position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); 
+    /* backdrop-filter: blur(5px); */
     border-radius: 20px;
-    border: var(--border1);
+    padding: 20px;
+    flex-direction: column;
+    border-color: #9e9e9e5b;
+    
+}
+dialog > div{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+dialog::backdrop{
+    background-color: rgba(0, 0, 0, 0.575);
+    backdrop-filter: blur(10px);
+    
 }
 
 /* --------- */
 .app:has(.app-print>textarea){
     padding: 0;   
 }
-:is(.app:has(.app-print>textarea)) .app-header .app-set-icon{
-    /* border: none; */
+:is(.app:has(.app-print>textarea)) .app-header .app-del{
     position: absolute;
-    right: 5px;
-    top: 5px;
+    left: 10px;
+    top: 10px;
+}
+:is(.app:has(.app-print>textarea)) .app-header .app-set{
+    position: absolute;
+    right: 10px;
+    top: 10px;
 }

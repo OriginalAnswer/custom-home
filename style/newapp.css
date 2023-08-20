@@ -23,7 +23,7 @@
     /* background-color: blue; */
     backdrop-filter: var(--blur-2) var(--brightness-85);
     -webkit-backdrop-filter: var(--blur-2) var(--brightness-85);
-    cursor:crosshair;
+    /* cursor:crosshair; */
 }
 .newapptoggle{
     display: flex;
@@ -57,7 +57,7 @@
     display: block;
     width: 100%;
     padding: 50px 0 50px 0;
-    border-radius: var(--border-radius-30) var(--border-radius-30) 0 0;
+    /* border-radius: var(--border-radius-30) var(--border-radius-30) 0 0; */
     
     background-color: var(--fff);
     backdrop-filter: var(--blur-20) ;

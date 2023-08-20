@@ -108,7 +108,7 @@
     --brightness-97:brightness(3%);
     --brightness-85:brightness(15%);
   
-    --border-1: 1px solid #000;
+    --border-1: 1px solid #ffffff;
     --border-radius-10: 10px;
     --border-radius-15: 15px;
     --border-radius-20: 20px;
@@ -118,7 +118,7 @@
     --box-shadow-inset-1:  rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
     --box-shadow-inset-2: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px inset;
     --box-shadow-inset-3: rgba(103, 103, 103, 0.483) 0px 2px 8px 0px inset;
-    --box-shadow-1: 2px 2px 10px #505050c9,0px -1px 10px #000000c5;
+    --box-shadow-1: 2px 2px 10px #50505079,0px -1px 10px #0000009f;
     
     --body-bgclr:#040404;
     --clr-toggle: #ffffff;
@@ -158,6 +158,8 @@
     --clr-focus-search-g-border:rgb(191, 189, 189);
     --clr-focus-search-y-border:rgba(227, 46, 46, 0.795);
     --clr-focus-search-ym-border:rgb(202, 137, 56);
+
+    --bgclr-app-modal: #1b1b1b9b;
   }
 }
 

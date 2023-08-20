@@ -34,21 +34,43 @@ function createNewapp(appObj) {
     app.draggable = true;
     app.dataset.type = appObj.type;
     if (appObj.type == 'memo') {
+        // <label for="title-${appId}" class="app-title toggle">${appObj.name}</label>
         app.innerHTML = `
         <div class="app-header">
             <input type="checkbox" id="title-${appId}" class="dpnone" onchange="">
-            <label for="title-${appId}" class="app-title toggle dpnone">${appObj.name}</label>
             <input type="checkbox" id="set-${appId}" class="dpnone" onclick="del(${appId})">
-            <label for="set-${appId}" class="app-set-icon  toggle">x</label>
-            <button onclick="appModal(${appId})">
+
+            <label for="set-${appId}" class="app-set-icon app-del toggle">x</label>
+
+            <button onclick="appModal(${appId})" class="app-set-icon app-set toggle">
                 <i class="fa-solid fa-ellipsis-vertical"></i>
             </button>
+
             <dialog id="dialog-${appId}">
-            test
+                <div class="dialog-title">
+                    <label for="set-title-${appId}">제목</label>
+                    <input type="text" id="set-title-${appId}" oninput="">
+                </div>
+                <div class="dialog-align">
+                    <label for="set-align-${appId}">정렬</label>
+                    <input type="text" id="set-align-${appId}" oninput="">
+                </div>
+                <div class="dialog-font">
+                    <label for="set-font-${appId}">폰트</label>
+                    <input type="text" id="set-font-${appId}" oninput="">
+                </div>
+                <div class="dialog-fonttype">
+                    <label for="set-fonttype-${appId}">폰트 타입</label>
+                    <input type="text" id="set-fonttype-${appId}" oninput="">
+                </div>
+                <div class="dialog-fontsize">
+                    <label for="set-fontsize-${appId}">폰트 사이즈</label>
+                    <input type="text" id="set-fontsize-${appId}" oninput="">
+                </div>
             </dialog>
         </div>
         <div class="app-print">
-            <textarea id="${appId}-app" oninput="apptext(this.value, ${appId})" rows="1" placeholder="type here..."></textarea>
+            <textarea id="${appId}" oninput="apptext(this.value, ${appId})" rows="1" placeholder="type here...">${currentContent}</textarea>
         </div>
         `;
         //Individual obj
@@ -63,18 +85,38 @@ function createNewapp(appObj) {
         app.innerHTML = `
         <div class="app-header">
             <input type="checkbox" id="title-${appId}" class="dpnone" onchange="">
-            <label for="title-${appId}" class="app-title toggle">${appObj.name}</label>
             <input type="checkbox" id="set-${appId}" class="dpnone" onclick="del(${appId})">
-            <label for="set-${appId}" class="app-set-icon  toggle">x</label>
-            <button onclick="appModal(${appId})">
+
+            <label for="set-${appId}" class="app-set-icon app-del toggle">x</label>
+            <label for="title-${appId}" class="app-title app-set toggle">${appObj.name}</label>
+
+            <button onclick="appModal(${appId})" class="app-set-icon  toggle">
                 <i class="fa-solid fa-ellipsis-vertical"></i>
             </button>
+
             <dialog id="dialog-${appId}">
-            test
+                <div class="dialog-title">
+                    <label for="set-title-${appId}">제목</label>
+                    <input type="text" id="set-title-${appId}" oninput="">
+                </div>
+                <div class="dialog-align">
+                    <label for="set-align-${appId}">정렬</label>
+                    <input type="text" id="set-align-${appId}" oninput="">
+                </div>
+                <div class="dialog-font">
+                    <label for="set-font-${appId}">폰트</label>
+                    <input type="text" id="set-font-${appId}" oninput="">
+                </div>
+                <div class="dialog-fonttype">
+                    <label for="set-fonttype-${appId}">폰트 타입</label>
+                    <input type="text" id="set-fonttype-${appId}" oninput="">
+                </div>
+                <div class="dialog-fontsize">
+                    <label for="set-fontsize-${appId}">폰트 사이즈</label>
+                    <input type="text" id="set-fontsize-${appId}" oninput="">
+                </div>
             </dialog>
         </div>
-      test
-     </dialog>
 
         <div class="app-print">
 
@@ -100,14 +142,36 @@ function createNewapp(appObj) {
         app.innerHTML = `
         <div class="app-header">
             <input type="checkbox" id="title-${appId}" class="dpnone" onchange="">
-            <label for="title-${appId}" class="app-title toggle">${appObj.name}</label>
             <input type="checkbox" id="set-${appId}" class="dpnone" onclick="del(${appId})">
-            <label for="set-${appId}" class="app-set-icon  toggle">i</label>
-            <button onclick="appModal(${appId})">
+
+            <label for="set-${appId}" class="app-set-icon app-del toggle">x</label>
+            <label for="title-${appId}" class="app-title app-set toggle">${appObj.name}</label>
+
+            <button onclick="appModal(${appId})" class="app-set-icon  toggle">
                 <i class="fa-solid fa-ellipsis-vertical"></i>
             </button>
+
             <dialog id="dialog-${appId}">
-                test
+                <div class="dialog-title">
+                    <label for="set-title-${appId}">제목</label>
+                    <input type="text" id="set-title-${appId}" oninput="">
+                </div>
+                <div class="dialog-align">
+                    <label for="set-align-${appId}">정렬</label>
+                    <input type="text" id="set-align-${appId}" oninput="">
+                </div>
+                <div class="dialog-font">
+                    <label for="set-font-${appId}">폰트</label>
+                    <input type="text" id="set-font-${appId}" oninput="">
+                </div>
+                <div class="dialog-fonttype">
+                    <label for="set-fonttype-${appId}">폰트 타입</label>
+                    <input type="text" id="set-fonttype-${appId}" oninput="">
+                </div>
+                <div class="dialog-fontsize">
+                    <label for="set-fontsize-${appId}">폰트 사이즈</label>
+                    <input type="text" id="set-fontsize-${appId}" oninput="">
+                </div>
             </dialog>
         </div>
         <form class="app-print">
@@ -134,31 +198,55 @@ function printApp(appObj) {
     app.id = `app-${appId}`;
     app.draggable = true;
     app.dataset.type = appObj.type;
+    app.dataset.group = appId;
 
     const currentAppDataJSON = localStorage.getItem(appId);
     const parsedCurrentAppData = JSON.parse(currentAppDataJSON);
+    console.log(currentAppDataJSON);
+    console.log(parsedCurrentAppData);
+
 
     if (appObj.type == "memo") {
         const currentContent = parsedCurrentAppData.content;
+        // <label for="title-${appId}" class="app-title toggle">${appObj.name}</label>
         app.innerHTML = `
         <div class="app-header">
             <input type="checkbox" id="title-${appId}" class="dpnone" onchange="">
-            <label for="title-${appId}" class="app-title toggle dpnone">${appObj.name}</label>
             <input type="checkbox" id="set-${appId}" class="dpnone" onclick="del(${appId})">
-            <label for="set-${appId}" class="app-set-icon  toggle">x</label>
-            <button onclick="appModal(${appId})">
+
+            <label for="set-${appId}" class="app-set-icon app-del toggle">x</label>
+            <button onclick="appModal(${appId})" class="app-set-icon app-set toggle">
                 <i class="fa-solid fa-ellipsis-vertical"></i>
             </button>
             <dialog id="dialog-${appId}">
-            test
+                <div class="dialog-title">
+                    <label for="set-title-${appId}">제목</label>
+                    <input type="text" id="set-title-${appId}" oninput="">
+                </div>
+                <div class="dialog-align">
+                    <label for="set-align-${appId}">정렬</label>
+                    <input type="text" id="set-align-${appId}" oninput="">
+                </div>
+                <div class="dialog-font">
+                    <label for="set-font-${appId}">폰트</label>
+                    <input type="text" id="set-font-${appId}" oninput="">
+                </div>
+                <div class="dialog-fonttype">
+                    <label for="set-fonttype-${appId}">폰트 타입</label>
+                    <input type="text" id="set-fonttype-${appId}" oninput="">
+                </div>
+                <div class="dialog-fontsize">
+                    <label for="set-fontsize-${appId}">폰트 사이즈</label>
+                    <input type="text" id="set-fontsize-${appId}" oninput="">
+                </div>
             </dialog>
         </div>
         <div class="app-print">
-            <textarea id="app-${appId}" oninput="apptext(this.value, ${appId})" rows="1" placeholder="type here...">${currentContent}</textarea>
+            <textarea id="${appId}" oninput="apptext(this.value, ${appId})" rows="1" placeholder="type here...">${currentContent}</textarea>
         </div>
         `;
         function appMemoResize() {
-            let textarea = document.getElementById(`app-${appId}`);    
+            let textarea = document.getElementById(`${appId}`);    
          
             let scHeight = textarea.scrollHeight;
             let style = window.getComputedStyle(textarea);
@@ -176,14 +264,36 @@ function printApp(appObj) {
         app.innerHTML = `
         <div class="app-header">
             <input type="checkbox" id="title-${appId}" class="dpnone" onchange="">
-            <label for="title-${appId}" class="app-title toggle">${appObj.name}</label>
             <input type="checkbox" id="set-${appId}" class="dpnone" onclick="del(${appId})">
-            <label for="set-${appId}" class="app-set-icon  toggle">x</label>
-            <button onclick="appModal(${appId})">
+
+            <label for="set-${appId}" class="app-set-icon app-del toggle">x</label>
+            <label for="title-${appId}" class="app-title toggle">${appObj.name}</label>
+
+            <button onclick="appModal(${appId})" class="app-set-icon app-set toggle">
                 <i class="fa-solid fa-ellipsis-vertical"></i>
             </button>
+
             <dialog id="dialog-${appId}">
-                test
+                <div class="dialog-title">
+                    <label for="set-title-${appId}">제목</label>
+                    <input type="text" id="set-title-${appId}" oninput="">
+                </div>
+                <div class="dialog-align">
+                    <label for="set-align-${appId}">정렬</label>
+                    <input type="text" id="set-align-${appId}" oninput="">
+                </div>
+                <div class="dialog-font">
+                    <label for="set-font-${appId}">폰트</label>
+                    <input type="text" id="set-font-${appId}" oninput="">
+                </div>
+                <div class="dialog-fonttype">
+                    <label for="set-fonttype-${appId}">폰트 타입</label>
+                    <input type="text" id="set-fonttype-${appId}" oninput="">
+                </div>
+                <div class="dialog-fontsize">
+                    <label for="set-fontsize-${appId}">폰트 사이즈</label>
+                    <input type="text" id="set-fontsize-${appId}" oninput="">
+                </div>
             </dialog>
         </div>
         <div class="app-print">
@@ -200,14 +310,21 @@ function printApp(appObj) {
         app.innerHTML = `
         <div class="app-header">
             <input type="checkbox" id="title-${appId}" class="dpnone" onchange="">
-            <label for="title-${appId}" class="app-title toggle">${appObj.name}</label>
             <input type="checkbox" id="set-${appId}" class="dpnone" onclick="del(${appId})">
-            <label for="set-${appId}" class="app-set-icon  toggle">x</label>
-            <button onclick="appModal(${appId})">
+
+            <label for="set-${appId}" class="app-set-icon app-del toggle">x</label>
+            <label for="title-${appId}" class="app-title app-set toggle">${appObj.name}</label>
+
+            <button onclick="appModal(${appId})" class="app-set-icon  toggle">
                 <i class="fa-solid fa-ellipsis-vertical"></i>
             </button>
+
             <dialog id="dialog-${appId}">
-                test
+            앱 타이틀/텍스트얼라인/폰트사이즈*굵기*기울기/삭제
+                <div class="dialog-title">
+                    <label for="set-title-${appId}">제목</label>
+                    <input type="text" id="set-title-${appId}" oninput="">
+                </div>
             </dialog>
         </div>
         <form class="app-print">
@@ -225,7 +342,6 @@ function printApp(appObj) {
     sectionC.appendChild(app);
     // const currentShow = document.querySelector(`.show-${appId}`);
     // console.log(currentShow);
-    console.log(parsedCurrentAppData);
     if (appObj.type == "task") {   
         parsedCurrentAppData.forEach(element => printTask(element, `show-${appId}`, appId));
     }
@@ -235,11 +351,19 @@ function loadAppsArr() {
     const appsArrJson = localStorage.getItem('appsArr');
     if (appsArrJson) {
         appsArr = JSON.parse(appsArrJson);
+        console.log(appsArr);
         appsArr.forEach(appObj => printApp(appObj));
     }
 }
 
 loadAppsArr(); // 페이지 로드 시 appsArr 복원
+
+
+
+
+
+
+
 
 // -------------------------------------------------------
 
@@ -254,7 +378,7 @@ function dragStart(event) {
     event.dataTransfer.effectAllowed = 'move';
     event.dataTransfer.setData('text/plain', '');
     const pick = {
-        id: draggedApp.id,
+        id: draggedApp.dataset.group,
         type: draggedApp.getAttribute('data-type'),
         name: draggedApp.querySelector('.app-title').innerText,
         section: 'c',
@@ -289,7 +413,7 @@ function drop(event) {
 function updateAppsArrOrder() {
     appsArr = Array.from(sectionC.querySelectorAll('.app')).map(app => {
         return {
-            id: app.id,
+            id: app.dataset.group,
             type: app.getAttribute('data-type'),
             name: app.querySelector('.app-title').innerText,
             section: 'c',

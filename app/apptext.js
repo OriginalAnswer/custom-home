@@ -7,7 +7,7 @@ function apptext(v,n) {
     }
     localStorage.setItem(n, JSON.stringify(reObj));
     
-    let textarea = document.getElementById(`app-${n}`);
+    let textarea = document.getElementById(`${n}`);
     textarea.addEventListener("keyup", e => {
         textarea.style.height = 'auto';
         let scHeight = e.target.scrollHeight;
