@@ -82,6 +82,10 @@
   --clr-focus-search-ym-border:rgb(243, 162, 10);
 
   --clr-item-checked-task:#adadad;
+
+  --bgclr-dialog-backdrop:rgba(199, 25, 25, 0.673);
+  --bgclr-dialog: #ffffff;
+
 }
 @media (prefers-color-scheme: dark) {
   :root{
@@ -159,7 +163,8 @@
     --clr-focus-search-y-border:rgba(227, 46, 46, 0.795);
     --clr-focus-search-ym-border:rgb(202, 137, 56);
 
-    --bgclr-app-modal: #1b1b1b9b;
+    --bgclr-dialog-backdrop:rgba(0, 0, 0, 0.575);
+    --bgclr-dialog: #1b1b1b9b;
   }
 }
 
