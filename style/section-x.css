@@ -57,10 +57,10 @@
     right: 0;
 
     display: block;
-    width: 350px;
+    width: 340px;
     height: 100vh;
     height: 100dvh;
-    padding: 10px 5px 10px 5px;
+    padding: 20px 10px 20px 10px;
 
     font-family: Arial, Helvetica, sans-serif;
     background-color: var(--set-bgclr);

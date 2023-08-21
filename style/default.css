@@ -18,6 +18,7 @@ input, select, textarea{
 }
 textarea{
   resize: none;
+  font-family: 'Nanum Gothic',Helvetica, sans-serif ,serif;
 }
 button{
   background-color: var(--clr-none);
