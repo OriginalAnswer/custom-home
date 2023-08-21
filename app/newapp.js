@@ -38,35 +38,46 @@ function createNewapp(appObj) {
         app.innerHTML = `
         <div class="app-header">
             <input type="checkbox" id="title-${appId}" class="dpnone" onchange="">
-            <input type="checkbox" id="set-${appId}" class="dpnone" onclick="del(${appId})">
-
-            <label for="set-${appId}" class="app-set-icon app-del toggle">x</label>
-
             <button onclick="appModal(${appId})" class="app-set-icon app-set toggle">
                 <i class="fa-solid fa-ellipsis-vertical"></i>
             </button>
 
             <dialog id="dialog-${appId}">
                 <div class="dialog-title">
-                    <label for="set-title-${appId}">제목</label>
-                    <input type="text" id="set-title-${appId}" oninput="">
+                    <label for="dialog-title-${appId}">TITLE</label>
+                    <input type="text" id="dialog-title-${appId}" oninput="">
                 </div>
                 <div class="dialog-align">
-                    <label for="set-align-${appId}">정렬</label>
-                    <input type="text" id="set-align-${appId}" oninput="">
+                    <label for="dialog-align-${appId}">ALIGHN</label>
+                    <select type="text" id="dialog-font-${appId}" oninput="">
+                        <option>left</option>
+                        <option>center</option>
+                        <option>right</option>
+                    </select>
                 </div>
                 <div class="dialog-font">
-                    <label for="set-font-${appId}">폰트</label>
-                    <input type="text" id="set-font-${appId}" oninput="">
+                    <label for="dialog-font-${appId}">FONT</label>
+                    <select type="text" id="dialog-font-${appId}" oninput="">
+                        <option>기본 폰트</option>
+                        <option>폰트1</option>
+                        <option>폰트2</option>
+                    </select>
                 </div>
                 <div class="dialog-fonttype">
-                    <label for="set-fonttype-${appId}">폰트 타입</label>
-                    <input type="text" id="set-fonttype-${appId}" oninput="">
+                    <label for="dialog-fonttype-${appId}">FONT TYPE</label>
+                    <select type="text" id="dialog-fonttype-${appId}" oninput="">
+                        <option>normal</option>
+                        <option>italic</option>
+                    </select>
                 </div>
                 <div class="dialog-fontsize">
-                    <label for="set-fontsize-${appId}">폰트 사이즈</label>
-                    <input type="text" id="set-fontsize-${appId}" oninput="">
+                    <label for="dialog-fontsize-${appId}">FONT SIZE</label>
+                    <input type="range" id="dialog-fontsize-${appId}" value="24" min="8"max="64" step="1" oninput="">
                 </div>
+                <form method="dialog">
+                    <button value="delete" class="modal-del" onclick="modalDel(dialog-${appId})">DELETE</button>
+                    <button value="save" class="modal-save" onclick="modalSave(dialog-${appId})">SAVE</button>
+                </form>
             </dialog>
         </div>
         <div class="app-print">
@@ -85,9 +96,6 @@ function createNewapp(appObj) {
         app.innerHTML = `
         <div class="app-header">
             <input type="checkbox" id="title-${appId}" class="dpnone" onchange="">
-            <input type="checkbox" id="set-${appId}" class="dpnone" onclick="del(${appId})">
-
-            <label for="set-${appId}" class="app-set-icon app-del toggle">x</label>
             <label for="title-${appId}" class="app-title app-set toggle">${appObj.name}</label>
 
             <button onclick="appModal(${appId})" class="app-set-icon  toggle">
@@ -96,25 +104,40 @@ function createNewapp(appObj) {
 
             <dialog id="dialog-${appId}">
                 <div class="dialog-title">
-                    <label for="set-title-${appId}">제목</label>
-                    <input type="text" id="set-title-${appId}" oninput="">
+                    <label for="dialog-title-${appId}">TITLE</label>
+                    <input type="text" id="dialog-title-${appId}" oninput="">
                 </div>
                 <div class="dialog-align">
-                    <label for="set-align-${appId}">정렬</label>
-                    <input type="text" id="set-align-${appId}" oninput="">
+                    <label for="dialog-align-${appId}">ALIGHN</label>
+                    <select type="text" id="dialog-font-${appId}" oninput="">
+                        <option>left</option>
+                        <option>center</option>
+                        <option>right</option>
+                    </select>
                 </div>
                 <div class="dialog-font">
-                    <label for="set-font-${appId}">폰트</label>
-                    <input type="text" id="set-font-${appId}" oninput="">
+                    <label for="dialog-font-${appId}">FONT</label>
+                    <select type="text" id="dialog-font-${appId}" oninput="">
+                        <option>기본 폰트</option>
+                        <option>폰트1</option>
+                        <option>폰트2</option>
+                    </select>
                 </div>
                 <div class="dialog-fonttype">
-                    <label for="set-fonttype-${appId}">폰트 타입</label>
-                    <input type="text" id="set-fonttype-${appId}" oninput="">
+                    <label for="dialog-fonttype-${appId}">FONT TYPE</label>
+                    <select type="text" id="dialog-fonttype-${appId}" oninput="">
+                        <option>normal</option>
+                        <option>italic</option>
+                    </select>
                 </div>
                 <div class="dialog-fontsize">
-                    <label for="set-fontsize-${appId}">폰트 사이즈</label>
-                    <input type="text" id="set-fontsize-${appId}" oninput="">
+                    <label for="dialog-fontsize-${appId}">FONT SIZE</label>
+                    <input type="range" id="dialog-fontsize-${appId}" value="24" min="8"max="64" step="1" oninput="">
                 </div>
+                <form method="dialog">
+                    <button value="delete" class="modal-del" onclick="modalDel(dialog-${appId})">DELETE</button>
+                    <button value="save" class="modal-save" onclick="modalSave(dialog-${appId})">SAVE</button>
+                </form>
             </dialog>
         </div>
 
@@ -142,10 +165,7 @@ function createNewapp(appObj) {
         app.innerHTML = `
         <div class="app-header">
             <input type="checkbox" id="title-${appId}" class="dpnone" onchange="">
-            <input type="checkbox" id="set-${appId}" class="dpnone" onclick="del(${appId})">
-
-            <label for="set-${appId}" class="app-set-icon app-del toggle">x</label>
-            <label for="title-${appId}" class="app-title app-set toggle">${appObj.name}</label>
+            \<label for="title-${appId}" class="app-title app-set toggle">${appObj.name}</label>
 
             <button onclick="appModal(${appId})" class="app-set-icon  toggle">
                 <i class="fa-solid fa-ellipsis-vertical"></i>
@@ -153,25 +173,40 @@ function createNewapp(appObj) {
 
             <dialog id="dialog-${appId}">
                 <div class="dialog-title">
-                    <label for="set-title-${appId}">제목</label>
-                    <input type="text" id="set-title-${appId}" oninput="">
+                    <label for="dialog-title-${appId}">TITLE</label>
+                    <input type="text" id="dialog-title-${appId}" oninput="">
                 </div>
                 <div class="dialog-align">
-                    <label for="set-align-${appId}">정렬</label>
-                    <input type="text" id="set-align-${appId}" oninput="">
+                    <label for="dialog-align-${appId}">ALIGHN</label>
+                    <select type="text" id="dialog-font-${appId}" oninput="">
+                        <option>left</option>
+                        <option>center</option>
+                        <option>right</option>
+                    </select>
                 </div>
                 <div class="dialog-font">
-                    <label for="set-font-${appId}">폰트</label>
-                    <input type="text" id="set-font-${appId}" oninput="">
+                    <label for="dialog-font-${appId}">FONT</label>
+                    <select type="text" id="dialog-font-${appId}" oninput="">
+                        <option>기본 폰트</option>
+                        <option>폰트1</option>
+                        <option>폰트2</option>
+                    </select>
                 </div>
                 <div class="dialog-fonttype">
-                    <label for="set-fonttype-${appId}">폰트 타입</label>
-                    <input type="text" id="set-fonttype-${appId}" oninput="">
+                    <label for="dialog-fonttype-${appId}">FONT TYPE</label>
+                    <select type="text" id="dialog-fonttype-${appId}" oninput="">
+                        <option>normal</option>
+                        <option>italic</option>
+                    </select>
                 </div>
                 <div class="dialog-fontsize">
-                    <label for="set-fontsize-${appId}">폰트 사이즈</label>
-                    <input type="text" id="set-fontsize-${appId}" oninput="">
+                    <label for="dialog-fontsize-${appId}">FONT SIZE</label>
+                    <input type="range" id="dialog-fontsize-${appId}" value="24" min="8"max="64" step="1" oninput="">
                 </div>
+                <form method="dialog">
+                    <button value="delete" class="modal-del" onclick="modalDel(dialog-${appId})">DELETE</button>
+                    <button value="save" class="modal-save" onclick="modalSave(dialog-${appId})">SAVE</button>
+                </form>
             </dialog>
         </div>
         <form class="app-print">
@@ -212,33 +247,45 @@ function printApp(appObj) {
         app.innerHTML = `
         <div class="app-header">
             <input type="checkbox" id="title-${appId}" class="dpnone" onchange="">
-            <input type="checkbox" id="set-${appId}" class="dpnone" onclick="del(${appId})">
-
-            <label for="set-${appId}" class="app-set-icon app-del toggle">x</label>
             <button onclick="appModal(${appId})" class="app-set-icon app-set toggle">
                 <i class="fa-solid fa-ellipsis-vertical"></i>
             </button>
             <dialog id="dialog-${appId}">
                 <div class="dialog-title">
-                    <label for="set-title-${appId}">제목</label>
-                    <input type="text" id="set-title-${appId}" oninput="">
+                    <label for="dialog-title-${appId}">TITLE</label>
+                    <input type="text" id="dialog-title-${appId}" oninput="">
                 </div>
                 <div class="dialog-align">
-                    <label for="set-align-${appId}">정렬</label>
-                    <input type="text" id="set-align-${appId}" oninput="">
+                    <label for="dialog-align-${appId}">ALIGHN</label>
+                    <select type="text" id="dialog-font-${appId}" oninput="">
+                        <option>left</option>
+                        <option>center</option>
+                        <option>right</option>
+                    </select>
                 </div>
                 <div class="dialog-font">
-                    <label for="set-font-${appId}">폰트</label>
-                    <input type="text" id="set-font-${appId}" oninput="">
+                    <label for="dialog-font-${appId}">FONT</label>
+                    <select type="text" id="dialog-font-${appId}" oninput="">
+                        <option>기본 폰트</option>
+                        <option>폰트1</option>
+                        <option>폰트2</option>
+                    </select>
                 </div>
                 <div class="dialog-fonttype">
-                    <label for="set-fonttype-${appId}">폰트 타입</label>
-                    <input type="text" id="set-fonttype-${appId}" oninput="">
+                    <label for="dialog-fonttype-${appId}">FONT TYPE</label>
+                    <select type="text" id="dialog-fonttype-${appId}" oninput="">
+                        <option>normal</option>
+                        <option>italic</option>
+                    </select>
                 </div>
                 <div class="dialog-fontsize">
-                    <label for="set-fontsize-${appId}">폰트 사이즈</label>
-                    <input type="text" id="set-fontsize-${appId}" oninput="">
+                    <label for="dialog-fontsize-${appId}">FONT SIZE</label>
+                    <input type="range" id="dialog-fontsize-${appId}" value="24" min="8"max="64" step="1" oninput="">
                 </div>
+                <form method="dialog">
+                <button value="delete" class="modal-del" onclick="modalDel(${appId})">DELETE</button>
+                <button value="save" class="modal-save" onclick="modalSave(dialog-${appId})">SAVE</button>
+                </form>
             </dialog>
         </div>
         <div class="app-print">
@@ -264,9 +311,6 @@ function printApp(appObj) {
         app.innerHTML = `
         <div class="app-header">
             <input type="checkbox" id="title-${appId}" class="dpnone" onchange="">
-            <input type="checkbox" id="set-${appId}" class="dpnone" onclick="del(${appId})">
-
-            <label for="set-${appId}" class="app-set-icon app-del toggle">x</label>
             <label for="title-${appId}" class="app-title toggle">${appObj.name}</label>
 
             <button onclick="appModal(${appId})" class="app-set-icon app-set toggle">
@@ -275,25 +319,40 @@ function printApp(appObj) {
 
             <dialog id="dialog-${appId}">
                 <div class="dialog-title">
-                    <label for="set-title-${appId}">제목</label>
-                    <input type="text" id="set-title-${appId}" oninput="">
+                    <label for="dialog-title-${appId}">TITLE</label>
+                    <input type="text" id="dialog-title-${appId}" oninput="">
                 </div>
                 <div class="dialog-align">
-                    <label for="set-align-${appId}">정렬</label>
-                    <input type="text" id="set-align-${appId}" oninput="">
+                    <label for="dialog-align-${appId}">ALIGHN</label>
+                    <select type="text" id="dialog-font-${appId}" oninput="">
+                        <option>left</option>
+                        <option>center</option>
+                        <option>right</option>
+                    </select>
                 </div>
                 <div class="dialog-font">
-                    <label for="set-font-${appId}">폰트</label>
-                    <input type="text" id="set-font-${appId}" oninput="">
+                    <label for="dialog-font-${appId}">FONT</label>
+                    <select type="text" id="dialog-font-${appId}" oninput="">
+                        <option>기본 폰트</option>
+                        <option>폰트1</option>
+                        <option>폰트2</option>
+                    </select>
                 </div>
                 <div class="dialog-fonttype">
-                    <label for="set-fonttype-${appId}">폰트 타입</label>
-                    <input type="text" id="set-fonttype-${appId}" oninput="">
+                    <label for="dialog-fonttype-${appId}">FONT TYPE</label>
+                    <select type="text" id="dialog-fonttype-${appId}" oninput="">
+                        <option>normal</option>
+                        <option>italic</option>
+                    </select>
                 </div>
                 <div class="dialog-fontsize">
-                    <label for="set-fontsize-${appId}">폰트 사이즈</label>
-                    <input type="text" id="set-fontsize-${appId}" oninput="">
+                    <label for="dialog-fontsize-${appId}">FONT SIZE</label>
+                    <input type="range" id="dialog-fontsize-${appId}" value="24" min="8"max="64" step="1" oninput="">
                 </div>
+                <form method="dialog">
+                <button value="delete" class="modal-del" onclick="modalDel(${appId})">DELETE</button>
+                <button value="save" class="modal-save" onclick="modalSave(dialog-${appId})">SAVE</button>
+                </form>
             </dialog>
         </div>
         <div class="app-print">
@@ -309,22 +368,49 @@ function printApp(appObj) {
     else if (appObj.type == "links") {
         app.innerHTML = `
         <div class="app-header">
-            <input type="checkbox" id="title-${appId}" class="dpnone" onchange="">
-            <input type="checkbox" id="set-${appId}" class="dpnone" onclick="del(${appId})">
+        <input type="checkbox" id="title-${appId}" class="dpnone" onchange="">
+        <label for="title-${appId}" class="app-title app-set toggle">${appObj.name}</label>
 
-            <label for="set-${appId}" class="app-set-icon app-del toggle">x</label>
-            <label for="title-${appId}" class="app-title app-set toggle">${appObj.name}</label>
+        <button onclick="appModal(${appId})" class="app-set-icon  toggle">
+            <i class="fa-solid fa-ellipsis-vertical"></i>
+        </button>
 
-            <button onclick="appModal(${appId})" class="app-set-icon  toggle">
-                <i class="fa-solid fa-ellipsis-vertical"></i>
-            </button>
-
-            <dialog id="dialog-${appId}">
-            앱 타이틀/텍스트얼라인/폰트사이즈*굵기*기울기/삭제
+        <dialog id="dialog-${appId}">
                 <div class="dialog-title">
-                    <label for="set-title-${appId}">제목</label>
-                    <input type="text" id="set-title-${appId}" oninput="">
+                    <label for="dialog-title-${appId}">TITLE</label>
+                    <input type="text" id="dialog-title-${appId}" oninput="">
                 </div>
+                <div class="dialog-align">
+                    <label for="dialog-align-${appId}">ALIGHN</label>
+                    <select type="text" id="dialog-font-${appId}" oninput="">
+                        <option>left</option>
+                        <option>center</option>
+                        <option>right</option>
+                    </select>
+                </div>
+                <div class="dialog-font">
+                    <label for="dialog-font-${appId}">FONT</label>
+                    <select type="text" id="dialog-font-${appId}" oninput="">
+                        <option>기본 폰트</option>
+                        <option>폰트1</option>
+                        <option>폰트2</option>
+                    </select>
+                </div>
+                <div class="dialog-fonttype">
+                    <label for="dialog-fonttype-${appId}">FONT TYPE</label>
+                    <select type="text" id="dialog-fonttype-${appId}" oninput="">
+                        <option>normal</option>
+                        <option>italic</option>
+                    </select>
+                </div>
+                <div class="dialog-fontsize">
+                    <label for="dialog-fontsize-${appId}">FONT SIZE</label>
+                    <input type="range" id="dialog-fontsize-${appId}" value="24" min="8"max="64" step="1" oninput="">
+                </div>
+                <form method="dialog">
+                    <button value="delete" class="modal-del" onclick="modalDel(${appId})">DELETE</button>
+                    <button value="save" class="modal-save" onclick="modalSave(dialog-${appId})">SAVE</button>
+                </form>
             </dialog>
         </div>
         <form class="app-print">

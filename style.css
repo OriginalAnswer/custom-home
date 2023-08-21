@@ -86,6 +86,12 @@
   --bgclr-dialog-backdrop:rgba(199, 25, 25, 0.673);
   --bgclr-dialog: #ffffff;
 
+  --clr-modal-save:rgb(255, 255, 255);
+  --clr-modal-save-bg:rgb(0, 0, 0);
+  
+  --clr-modal-del:rgb(255, 255, 255);
+  --clr-modal-del-bg:rgb(255, 0, 0);
+  --clr-modal-del-border:rgb(255, 0, 0);
 }
 @media (prefers-color-scheme: dark) {
   :root{
@@ -166,6 +172,14 @@
 
     --bgclr-dialog-backdrop:rgba(0, 0, 0, 0.575);
     --bgclr-dialog: #1b1b1b9b;
+
+    
+  --clr-modal-save-hover:rgb(0, 0, 0);
+  --clr-modal-save-hover-bg:rgb(255, 255, 255);
+  
+  --clr-modal-del:rgb(255, 255, 255);
+  --clr-modal-del-bg:rgb(255, 0, 0);
+  --clr-modal-del-border:rgb(255, 0, 0);
   }
 }
 
