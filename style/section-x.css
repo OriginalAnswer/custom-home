@@ -64,7 +64,7 @@
 
     font-family: Arial, Helvetica, sans-serif;
     background-color: var(--set-bgclr);
-    backdrop-filter: var(--blur-10);
+    backdrop-filter: var(--blur-4);
     -webkit-backdrop-filter: var(--blur-10) var(--saturate-95);
     box-shadow: var(--box-shadow-inset-2);
     
