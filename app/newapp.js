@@ -142,14 +142,14 @@ function createNewapp(appObj) {
         </div>
 
         <div class="app-print">
-
+            <div class="show-${appId} task-show"></div>
+        
             <form class="task-bar" id="form-${appId}" name="${appId}" onsubmit="appTask()">
                 <label for="input-${appId}"><i class="fa-regular fa-pen-to-square"></i></label>
                 <input type="text" id="input-${appId}" name="${appId}" class="task-input" required>
                 <button type="submit" name="${appId}"" ><i class="fa-solid fa-plus"></i></button>
             </form>
 
-            <div class="show-${appId} task-show"></div>
         </div>`;
         //Individual obj
         const indiObjArr = [];
@@ -356,12 +356,12 @@ function printApp(appObj) {
             </dialog>
         </div>
         <div class="app-print">
+            <div class="show-${appId} task-show"></div>
             <form class="task-bar" id="form-${appId}" name="${appId}" onsubmit="appTask()">
                 <label for="input-${appId}"><i class="fa-regular fa-pen-to-square"></i></label>
                 <input type="text" id="input-${appId}" name="${appId}" class="task-input" required>
                 <button type="submit" name="${appId}" ><i class="fa-solid fa-plus"></i></button>
             </form>
-            <div class="show-${appId} task-show"></div>
         </div>`;
                  
     } 
