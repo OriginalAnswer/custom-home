@@ -29,6 +29,7 @@ function createNewapp(appObj) {
 
     const app = document.createElement('div');
     const appId = appObj.id;
+    const name = appObj.name;
     app.classList.add('app');
     app.id = `app-${appId}`;
     app.draggable = true;
@@ -105,7 +106,7 @@ function createNewapp(appObj) {
             <dialog id="dialog-${appId}">
                 <div class="dialog-title">
                     <label for="dialog-title-${appId}">TITLE</label>
-                    <input type="text" id="dialog-title-${appId}" oninput="">
+                    <input type="text" id="dialog-title-${appId}" value="${name}" oninput="">
                 </div>
                 <div class="dialog-align">
                     <label for="dialog-align-${appId}">ALIGHN</label>
@@ -229,6 +230,7 @@ function createNewapp(appObj) {
 function printApp(appObj) {
     const app = document.createElement('div');
     const appId = appObj.id;
+    const name = appObj.name;
     app.classList.add('app');
     app.id = `app-${appId}`;
     app.draggable = true;
@@ -237,8 +239,8 @@ function printApp(appObj) {
 
     const currentAppDataJSON = localStorage.getItem(appId);
     const parsedCurrentAppData = JSON.parse(currentAppDataJSON);
-    console.log(currentAppDataJSON);
-    console.log(parsedCurrentAppData);
+    console.log(name);
+    // console.log(parsedCurrentAppData);
 
 
     if (appObj.type == "memo") {
@@ -311,16 +313,16 @@ function printApp(appObj) {
         app.innerHTML = `
         <div class="app-header">
             <input type="checkbox" id="title-${appId}" class="dpnone" onchange="">
-            <label for="title-${appId}" class="app-title toggle">${appObj.name}</label>
+            <label for="title-${appId}" class="app-title app-title-${appId} toggle">${appObj.name}</label>
 
-            <button onclick="appModal(${appId})" class="app-set-icon app-set toggle">
+            <button onclick="appModal(${appId},'${name}')" class="app-set-icon app-set toggle">
                 <i class="fa-solid fa-ellipsis-vertical"></i>
             </button>
 
             <dialog id="dialog-${appId}">
                 <div class="dialog-title">
                     <label for="dialog-title-${appId}">TITLE</label>
-                    <input type="text" id="dialog-title-${appId}" oninput="">
+                    <input type="text" id="dialog-title-${appId}" oninput="modalTitle(${appId},this.value)">
                 </div>
                 <div class="dialog-align">
                     <label for="dialog-align-${appId}">ALIGHN</label>
@@ -351,7 +353,7 @@ function printApp(appObj) {
                 </div>
                 <form method="dialog">
                 <button value="delete" class="modal-del" onclick="modalDel(${appId})">DELETE</button>
-                <button value="save" class="modal-save" onclick="modalSave(dialog-${appId})">SAVE</button>
+                <button value="save" class="modal-save" onclick="modalSave('dialog-${appId}')">SAVE</button>
                 </form>
             </dialog>
         </div>
@@ -437,7 +439,7 @@ function loadAppsArr() {
     const appsArrJson = localStorage.getItem('appsArr');
     if (appsArrJson) {
         appsArr = JSON.parse(appsArrJson);
-        console.log(appsArr);
+        // console.log(appsArr);
         appsArr.forEach(appObj => printApp(appObj));
     }
 }
