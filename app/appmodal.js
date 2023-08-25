@@ -39,7 +39,7 @@ function modalTitle(appId,n) {
     let currentAppJSON = localStorage.getItem('appsArr');
     let arr = JSON.parse(currentAppJSON);
     let thisObj = arr.find(e => e.id == appId);
-    console.log(arr);
+    // console.log(arr);
     
     thisObj.name = n;
     console.log(thisObj.name);
@@ -48,7 +48,7 @@ function modalTitle(appId,n) {
     
     
     arr.map((item) => item.id === appId ? { ...item, name: n } : item);
-    console.log(arr);
+    // console.log(arr);
 
     localStorage.setItem('appsArr', JSON.stringify(arr));
 }
