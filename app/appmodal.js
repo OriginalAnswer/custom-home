@@ -10,6 +10,7 @@ function appModal(appId,n) {
 
 
     const titleInput = document.querySelector(`#dialog-title-${appId}`);
+    titleInput.blur();
     titleInput.setAttribute('value', n);
     
     // const title = document.querySelector(`dialog-title-${appId}`);

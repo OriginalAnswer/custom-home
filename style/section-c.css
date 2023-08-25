@@ -257,7 +257,7 @@ dialog::backdrop{
 }
 
 /* --------- */
-.app:has(.app-print>textarea){
+/* .app:has(.app-print>textarea){
     padding: 0;   
 }
 :is(.app:has(.app-print>textarea)) .app-header .app-del{
@@ -269,4 +269,4 @@ dialog::backdrop{
     position: absolute;
     right: 10px;
     top: 10px;
-}
+} */
