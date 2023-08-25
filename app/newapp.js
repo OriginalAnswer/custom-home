@@ -226,6 +226,7 @@ function createNewapp(appObj) {
 
 
     sectionC.appendChild(app);
+
 }
 
 // ===================================================
