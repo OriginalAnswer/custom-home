@@ -15,19 +15,27 @@ function appModal(appId,n) {
     // const title = document.querySelector(`dialog-title-${appId}`);
 }
 
-function modalDel(appID) {
-    const thisapp = document.querySelector(`#app-${appID}`);
+function modalDel(appId) {
+    const thisapp = document.querySelector(`#app-${appId}`);
     
     let currentAppJSON = localStorage.getItem('appsArr');
     let parsedCurrentAppData = JSON.parse(currentAppJSON);
-    console.log(parsedCurrentAppData);
-    parsedCurrentAppData = parsedCurrentAppData.filter(t => t.id !== parseInt(appID));
-    let reArr = parsedCurrentAppData;
-    console.log(reArr);
-    thisapp.remove();
-    localStorage.setItem('appsArr', JSON.stringify(reArr));
-    localStorage.removeItem(appID)
+    let arr = parsedCurrentAppData;
+    console.log(arr);
+    let thisObj = arr.find(e => e.id == appId);
+    const n = arr.indexOf(thisObj);
+    arr.splice(n);
+    console.log(arr);
     
+    // arr = arr.filter(t => t.id !== parseInt(appId));
+    // console.log(arr);
+    let reArr = arr;
+
+    // console.log(reArr);
+
+    thisapp.remove();
+    localStorage.removeItem(appId);
+    localStorage.setItem('appsArr', JSON.stringify(reArr));
 }
 function modalSave(a) {
     const dialog = document.querySelector(`#${a}`);
