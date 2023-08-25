@@ -444,7 +444,7 @@ function loadAppsArr() {
     const appsArrJson = localStorage.getItem('appsArr');
     if (appsArrJson) {
         appsArr = JSON.parse(appsArrJson);
-        // console.log(appsArr);
+        console.log(appsArr);
         appsArr.forEach(appObj => printApp(appObj));
     }
 }
