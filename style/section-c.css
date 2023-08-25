@@ -264,9 +264,9 @@ dialog::backdrop{
     position: absolute;
     left: 10px;
     top: 10px;
-}
+}*/
 :is(.app:has(.app-print>textarea)) .app-header .app-set{
     position: absolute;
     right: 10px;
     top: 10px;
-} */
+} 
