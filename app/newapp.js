@@ -39,14 +39,16 @@ function createNewapp(appObj) {
         app.innerHTML = `
         <div class="app-header">
             <input type="checkbox" id="title-${appId}" class="dpnone" onchange="">
-            <button onclick="appModal(${appId})" class="app-set-icon app-set toggle">
+            <label for="title-${appId}" class="app-title app-title-${appId} toggle">${appObj.name}</label>
+
+            <button onclick="appModal(${appId},'${name}')" class="app-set-icon app-set toggle">
                 <i class="fa-solid fa-ellipsis-vertical"></i>
             </button>
 
             <dialog id="dialog-${appId}">
                 <div class="dialog-title">
                     <label for="dialog-title-${appId}">TITLE</label>
-                    <input type="text" id="dialog-title-${appId}" oninput="">
+                    <input type="text" id="dialog-title-${appId}" oninput="modalTitle(${appId},this.value)">
                 </div>
                 <div class="dialog-align">
                     <label for="dialog-align-${appId}">ALIGHN</label>
@@ -76,8 +78,8 @@ function createNewapp(appObj) {
                     <input type="range" id="dialog-fontsize-${appId}" value="24" min="8"max="64" step="1" oninput="">
                 </div>
                 <form method="dialog">
-                    <button value="delete" class="modal-del" onclick="modalDel(dialog-${appId})">DELETE</button>
-                    <button value="save" class="modal-save" onclick="modalSave(dialog-${appId})">SAVE</button>
+                <button value="delete" class="modal-del" onclick="modalDel(${appId})">DELETE</button>
+                <button value="save" class="modal-save" onclick="modalSave('dialog-${appId}')">SAVE</button>
                 </form>
             </dialog>
         </div>
@@ -97,16 +99,16 @@ function createNewapp(appObj) {
         app.innerHTML = `
         <div class="app-header">
             <input type="checkbox" id="title-${appId}" class="dpnone" onchange="">
-            <label for="title-${appId}" class="app-title app-set toggle">${appObj.name}</label>
+            <label for="title-${appId}" class="app-title app-title-${appId} toggle">${appObj.name}</label>
 
-            <button onclick="appModal(${appId})" class="app-set-icon  toggle">
+            <button onclick="appModal(${appId},'${name}')" class="app-set-icon app-set toggle">
                 <i class="fa-solid fa-ellipsis-vertical"></i>
             </button>
 
             <dialog id="dialog-${appId}">
                 <div class="dialog-title">
                     <label for="dialog-title-${appId}">TITLE</label>
-                    <input type="text" id="dialog-title-${appId}" value="${name}" oninput="">
+                    <input type="text" id="dialog-title-${appId}" oninput="modalTitle(${appId},this.value)">
                 </div>
                 <div class="dialog-align">
                     <label for="dialog-align-${appId}">ALIGHN</label>
@@ -136,8 +138,8 @@ function createNewapp(appObj) {
                     <input type="range" id="dialog-fontsize-${appId}" value="24" min="8"max="64" step="1" oninput="">
                 </div>
                 <form method="dialog">
-                    <button value="delete" class="modal-del" onclick="modalDel(dialog-${appId})">DELETE</button>
-                    <button value="save" class="modal-save" onclick="modalSave(dialog-${appId})">SAVE</button>
+                <button value="delete" class="modal-del" onclick="modalDel(${appId})">DELETE</button>
+                <button value="save" class="modal-save" onclick="modalSave('dialog-${appId}')">SAVE</button>
                 </form>
             </dialog>
         </div>
@@ -166,16 +168,16 @@ function createNewapp(appObj) {
         app.innerHTML = `
         <div class="app-header">
             <input type="checkbox" id="title-${appId}" class="dpnone" onchange="">
-            <label for="title-${appId}" class="app-title app-set toggle">${appObj.name}</label>
+            <label for="title-${appId}" class="app-title app-title-${appId} toggle">${appObj.name}</label>
 
-            <button onclick="appModal(${appId})" class="app-set-icon  toggle">
+            <button onclick="appModal(${appId},'${name}')" class="app-set-icon app-set toggle">
                 <i class="fa-solid fa-ellipsis-vertical"></i>
             </button>
 
             <dialog id="dialog-${appId}">
                 <div class="dialog-title">
                     <label for="dialog-title-${appId}">TITLE</label>
-                    <input type="text" id="dialog-title-${appId}" oninput="">
+                    <input type="text" id="dialog-title-${appId}" oninput="modalTitle(${appId},this.value)">
                 </div>
                 <div class="dialog-align">
                     <label for="dialog-align-${appId}">ALIGHN</label>
@@ -205,8 +207,8 @@ function createNewapp(appObj) {
                     <input type="range" id="dialog-fontsize-${appId}" value="24" min="8"max="64" step="1" oninput="">
                 </div>
                 <form method="dialog">
-                    <button value="delete" class="modal-del" onclick="modalDel(dialog-${appId})">DELETE</button>
-                    <button value="save" class="modal-save" onclick="modalSave(dialog-${appId})">SAVE</button>
+                <button value="delete" class="modal-del" onclick="modalDel(${appId})">DELETE</button>
+                <button value="save" class="modal-save" onclick="modalSave('dialog-${appId}')">SAVE</button>
                 </form>
             </dialog>
         </div>
@@ -249,13 +251,16 @@ function printApp(appObj) {
         app.innerHTML = `
         <div class="app-header">
             <input type="checkbox" id="title-${appId}" class="dpnone" onchange="">
-            <button onclick="appModal(${appId})" class="app-set-icon app-set toggle">
+            <label for="title-${appId}" class="app-title app-title-${appId} toggle">${appObj.name}</label>
+
+            <button onclick="appModal(${appId},'${name}')" class="app-set-icon app-set toggle">
                 <i class="fa-solid fa-ellipsis-vertical"></i>
             </button>
+
             <dialog id="dialog-${appId}">
                 <div class="dialog-title">
                     <label for="dialog-title-${appId}">TITLE</label>
-                    <input type="text" id="dialog-title-${appId}" oninput="">
+                    <input type="text" id="dialog-title-${appId}" oninput="modalTitle(${appId},this.value)">
                 </div>
                 <div class="dialog-align">
                     <label for="dialog-align-${appId}">ALIGHN</label>
@@ -286,7 +291,7 @@ function printApp(appObj) {
                 </div>
                 <form method="dialog">
                 <button value="delete" class="modal-del" onclick="modalDel(${appId})">DELETE</button>
-                <button value="save" class="modal-save" onclick="modalSave(dialog-${appId})">SAVE</button>
+                <button value="save" class="modal-save" onclick="modalSave('dialog-${appId}')">SAVE</button>
                 </form>
             </dialog>
         </div>
@@ -371,16 +376,16 @@ function printApp(appObj) {
         app.innerHTML = `
         <div class="app-header">
             <input type="checkbox" id="title-${appId}" class="dpnone" onchange="">
-            <label for="title-${appId}" class="app-title app-set toggle">${appObj.name}</label>
+            <label for="title-${appId}" class="app-title app-title-${appId} toggle">${appObj.name}</label>
 
-            <button onclick="appModal(${appId})" class="app-set-icon  toggle">
+            <button onclick="appModal(${appId},'${name}')" class="app-set-icon app-set toggle">
                 <i class="fa-solid fa-ellipsis-vertical"></i>
             </button>
 
             <dialog id="dialog-${appId}">
                 <div class="dialog-title">
                     <label for="dialog-title-${appId}">TITLE</label>
-                    <input type="text" id="dialog-title-${appId}" oninput="">
+                    <input type="text" id="dialog-title-${appId}" oninput="modalTitle(${appId},this.value)">
                 </div>
                 <div class="dialog-align">
                     <label for="dialog-align-${appId}">ALIGHN</label>
@@ -410,8 +415,8 @@ function printApp(appObj) {
                     <input type="range" id="dialog-fontsize-${appId}" value="24" min="8"max="64" step="1" oninput="">
                 </div>
                 <form method="dialog">
-                    <button value="delete" class="modal-del" onclick="modalDel(${appId})">DELETE</button>
-                    <button value="save" class="modal-save" onclick="modalSave(dialog-${appId})">SAVE</button>
+                <button value="delete" class="modal-del" onclick="modalDel(${appId})">DELETE</button>
+                <button value="save" class="modal-save" onclick="modalSave('dialog-${appId}')">SAVE</button>
                 </form>
             </dialog>
         </div>
