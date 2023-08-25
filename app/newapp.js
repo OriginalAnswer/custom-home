@@ -165,7 +165,7 @@ function createNewapp(appObj) {
         app.innerHTML = `
         <div class="app-header">
             <input type="checkbox" id="title-${appId}" class="dpnone" onchange="">
-            \<label for="title-${appId}" class="app-title app-set toggle">${appObj.name}</label>
+            <label for="title-${appId}" class="app-title app-set toggle">${appObj.name}</label>
 
             <button onclick="appModal(${appId})" class="app-set-icon  toggle">
                 <i class="fa-solid fa-ellipsis-vertical"></i>
@@ -368,14 +368,14 @@ function printApp(appObj) {
     else if (appObj.type == "links") {
         app.innerHTML = `
         <div class="app-header">
-        <input type="checkbox" id="title-${appId}" class="dpnone" onchange="">
-        <label for="title-${appId}" class="app-title app-set toggle">${appObj.name}</label>
+            <input type="checkbox" id="title-${appId}" class="dpnone" onchange="">
+            <label for="title-${appId}" class="app-title app-set toggle">${appObj.name}</label>
 
-        <button onclick="appModal(${appId})" class="app-set-icon  toggle">
-            <i class="fa-solid fa-ellipsis-vertical"></i>
-        </button>
+            <button onclick="appModal(${appId})" class="app-set-icon  toggle">
+                <i class="fa-solid fa-ellipsis-vertical"></i>
+            </button>
 
-        <dialog id="dialog-${appId}">
+            <dialog id="dialog-${appId}">
                 <div class="dialog-title">
                     <label for="dialog-title-${appId}">TITLE</label>
                     <input type="text" id="dialog-title-${appId}" oninput="">
