@@ -54,13 +54,12 @@
   
   --set-bgclr: hsla(0, var(--hsla-saturation), var(--hsla-lightness), var(--hsla-alpha));
   --set-back-clr: #8484841c;
-  --set-input-clr:#fff;
   
   --newapp-back-clr: #8484845d;
   --newapp-bgclr: #ffffff;
   --clr-newapp-hover-bg-btn:#e0e0e0;
   
-  --app-bgclr: hsla(0, 0%, 89%, 0.32);
+  --app-bgclr: hsla(0, 0%, 100%, 0.89);
   --app-border: 1px solid rgba(236, 236, 236, 0.83);
   --app-box-shadow-1: 0 5px 10px 0 rgba(203, 203, 203, 0.283);
   --app-box-shadow-2: 0 5px 10px 0 rgba(169, 169, 169, 0.283);
@@ -68,23 +67,24 @@
   --app-box-shadow-inset-2: 5px 3px 10px -2px rgba(240, 240, 240, 0.680) inset;
   
   --input-height-15: 1.5rem;
-
+  
   --haedapp-align-checked-bgclr:#fefefe;
   --haedapp-align-bgclr:#f2f2f2;
-
+  
   --app-set-icon-size: 2rem;
-
+  
   --clr-search-g-border:rgb(221, 221, 221);
   --clr-search-y-border:rgba(227, 46, 46, 0.795);
   --clr-search-ym-border:rgb(202, 137, 56);
   --clr-focus-search-g-border:rgb(251, 251, 251);
   --clr-focus-search-y-border:orangered;
   --clr-focus-search-ym-border:rgb(243, 162, 10);
-
+  
   --clr-item-checked-task:#adadad;
-
+  
   --bgclr-dialog-backdrop:rgba(199, 25, 25, 0.673);
-  --bgclr-dialog: #ffffff;
+  --bgclr-dialog: #ffffff5a;
+  --set-input-clr:#ffffff;
 
   --clr-modal-save:rgb(255, 255, 255);
   --clr-modal-save-bg:rgb(0, 0, 0);
@@ -134,14 +134,14 @@
     --body-bgclr:#040404;
     --clr-toggle: #ffffff;
     
-    --search-bgclr: #2d2d2e;
+    --search-bgclr: hsla(0, 0%, 23%, 0.32);
     --search-height: 2rem;
     --search-border-radius: 20px;
     --search-icon-border-radius: 50px;
     
     --set-bgclr: hsla(100, var(--hsla-saturation), var(--hsla-lightness), var(--hsla-alpha));
     --set-back-clr: #b3b3b31c;
-    --set-input-clr:#000000;
+    --set-input-clr:#00000000;
     
     --newapp-back-clr: #a3a3a35d;
     --newapp-bgclr: #000000;
@@ -171,11 +171,15 @@
     --clr-focus-search-ym-border:rgb(202, 137, 56);
 
     --bgclr-dialog-backdrop:rgba(0, 0, 0, 0.575);
-    --bgclr-dialog: #1b1b1b9b;
+    --bgclr-dialog: #0000002c;
 
     
-  --clr-modal-save-hover:rgb(0, 0, 0);
-  --clr-modal-save-hover-bg:rgb(255, 255, 255);
+  --clr-modal-save:rgb(0, 0, 0);
+  --clr-modal-save-bg:rgb(255, 255, 255);
+  --clr-modal-save-border:rgb(255, 255, 255);
+  --clr-modal-save-hover:rgb(255, 255, 255);
+  --clr-modal-save-hover-bg:rgb(0, 0, 0);
+  /* --clr-modal-save-hover-border:rgb(0, 0, 0); */
   
   --clr-modal-del:rgb(255, 255, 255);
   --clr-modal-del-bg:rgb(255, 0, 0);

@@ -260,11 +260,11 @@ function printApp(appObj) {
 
             <dialog id="dialog-${appId}">
                 <div class="dialog-title">
-                    <label for="dialog-title-${appId}">TITLE</label>
+                    <label for="dialog-title-${appId}">Title</label>
                     <input type="text" id="dialog-title-${appId}" oninput="modalTitle(${appId},this.value)">
                 </div>
                 <div class="dialog-align">
-                    <label for="dialog-align-${appId}">ALIGHN</label>
+                    <label for="dialog-align-${appId}">Align</label>
                     <select type="text" id="dialog-font-${appId}" oninput="">
                         <option>left</option>
                         <option>center</option>
@@ -272,7 +272,7 @@ function printApp(appObj) {
                     </select>
                 </div>
                 <div class="dialog-font">
-                    <label for="dialog-font-${appId}">FONT</label>
+                    <label for="dialog-font-${appId}">Font</label>
                     <select type="text" id="dialog-font-${appId}" oninput="">
                         <option>기본 폰트</option>
                         <option>폰트1</option>
@@ -280,14 +280,14 @@ function printApp(appObj) {
                     </select>
                 </div>
                 <div class="dialog-fonttype">
-                    <label for="dialog-fonttype-${appId}">FONT TYPE</label>
+                    <label for="dialog-fonttype-${appId}">Font Type</label>
                     <select type="text" id="dialog-fonttype-${appId}" oninput="">
                         <option>normal</option>
                         <option>italic</option>
                     </select>
                 </div>
                 <div class="dialog-fontsize">
-                    <label for="dialog-fontsize-${appId}">FONT SIZE</label>
+                    <label for="dialog-fontsize-${appId}">Font Size</label>
                     <input type="range" id="dialog-fontsize-${appId}" value="24" min="8"max="64" step="1" oninput="">
                 </div>
                 <form method="dialog">
