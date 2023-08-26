@@ -54,8 +54,9 @@
             flex-wrap: nowrap;
             align-items: center;
             justify-content: space-between;
-
+            
             width: 100%;
+            height: 32px;
             /* padding-left: var(--app-set-icon-size); */
             
             & .app-title{
@@ -265,8 +266,8 @@ dialog::backdrop{
     left: 10px;
     top: 10px;
 }*/
-:is(.app:has(.app-print>textarea)) .app-header .app-set{
+/* :is(.app:has(.app-print>textarea)) .app-header .app-set{
     position: absolute;
     right: 10px;
     top: 10px;
-} 
+}  */
