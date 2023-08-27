@@ -1,18 +1,18 @@
 function taskCheck(a, b, c) {
     // console.log(a);//앱 id
     // console.log(b);//객체 id
-    // console.log(c);//체크여부
+    console.log(c);//체크여부
 
     let currentAppJSON = localStorage.getItem(a);
     let parsedCurrentAppData = JSON.parse(currentAppJSON);
     let arr = parsedCurrentAppData;
     // console.log(arr);
-    arr = arr.map(p =>
-        p.id === b
-            ? { ...p, statu: 'ture' }
-            : p
-      );
-      saveTask(a,arr);
+    if (c === 'true' ) {
+        arr = arr.map(p => p.id === b ? { ...p, statu: 'ture' }: p);
+    } else {
+        arr = arr.map(p => p.id === b ? { ...p, statu: 'false' }: p);
+    }
+    saveTask(a,arr);
 }
 
 
