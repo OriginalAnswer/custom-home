@@ -6,8 +6,8 @@ function taskCheck(a, b, c) {
     let currentAppJSON = localStorage.getItem(a);
     let parsedCurrentAppData = JSON.parse(currentAppJSON);
     let arr = parsedCurrentAppData;
-    // console.log(arr);
-    if (c === 'true' ) {
+    console.log(arr);
+    if (c === true ) {
         arr = arr.map(p => p.id === b ? { ...p, statu: 'ture' }: p);
     } else {
         arr = arr.map(p => p.id === b ? { ...p, statu: 'false' }: p);
