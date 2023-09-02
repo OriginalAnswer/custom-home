@@ -248,8 +248,10 @@ function printApp(appObj) {
     
     
     if (appObj.type == "memo") {
-        console.log(localStorage.getItem(1693640631876));
-        // const currentContent = parsedCurrentAppData.content;
+        let currentContent = parsedCurrentAppData.content;
+        if (currentContent == "") {
+            let currentContent = "";
+        }
         // <label for="title-${appId}" class="app-title toggle">${appObj.name}</label>
         app.innerHTML = `
         <div class="app-header">
@@ -474,7 +476,7 @@ function dragStart(event) {
     event.dataTransfer.effectAllowed = 'move';
     event.dataTransfer.setData('text/plain', '');
     const pick = {
-        id: draggedApp.dataset.appID,
+        id: draggedApp.dataset.id,
         type: draggedApp.getAttribute('data-type'),
         name: draggedApp.querySelector('.app-title').innerText,
         section: 'c',
