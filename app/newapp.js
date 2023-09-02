@@ -34,6 +34,8 @@ function createNewapp(appObj) {
     app.id = `app-${appId}`;
     app.draggable = true;
     app.dataset.type = appObj.type;
+    app.dataset.id = appObj.id;
+
     if (appObj.type == 'memo') {
         // <label for="title-${appId}" class="app-title toggle">${appObj.name}</label>
         app.innerHTML = `
@@ -238,20 +240,16 @@ function printApp(appObj) {
     app.id = `app-${appId}`;
     app.draggable = true;
     app.dataset.type = appObj.type;
-    app.dataset.group = appId;
+    app.dataset.id = appObj.id;
 
     const currentAppDataJSON = localStorage.getItem(appId);
     const parsedCurrentAppData = JSON.parse(currentAppDataJSON);
-    console.log(name);
-    // console.log(parsedCurrentAppData);
-
-
+    // console.log(name);
+    
+    
     if (appObj.type == "memo") {
-        if (parsedCurrentAppData.content === null) {
-            const currentContent = "";
-        } else {
-            const currentContent = parsedCurrentAppData.content;
-        }
+        console.log(localStorage.getItem(1693640631876));
+        // const currentContent = parsedCurrentAppData.content;
         // <label for="title-${appId}" class="app-title toggle">${appObj.name}</label>
         app.innerHTML = `
         <div class="app-header">
@@ -476,7 +474,7 @@ function dragStart(event) {
     event.dataTransfer.effectAllowed = 'move';
     event.dataTransfer.setData('text/plain', '');
     const pick = {
-        id: draggedApp.dataset.group,
+        id: draggedApp.dataset.appID,
         type: draggedApp.getAttribute('data-type'),
         name: draggedApp.querySelector('.app-title').innerText,
         section: 'c',
@@ -511,7 +509,7 @@ function drop(event) {
 function updateAppsArrOrder() {
     appsArr = Array.from(sectionC.querySelectorAll('.app')).map(app => {
         return {
-            id: app.dataset.group,
+            id: app.dataset.id,
             type: app.getAttribute('data-type'),
             name: app.querySelector('.app-title').innerText,
             section: 'c',
