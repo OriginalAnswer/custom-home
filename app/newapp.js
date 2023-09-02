@@ -247,7 +247,11 @@ function printApp(appObj) {
 
 
     if (appObj.type == "memo") {
-        const currentContent = parsedCurrentAppData.content;
+        if (parsedCurrentAppData.content === null) {
+            const currentContent = "";
+        } else {
+            const currentContent = parsedCurrentAppData.content;
+        }
         // <label for="title-${appId}" class="app-title toggle">${appObj.name}</label>
         app.innerHTML = `
         <div class="app-header">
