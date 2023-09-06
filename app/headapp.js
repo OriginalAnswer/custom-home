@@ -173,4 +173,5 @@ if (savedHeadapp !== null) {
     });
 }
 
-// 드래그 앤 드롭*********************
+// 파비콘*********************
+// const favi = `http://favicons.githubusercontent.com/${url}`;
